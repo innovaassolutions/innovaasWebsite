@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.04 62.04">
+  <defs>
+    <style>
+      .d, .e {
+        fill: none;
+      }
+
+      .e {
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="a" data-name="Layer 1"/>
+  <g id="b" data-name="Layer 2">
+    <g id="c" data-name="Layer 2">
+      <g>
+        <rect class="d" width="62.04" height="62.04"/>
+        <g>
+          <circle class="e" cx="31.02" cy="31.02" r="8.1"/>
+          <circle class="e" cx="31.02" cy="10.77" r="4.05"/>
+          <line class="e" x1="31.02" y1="22.92" x2="31.02" y2="14.77"/>
+          <circle class="e" cx="31.02" cy="51.27" r="4.05"/>
+          <line class="e" x1="31.02" y1="39.12" x2="31.02" y2="47.27"/>
+          <circle class="e" cx="13.48" cy="20.9" r="4.05"/>
+          <line class="e" x1="24.01" y1="26.97" x2="16.95" y2="22.9"/>
+          <circle class="e" cx="48.56" cy="41.15" r="4.05"/>
+          <line class="e" x1="38.04" y1="35.07" x2="45.1" y2="39.15"/>
+          <circle class="e" cx="13.48" cy="41.15" r="4.05"/>
+          <line class="e" x1="24.01" y1="35.07" x2="16.95" y2="39.15"/>
+          <circle class="e" cx="48.56" cy="20.9" r="4.05"/>
+          <line class="e" x1="38.04" y1="26.97" x2="45.1" y2="22.9"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

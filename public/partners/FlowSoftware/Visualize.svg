@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.04 62.04">
+  <defs>
+    <style>
+      .d, .e {
+        fill: none;
+      }
+
+      .e {
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="a" data-name="Layer 1"/>
+  <g id="b" data-name="Layer 2">
+    <g id="c" data-name="Layer 2">
+      <g>
+        <rect class="d" width="62.04" height="62.04"/>
+        <g>
+          <rect class="e" x="10.77" y="37.1" width="10.12" height="14.17"/>
+          <rect class="e" x="25.96" y="24.95" width="10.12" height="26.32"/>
+          <rect class="e" x="41.15" y="10.77" width="10.12" height="40.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

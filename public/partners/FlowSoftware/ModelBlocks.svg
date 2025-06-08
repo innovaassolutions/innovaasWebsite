@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.04 62.04">
+  <defs>
+    <style>
+      .d, .e {
+        fill: none;
+      }
+
+      .e {
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="a" data-name="Layer 1"/>
+  <g id="b" data-name="Layer 2">
+    <g id="c" data-name="Layer 2">
+      <g>
+        <rect class="d" width="62.04" height="62.04"/>
+        <g>
+          <polygon class="e" points="31.02 6.72 18.46 11.61 31.02 16.49 43.59 11.61 31.02 6.72"/>
+          <polyline class="e" points="18.46 11.61 18.46 28.58 31.02 33.46 43.59 28.58 43.59 11.61"/>
+          <line class="e" x1="31.02" y1="16.49" x2="31.02" y2="33.46"/>
+          <polygon class="e" points="18.46 28.58 5.89 33.46 18.46 38.35 31.02 33.46 18.46 28.58"/>
+          <polyline class="e" points="5.89 33.46 5.89 50.44 18.46 55.32 31.02 50.44 31.02 33.46"/>
+          <line class="e" x1="18.46" y1="38.35" x2="18.46" y2="55.32"/>
+          <polygon class="e" points="43.59 28.58 56.15 33.46 43.59 38.35 31.02 33.46 43.59 28.58"/>
+          <polyline class="e" points="56.15 33.46 56.15 50.44 43.59 55.32 31.02 50.44 31.02 33.46"/>
+          <line class="e" x1="43.59" y1="38.35" x2="43.59" y2="55.32"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
