@@ -6,6 +6,7 @@ import { CheckCircleIcon } from '@chakra-ui/icons';
 export default function ServicesPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
+  const whyTextColor = useColorModeValue('#222', '#fff');
 
   return (
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
@@ -45,7 +46,7 @@ export default function ServicesPage() {
           </List>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="ImplementationServices.webp" alt="Unified namespace" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Namespace" />
+          <Image src="implementationServices.webp" alt="Unified namespace" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Namespace" />
         </Box>
       </Flex>
 
@@ -151,11 +152,11 @@ export default function ServicesPage() {
                   <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                   </Box>
-                  <Heading as="h3" size="lg" color="white" fontWeight={800}>
+                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
                     Expertise
                   </Heading>
                 </Box>
-                <Text color="white" fontSize="lg">
+                <Text color={whyTextColor} fontSize="lg">
                   Our team has extensive experience in digital transformation and data management.
                 </Text>
               </Box>
@@ -165,11 +166,11 @@ export default function ServicesPage() {
                   <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M16.53 11.06l-4.24-4.24c-.39-.39-1.02-.39-1.41 0l-4.24 4.24c-.39.39-.39 1.02 0 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l4.24-4.24c.39-.39.39-1.02 0-1.41z"/></svg>
                   </Box>
-                  <Heading as="h3" size="lg" color="white" fontWeight={800}>
+                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
                     End-to-End Support
                   </Heading>
                 </Box>
-                <Text color="white" fontSize="lg">
+                <Text color={whyTextColor} fontSize="lg">
                   From strategy development to implementation and optimization, we provide comprehensive support.
                 </Text>
               </Box>
@@ -184,11 +185,11 @@ export default function ServicesPage() {
                   <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
                   </Box>
-                  <Heading as="h3" size="lg" color="white" fontWeight={800}>
+                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
                     Customization
                   </Heading>
                 </Box>
-                <Text color="white" fontSize="lg">
+                <Text color={whyTextColor} fontSize="lg">
                   We tailor our services to meet the unique needs of your business.
                 </Text>
               </Box>
@@ -198,11 +199,11 @@ export default function ServicesPage() {
                   <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 10z"/></svg>
                   </Box>
-                  <Heading as="h3" size="lg" color="white" fontWeight={800}>
+                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
                     Proven Track Record
                   </Heading>
                 </Box>
-                <Text color="white" fontSize="lg">
+                <Text color={whyTextColor} fontSize="lg">
                   Our successful projects demonstrate our ability to deliver impactful results.
                 </Text>
               </Box>
