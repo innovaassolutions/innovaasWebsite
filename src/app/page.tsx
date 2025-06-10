@@ -1,11 +1,10 @@
 "use client";
 
-import { Box, Flex, Heading, Text, Button, Image, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Image, useColorModeValue } from '@chakra-ui/react';
 
 export default function HomePage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
-  const bg = useColorModeValue('white', '#181f2a');
 
   return (
     <Box maxW="1200px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>

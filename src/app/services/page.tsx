@@ -6,7 +6,6 @@ import { CheckCircleIcon } from '@chakra-ui/icons';
 export default function ServicesPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
-  const bg = useColorModeValue('white', '#181f2a');
 
   return (
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>

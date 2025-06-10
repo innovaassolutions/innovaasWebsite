@@ -4,10 +4,6 @@ import { Box, Heading, Text, Button, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 
 export default function Hero({ image }: { image: string }) {
-  // Always use dark theme colors
-  const textColor = "#181f2a";
-  const headingColor = "#fff";
-
   return (
     <Box
       as="section"

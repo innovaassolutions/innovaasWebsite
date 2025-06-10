@@ -6,21 +6,6 @@ export default function PartnersPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
   const boxBg = useColorModeValue('#232b39', '#151922');
-  const bg = useColorModeValue('white', '#181f2a');
-
-  const logoBg = useColorModeValue('#181f2a', 'white'); // dark in light mode, light in dark mode
-
-  const logoSrc = useColorModeValue(
-    '/logos/partner-black.png', // for light mode
-    '/logos/partner-white.png'  // for dark mode
-  );
-
-  const partnerLogos = [
-    { src: '/partners/Benthos.png', alt: 'Benthos' },
-    { src: '/partners/flatcar.png', alt: 'Logo 2' },
-    { src: '/partners/EMQX/EMQX_Icon.png', alt: 'Logo 2' },
-    // ...add up to 6
-  ];
 
   return (
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
@@ -61,7 +46,7 @@ export default function PartnersPage() {
             UMH Integrated Platform
           </Heading>
           <Text color={bodyTextColor}>
-            The UMH Integrated Platform is a cloud-based application engineered to manage your company's IIoT infrastructure. It equips your engineers with the necessary tools to set up and oversee all data streams and applications (Data Infrastructure), devices (Device & Container Infrastructure), while also automating management in a user-friendly interface (Management Console).
+            The UMH Integrated Platform is a cloud-based application engineered to manage your company&apos;s IIoT infrastructure. It equips your engineers with the necessary tools to set up and oversee all data streams and applications (Data Infrastructure), devices (Device & Container Infrastructure), while also automating management in a user-friendly interface (Management Console).
           </Text>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '250px' }}>
@@ -88,7 +73,7 @@ export default function PartnersPage() {
             Litmus
           </Heading>
           <Text color={bodyTextColor}>
-            Litmus was founded because they experienced first-hand there was a better and easier way to harness the power of industrial data. In fact, it was essential to make the promise of Industry 4.0 more attainable.
+            Litmus was founded because they experienced first&#39;hand there was a better and easier way to harness the power of industrial data. In fact, it was essential to make the promise of Industry 4.0 more attainable.
           </Text>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '250px' }}>

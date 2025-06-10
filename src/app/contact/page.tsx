@@ -20,7 +20,7 @@ export default function ContactPage() {
     <Box maxW="500px" mx="auto" mt={12} p={8} bg={bg} borderRadius="lg" boxShadow="lg" borderWidth="1px" borderColor={border}>
       <Heading as="h1" size="lg" mb={6} color={text}>Contact Us</Heading>
       {submitted ? (
-        <Text color={text} fontSize="lg">Thank you for reaching out! We'll get back to you soon.</Text>
+        <Text color={text} fontSize="lg">Thank you for reaching out! We&apos;ll get back to you soon.</Text>
       ) : (
         <form onSubmit={handleSubmit}>
           <Stack spacing={5}>

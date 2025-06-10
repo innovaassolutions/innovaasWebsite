@@ -8,6 +8,5 @@ export default function HeroWrapper() {
   if (pathname.startsWith("/about")) heroImage = "/hero-about.webp";
   else if (pathname.startsWith("/services")) heroImage = "/hero-services.webp";
   else if (pathname.startsWith("/partners")) heroImage = "/hero-partners.webp";
-  else if (pathname.startsWith("/blog")) heroImage = "/hero-blog.webp";
   return <Hero image={heroImage} />;
 }
