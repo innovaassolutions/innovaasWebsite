@@ -1,6 +1,6 @@
 # 🧠 Innovaas Knowledge Management System (KMS) Build Plan
 
-This document outlines the full build plan for implementing a Knowledge Management System (KMS) with LLM integration for Innovaas Solutions Pte. Ltd., including support for audio and video files.
+This document outlines the full build plan for implementing a Knowledge Management System (KMS) with LLM integration for Innovaas Solutions Pte. Ltd., including support for audio and video files.  My vision for the KMS is to allow anyone to feed the LLM with information by uploading documents in various formats.  I do not expect people to be downloading or viewing actual documents once uploaded.  I expect them to ask / prompt the LLM for guidance on various tasks they may face in their dialy work activities i.e. Architecting a new solution for a client, asking about best practices for building a Unified Namespace, etc.
 
 ---
 
