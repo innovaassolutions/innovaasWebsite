@@ -1,12 +1,21 @@
 "use client";
 
 import { Box, Flex, Heading, Text, Image, useColorModeValue } from '@chakra-ui/react';
+import Hero from "@/components/Hero";
 
 export default function HomePage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
 
   return (
+    <>
+      <Hero
+        image="/home-hero.webp"
+        heading="Everything and Everyone: Connected"
+        subheading="Digital transformation services, enabling Industrial businesses to connect every machine, sensor, human activity, and business transaction into one single source of truth."
+        buttonText="Get Started"
+        buttonLink="/contact"
+      />
     <Box maxW="1200px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
       {/* Mission Section */}
       <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={12}>
@@ -54,5 +63,6 @@ export default function HomePage() {
         </Box>
       </Flex>
     </Box>
+    </>
   );
 }

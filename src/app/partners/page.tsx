@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Flex, Heading, Text, useColorModeValue, Image } from '@chakra-ui/react';
+import Hero from "@/components/Hero";
 
 export default function PartnersPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -8,6 +9,14 @@ export default function PartnersPage() {
   const boxBg = useColorModeValue('#232b39', '#151922');
 
   return (
+    <>
+      <Hero
+        image="/hero-partners.webp"
+        heading="Our Partners"
+        subheading="Meet the innovative companies we work with."
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
       <Heading as="h1" size="2xl" mb={8} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
         Our Partners
@@ -92,5 +101,6 @@ export default function PartnersPage() {
         </Box>
       </Flex>
     </Box>
+    </>
   );
 } 

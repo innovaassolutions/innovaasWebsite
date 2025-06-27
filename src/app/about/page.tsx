@@ -2,6 +2,7 @@
 
 import { Box, Flex, Heading, Text, useColorModeValue, Image, Stack, Icon } from '@chakra-ui/react';
 import { FaUser } from 'react-icons/fa';
+import Hero from "@/components/Hero";
 
 const teamMembers = [
   {
@@ -14,7 +15,7 @@ const teamMembers = [
     name: 'Robert Rae, Chief Technical Advisor',
     image: '',
     alt: 'Robert Rae',
-    description: 'Rob brings decades of software development to the team. He mentors our in-house team of developers ensure we adhere to the highest standards of quality for our customers.'
+    description: 'Rob brings decades of software development experience to the team. He mentors our in-house team of developers ensuring we adhere to the highest standards of quality for our customers.'
   },
   {
     name: 'Collin Tan, Advisor',
@@ -38,6 +39,14 @@ export default function AboutPage() {
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
+    <>
+      <Hero
+        image="/hero-about.webp"
+        heading="About Us"
+        subheading="Guided by expertise gained over 20 years of achieving success for clients, we practice with passion and strategic focus on the future."
+        buttonText="Contact Us"
+        buttonLink="/contact"
+      />
     <Box maxW="900px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
       <Heading as="h1" size="2xl" mb={8} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
         About us
@@ -108,5 +117,6 @@ export default function AboutPage() {
         </Stack>
       </Box>
     </Box>
+    </>
   );
 } 

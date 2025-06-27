@@ -2,6 +2,7 @@
 
 import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Image } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
+import Hero from "@/components/Hero";
 
 export default function ServicesPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -9,6 +10,14 @@ export default function ServicesPage() {
   const whyTextColor = useColorModeValue('#222', '#fff');
 
   return (
+    <>
+      <Hero
+        image="/hero-services.webp"
+        heading="Our Services"
+        subheading="Discover how we can help your business transform."
+        buttonText="Learn More"
+        buttonLink="/contact"
+      />
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
       {/* Digital Transformation Strategy */}
       <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
@@ -212,5 +221,6 @@ export default function ServicesPage() {
         </Box>
       </Box>
     </Box>
+    </>
   );
 } 

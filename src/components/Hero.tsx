@@ -3,15 +3,29 @@
 import { Box, Heading, Text, Button, Stack } from "@chakra-ui/react";
 import Link from "next/link";
 
-export default function Hero({ image }: { image: string }) {
+interface HeroProps {
+  image: string;
+  heading: string;
+  subheading: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export default function Hero({
+  image,
+  heading,
+  subheading,
+  buttonText,
+  buttonLink,
+}: HeroProps) {
   return (
     <Box
       as="section"
-      minH="60vh"
+      minH="30vh"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      px={8}
+      px={4}
       bgImage={`url(${image})`}
       bgSize="cover"
       bgPosition="center"
@@ -30,36 +44,38 @@ export default function Hero({ image }: { image: string }) {
       }}
     >
       <Stack
-        spacing={8}
-        maxW="3xl"
+        spacing={4}
+        maxW="2xl"
         position="relative"
         zIndex={1}
         bg="rgba(24,31,42,0.7)" // dark overlay
-        p={8}
+        p={4}
         borderRadius="lg"
         boxShadow="lg"
       >
-        <Heading as="h1" size="2xl" fontWeight="bold" color="#fff">
-          Everything and Everyone: <br /> <Box as="span" color="white">Connected</Box>
+        <Heading as="h1" size="xl" fontWeight="bold" color="#fff">
+          {heading}
         </Heading>
-        <Text fontSize="xl" color="#fff">
-          Digital transformation services, enabling Industrial businesses to connect every machine, sensor, human activity, and business transaction into one single source of truth.
+        <Text fontSize="lg" color="#fff">
+          {subheading}
         </Text>
+        {buttonText && buttonLink && (
         <Button
           as={Link}
-          href="/contact"
-          size="lg"
+            href={buttonLink}
+            size="md"
           fontWeight={700}
           bg="#F25C05"
           color="#fff"
           _hover={{ bg: "#d94e04" }}
           borderRadius="6px"
-          fontSize="1.25rem"
+            fontSize="1rem"
           boxShadow="lg"
           alignSelf="flex-start"
         >
-          Get Started
+            {buttonText}
         </Button>
+        )}
       </Stack>
     </Box>
   );

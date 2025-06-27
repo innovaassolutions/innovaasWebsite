@@ -15,6 +15,8 @@ const navLinks = [
   { href: '/services', label: 'Services' },
   { href: '/partners', label: 'Our Partners' },
   { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/login', label: 'Team Login' },
 ];
 
 function ColorModeSwitcher() {
@@ -43,7 +45,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <Image
-            src="/innovaas_logo_white.png"
+            src="/innovaas_logo_orange_and_white.png"
             alt="Innovaas Logo"
             width={140}
             height={80}
