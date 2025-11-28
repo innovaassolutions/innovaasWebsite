@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/utils/supabase/client";
 import Hero from "@/components/Hero";
 
+// Force dynamic rendering to prevent build-time errors when Supabase is not configured
+export const dynamic = 'force-dynamic';
+
 export default function TeamDashboard() {
   const resources = [
     {

@@ -4,6 +4,9 @@ import { supabase } from "@/utils/supabase/client";
 import { handleAuthError } from "@/utils/auth";
 import { useRouter } from "next/navigation";
 
+// Force dynamic rendering to prevent build-time errors when Supabase is not configured
+export const dynamic = 'force-dynamic';
+
 import {
   Box,
   VStack,
