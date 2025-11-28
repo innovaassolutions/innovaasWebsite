@@ -16,7 +16,7 @@ const navLinks = [
   { href: '/partners', label: 'Our Partners' },
   { href: '/about', label: 'About Us' },
   { href: '/blog', label: 'Blog' },
-  { href: '/login', label: 'Team Login' },
+  // { href: '/login', label: 'Team Login' }, // Disabled for basic website deployment
 ];
 
 function ColorModeSwitcher() {
