@@ -3,11 +3,11 @@ const nextConfig = {
     return [
       {
         source: '/flowforge',
-        destination: 'https://innovaasflowforge.vercel.app',
+        destination: 'https://innovaasflowforge.vercel.app/flowforge',
       },
       {
         source: '/flowforge/:path*',
-        destination: 'https://innovaasflowforge.vercel.app/:path*',
+        destination: 'https://innovaasflowforge.vercel.app/flowforge/:path*',
       },
     ];
   },
