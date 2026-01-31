@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </div>
       <div style={{ background: '#131722', color: secondaryTextColor, textAlign: 'center', padding: '0.75rem 0', fontSize: '1rem' }}>
-        Copyright © Innovaas Solutions Pte. Ltd. 2024
+        Copyright © Innovaas Solutions Pte. Ltd. 2025
       </div>
     </footer>
   );
