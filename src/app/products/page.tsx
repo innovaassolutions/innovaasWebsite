@@ -34,7 +34,7 @@ export default function ProductsPage() {
           {/* Hero screenshot */}
           <Image
             src="/products/flowforge-hero.png"
-            alt="FlowForge platform — leadership archetype results"
+            alt="FlowForge platform — encode your expertise, scale your practice"
             borderRadius="lg"
             objectFit="cover"
             w="100%"
@@ -54,24 +54,24 @@ export default function ProductsPage() {
             <Box flex={1}>
               <Image
                 src="/products/flowforge-interview.png"
-                alt="FlowForge AI interview conversation"
+                alt="FlowForge AI interview mockup and campaign management"
                 borderRadius="lg"
                 objectFit="cover"
                 w="100%"
                 boxShadow="md"
               />
-              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">AI-facilitated stakeholder interview</Text>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">AI interview agent and campaign management</Text>
             </Box>
             <Box flex={1}>
               <Image
-                src="/products/flowforge-archetypes.png"
-                alt="FlowForge coaching results — leadership archetype discovery"
+                src="/products/flowforge-features.png"
+                alt="FlowForge value propositions and target personas"
                 borderRadius="lg"
                 objectFit="cover"
                 w="100%"
                 boxShadow="md"
               />
-              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Synthesized coaching results — white-labeled</Text>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Built for solo consultants, firms, and coaching practices</Text>
             </Box>
           </Flex>
 
