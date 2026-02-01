@@ -123,12 +123,11 @@ export default function ProductsPage() {
           </Text>
 
           <Image
-            src="/products/novacrm-login.png"
-            alt="NovaCRM platform branding"
+            src="/products/novacrm-dashboard.png"
+            alt="NovaCRM sales dashboard with pipeline metrics"
             borderRadius="lg"
             objectFit="cover"
             w="100%"
-            maxW="600px"
             mb={8}
             boxShadow="xl"
           />
@@ -139,6 +138,33 @@ export default function ProductsPage() {
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
             Most CRMs added AI as a checkbox feature. We built NovaCRM with AI at the foundation, so it actually helps your team work smarter instead of just adding another tab to click.
           </Text>
+
+          {/* Secondary screenshots */}
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Image
+                src="/products/novacrm-contacts.png"
+                alt="NovaCRM contact management"
+                borderRadius="lg"
+                objectFit="cover"
+                w="100%"
+                boxShadow="md"
+              />
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Contact management with campaign tracking</Text>
+            </Box>
+            <Box flex={1}>
+              <Image
+                src="/products/novacrm-deals.png"
+                alt="NovaCRM deal pipeline and tracking"
+                borderRadius="lg"
+                objectFit="cover"
+                w="100%"
+                boxShadow="md"
+              />
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Deal pipeline with AI health scoring</Text>
+            </Box>
+          </Flex>
+
           <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
             NovaCRM is currently in private beta. Interested in early access? Get in touch.
           </Text>
