@@ -133,10 +133,10 @@ export default function ProductsPage() {
           />
 
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
-            NovaCRM is an AI-first CRM we built because every CRM we tried bolted AI on as an afterthought. Ours has it at the foundation — from composite deal health scoring that weighs activity recency, pipeline stage, close dates, and AI insights to flag at-risk deals before you lose them, to multi-provider AI (Anthropic, OpenAI, Gemini) powering everything from email copy to marketing collateral.
+            We built NovaCRM because every CRM we tried bolted AI on as an afterthought. Ours has it at the foundation — AI deal health scoring that flags at-risk opportunities before you lose them, multi-provider AI (Anthropic, OpenAI, Gemini) powering everything from email copy to image generation, and intelligent activity tracking that keeps your team focused on what moves the needle.
           </Text>
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
-            Full marketing suite built in: brand management, email template builder, campaign orchestration with click tracking and analytics, AI image generation, and collateral management. Plus project tracking, proposal generation with e-signatures via DocuSign, and a client portal so your customers can self-serve.
+            It&apos;s not just a contact database. It&apos;s the full sales and delivery stack: pipeline management, marketing campaigns, custom-built contract signing, project delivery tracking, and a secure client portal — all in one platform, all AI-enhanced.
           </Text>
 
           {/* Secondary screenshots */}
@@ -171,23 +171,23 @@ export default function ProductsPage() {
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>AI Deal Health Scoring:</b> Composite scoring algorithm weighing activity recency, pipeline stage, close dates, probability, and AI insights — flags at-risk deals automatically.
+              <b>Company &amp; Contact Management:</b> Centralized contact and company profiles with CSV import, campaign tagging, duplicate detection, and full interaction history across every touchpoint.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Full Marketing Suite:</b> Brand management, email template builder, campaign orchestration with send tracking, click analytics, AI image generation, and collateral management.
+              <b>Deal &amp; Pipeline Management:</b> Visual pipeline with customizable stages, AI-powered deal health scoring that weighs activity recency, close dates, and probability to flag at-risk deals before you lose them.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Multi-Provider AI:</b> Anthropic, OpenAI, and Gemini — choose the right model for each task. AI writes email copy, generates images, and scores deal health.
+              <b>Marketing:</b> Brand management, email template builder, campaign orchestration with send tracking and click analytics, AI image generation, and collateral management — all built in, not bolted on.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Proposals &amp; E-Signatures:</b> Generate proposals, send for signing via DocuSign, track analytics — all without leaving the CRM.
+              <b>Document Management &amp; Contract Signing:</b> Custom-built document signing workflow — generate contracts, send for signature, track completion. No third-party signing tools required.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Client Portal &amp; Projects:</b> Customer self-service portal with project tracking, document sharing, and preference management.
+              <b>Project Management &amp; Client Portal:</b> Track project delivery from deal close through completion. Secure customer-facing portal lets clients view progress, access documents, and manage preferences.
             </ListItem>
           </List>
           <Button
