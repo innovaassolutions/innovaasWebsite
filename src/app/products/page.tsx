@@ -133,10 +133,10 @@ export default function ProductsPage() {
           />
 
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
-            NovaCRM is an AI-first CRM built for businesses that want artificial intelligence baked into their sales process from day one — not bolted on as an afterthought. Contact management, deal tracking, pipeline visualization, and activity logging, all with AI woven into the core.
+            NovaCRM is an AI-first CRM we built because every CRM we tried bolted AI on as an afterthought. Ours has it at the foundation — from composite deal health scoring that weighs activity recency, pipeline stage, close dates, and AI insights to flag at-risk deals before you lose them, to multi-provider AI (Anthropic, OpenAI, Gemini) powering everything from email copy to marketing collateral.
           </Text>
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
-            Most CRMs added AI as a checkbox feature. We built NovaCRM with AI at the foundation, so it actually helps your team work smarter instead of just adding another tab to click.
+            Full marketing suite built in: brand management, email template builder, campaign orchestration with click tracking and analytics, AI image generation, and collateral management. Plus project tracking, proposal generation with e-signatures via DocuSign, and a client portal so your customers can self-serve.
           </Text>
 
           {/* Secondary screenshots */}
@@ -171,19 +171,23 @@ export default function ProductsPage() {
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Contact Management:</b> Centralized, searchable, with AI-powered enrichment.
+              <b>AI Deal Health Scoring:</b> Composite scoring algorithm weighing activity recency, pipeline stage, close dates, probability, and AI insights — flags at-risk deals automatically.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Deal Tracking &amp; Pipeline:</b> Visual pipeline with AI insights on deal health and next steps.
+              <b>Full Marketing Suite:</b> Brand management, email template builder, campaign orchestration with send tracking, click analytics, AI image generation, and collateral management.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Activity Logging:</b> Automatic capture and intelligent summarization of interactions.
+              <b>Multi-Provider AI:</b> Anthropic, OpenAI, and Gemini — choose the right model for each task. AI writes email copy, generates images, and scores deal health.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Marketing Tools:</b> Built-in campaign capabilities with role-based access control.
+              <b>Proposals &amp; E-Signatures:</b> Generate proposals, send for signing via DocuSign, track analytics — all without leaving the CRM.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Client Portal &amp; Projects:</b> Customer self-service portal with project tracking, document sharing, and preference management.
             </ListItem>
           </List>
           <Button
