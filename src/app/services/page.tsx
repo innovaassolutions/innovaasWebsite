@@ -13,9 +13,9 @@ export default function ServicesPage() {
     <>
       <Hero
         image="/hero-services.webp"
-        heading="Our Services"
-        subheading="It starts with understanding where you stand. Our Digital Readiness Assessment is the entry point — from there, we build what you need."
-        buttonText="Book Your Assessment"
+        heading="How We Help"
+        subheading="Every business is different, but the starting point is the same — understanding where you actually stand. From there, we work with you to close the gaps that matter most."
+        buttonText="Start a Conversation"
         buttonLink="/contact"
       />
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
@@ -27,7 +27,7 @@ export default function ServicesPage() {
             Digital Readiness Assessment
           </Heading>
           <Text color={bodyTextColor} mb={2}>
-            Most companies know they need to modernize. Few know where to start. That&apos;s what this assessment tells you. We use AI-facilitated interviews to talk to stakeholders across your organization — in parallel, not sequentially — and synthesize everything into a clear picture of where you stand.
+            You probably already know things could be running better. But between day-to-day operations and conflicting opinions from every department, it&apos;s hard to know what to fix first. That&apos;s where we come in. We talk to people across your organization — from the shop floor to the C-suite — and give you an honest picture of where you stand.
           </Text>
           <List spacing={2} color={bodyTextColor} pl={2}>
             <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI-Facilitated Interviews:</b> Your team talks to our platform on their own time. No scheduling nightmares, no six-week engagement just to gather input.</ListItem>

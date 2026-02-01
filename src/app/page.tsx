@@ -15,52 +15,52 @@ export default function HomePage() {
     <>
       <Hero
         image="/home-hero.webp"
-        heading="Find Out Where Your Business Really Stands — Then Fix It"
-        subheading="Our digital readiness assessment shows you exactly where you are. Then we build the roadmap and the solutions to get you where you need to be. We don't just tell you what's wrong — we fix it."
-        buttonText="Book Your Assessment"
+        heading="You Know Your Business Needs to Modernize. You're Just Not Sure Where to Start."
+        subheading="You're not alone. Most growing businesses are in the same place — juggling disconnected systems, manual processes, and too many tools that don't talk to each other. We help you figure out where you actually stand, what to fix first, and then we do the work."
+        buttonText="Let's Figure It Out Together"
         buttonLink="/contact"
       />
       <Box maxW="1200px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
         {/* What We Do Section */}
         <Heading as="h2" size="xl" mb={2} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
-          What We Do
+          Sound Familiar?
         </Heading>
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
-          We figure out where you actually stand digitally, build a plan to close the gaps, and then do the work to get you there.
+          Your team wastes hours on things that should be automated. Your systems don&apos;t talk to each other. You know AI could help but you&apos;re not sure where — or who to trust. We&apos;ve helped businesses just like yours figure it out.
         </Text>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mb={16}>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Assess
+              We Listen First
             </Heading>
             <Text color={bodyTextColor}>
-              We interview your stakeholders using AI to understand where you stand digitally. Technology, process, people — across the whole organization.
+              We talk to your people — across departments, across roles — to understand how your business actually runs. Not how an org chart says it should. That&apos;s where the real gaps show up.
             </Text>
           </Box>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Roadmap
+              We Give You a Clear Plan
             </Heading>
             <Text color={bodyTextColor}>
-              We synthesize findings into a prioritized roadmap. Not a 200-page deck — a clear plan with realistic timelines.
+              No 200-page strategy deck that sits on a shelf. You get a prioritized roadmap — what to fix first, what it&apos;ll take, and what the payoff looks like. Honest, practical, no fluff.
             </Text>
           </Box>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Build
+              We Build What You Need
             </Heading>
             <Text color={bodyTextColor}>
-              We design and deploy the solutions your assessment revealed. Custom software, AI tools, system integrations — whatever moves the needle.
+              Most consultants hand you a plan and wish you luck. We stick around and build the solution — custom software, AI tools, system integrations — whatever your business actually needs.
             </Text>
           </Box>
         </SimpleGrid>
 
         {/* Products Proof Section */}
         <Heading as="h2" size="xl" mb={2} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
-          Powered by Our Own Technology
+          We Don&apos;t Just Advise — We Build
         </Heading>
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
-          We don&apos;t just build for clients — we build and run our own platforms. Here&apos;s what powers our work.
+          Anyone can write a report. We build real software that solves real problems. These are platforms we built and run ourselves — the same team that would work on your project.
         </Text>
         <Box mb={10}>
           <Image
@@ -78,9 +78,9 @@ export default function HomePage() {
               FlowForge
             </Heading>
             <Text color={bodyTextColor} mb={3}>
-              Our AI assessment platform interviews your team in parallel, synthesizes insights across all perspectives, and delivers professional reports — in days, not months.
+              This is how we run your digital readiness assessment. It interviews your team in parallel using AI, finds the patterns humans miss, and delivers a clear report — in days, not months.
             </Text>
-            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">Our assessment methodology, encoded in software.</Text>
+            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">The engine behind every assessment we deliver.</Text>
           </Box>
           <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
