@@ -226,11 +226,11 @@ export default function ServicesPage() {
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 10z"/></svg>
                   </Box>
                   <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    Founder-Led, Always
+                    Senior Team, Every Project
                   </Heading>
                 </Box>
                 <Text color={whyTextColor} fontSize="lg">
-                  Todd, our CEO, is in the room for every engagement. You get senior decision-makers, not junior associates learning on your dime.
+                  The people who understand your problem are the same people writing the code. No junior handoffs. No learning on your dime.
                 </Text>
               </Box>
             </Box>

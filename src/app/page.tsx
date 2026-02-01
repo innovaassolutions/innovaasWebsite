@@ -124,10 +124,10 @@ export default function HomePage() {
           <Box textAlign="center" p={6}>
             <Icon as={FaUserTie} w={10} h={10} color="#F25C05" mb={4} />
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Founder-Led Engagements
+              Senior People, Start to Finish
             </Heading>
             <Text color={bodyTextColor}>
-              You work with Todd, our founder and CEO — not layers of account managers. The person in your meetings is the same person making technical decisions.
+              The people in your strategy meetings are the same people building your software. No junior handoffs. No lost context between teams.
             </Text>
           </Box>
         </SimpleGrid>

@@ -1,123 +1,159 @@
 "use client";
 
-import { Box, Flex, Heading, Text, useColorModeValue, Image, Stack, Icon } from '@chakra-ui/react';
-import { FaUser } from 'react-icons/fa';
+import { Box, Flex, Heading, Text, useColorModeValue, Image, SimpleGrid } from '@chakra-ui/react';
 import Hero from "@/components/Hero";
-
-const teamMembers = [
-  {
-    name: 'Todd Abraham, Founder & CEO',
-    image: 'InnovaasToddOrange.png',
-    alt: 'Todd Abraham',
-    description: 'Todd founded Innovaas to bridge the gap between strategy and execution. He writes code, sits in client meetings, and makes technical decisions — often in the same day. He built FlowForge and NovaCRM from the ground up, and brings experience spanning multiple countries and industries including financial services, marine, education, and technology. When you work with Innovaas, Todd is in the room.'
-  },
-  {
-    name: 'Robert Rae, Chief Technical Advisor',
-    image: '',
-    alt: 'Robert Rae',
-    description: 'Rob brings decades of software architecture and engineering leadership to the team. He sets the quality standards for everything we ship — from code review practices to system design decisions. His deep experience across enterprise software ensures our solutions are built to last, not just built to demo.'
-  },
-  {
-    name: 'Collin Tan, Advisor',
-    image: '',
-    alt: 'Collin Tan',
-    description: 'Collin brings decades of experience in senior business development and strategic alliance roles across major enterprise technology vendors. His network and expertise in building partnerships help Innovaas navigate complex technology ecosystems and deliver solutions that integrate with the platforms our clients already use.'
-  },
-  {
-    name: 'Mohammed Sami Rehman, Integration Architect & Project Lead',
-    image: 'InnovaasSamiOrange.png',
-    alt: 'Mohammed Sami Rehman',
-    description: 'Sami combines an electrical engineering foundation with hands-on software development and project management experience. He previously managed projects with over 100 developers in the financial services sector at a major consulting firm. At Innovaas, he leads integration architecture and project delivery — making sure complex technical work stays on track and on budget.'
-  }
-];
 
 export default function AboutPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
-  const boxBg1 = useColorModeValue('white', '#232b39');
-  const boxBg2 = useColorModeValue('gray.50', '#1a202c');
+  const cardBg = useColorModeValue('white', '#232b39');
+  const cardBg2 = useColorModeValue('gray.50', '#1a202c');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const accentColor = '#F25C05';
 
   return (
     <>
       <Hero
         image="/hero-about.webp"
-        heading="About Us"
-        subheading="A builder-first company. We don't just advise — we design, build, and ship custom AI-powered software."
-        buttonText="Contact Us"
+        heading="About Innovaas"
+        subheading="We build custom AI-powered software that solves real business problems — from strategy through deployment."
+        buttonText="Get in Touch"
         buttonLink="/contact"
       />
     <Box maxW="900px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
-      <Heading as="h1" size="2xl" mb={8} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
-        About Us
-      </Heading>
-      {/* Intro Section */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
+
+      {/* Origin Story */}
+      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={14}>
         <Box flex={1}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            We Build Things That Work
+            Why We Exist
           </Heading>
           <Text color={bodyTextColor} mb={3}>
-            Innovaas is a hands-on, founder-led company that builds custom AI-powered software for businesses. We started because we saw too many companies paying for strategy decks that never became real products.
+            Too many businesses pay for strategy that never becomes real software. They get slide decks, roadmaps, and recommendations — then they&apos;re left to figure out the hard part on their own.
+          </Text>
+          <Text color={bodyTextColor} mb={3}>
+            Innovaas was founded to close that gap. We take projects from assessment through to working software. No handoffs between firms. No lost context. No finger-pointing.
           </Text>
           <Text color={bodyTextColor}>
-            So we do both. We help you figure out where AI creates real value, then we build the software to capture it. FlowForge and NovaCRM are products we built and maintain ourselves — they&apos;re proof that we practice what we preach.
+            We&apos;re a team of engineers, architects, and strategists who build AI-powered tools for real businesses. FlowForge and NovaCRM are products we built and maintain ourselves — and they&apos;re the same standard we bring to every client engagement.
           </Text>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '250px' }}>
-          <Image src="SpaceShip.webp" alt="About Innovaas" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '140px', md: '180px' }} fallbackSrc="https://via.placeholder.com/250x180?text=About" />
+          <Image src="SpaceShip.webp" alt="About Innovaas" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '160px', md: '220px' }} fallbackSrc="https://via.placeholder.com/250x220?text=About" />
         </Box>
       </Flex>
 
-      {/* Team Section */}
-      <Box mb={10}>
-        <Heading as="h2" size="lg" mb={6} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-          Our Team
+      {/* What Sets Us Apart */}
+      <Box mb={14}>
+        <Heading as="h2" size="lg" mb={8} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
+          What Sets Us Apart
         </Heading>
-        <Stack spacing={8}>
-          {teamMembers.map((member, idx) => (
-            <Flex
-              key={member.name}
-              direction="row"
-              align="center"
-              bg={idx % 2 === 0 ? boxBg1 : boxBg2}
-              borderRadius="2xl"
-              boxShadow="lg"
-              borderWidth="1px"
-              borderColor={borderColor}
-              px={{ base: 4, md: 8 }}
-              py={6}
-              gap={6}
-              flexDirection={{ base: 'column', md: 'row' }}
-              width="100%"
-              ml={{ md: idx % 2 === 0 ? 0 : '50%' }}
-              mr={0}
-              transition="box-shadow 0.2s"
-            >
-              <Box flexShrink={0} minW="120px" display="flex" alignItems="center" justifyContent="center">
-                {member.image ? (
-                  <Image
-                    src={member.image}
-                    alt={member.alt}
-                    borderRadius="full"
-                    objectFit="cover"
-                    w="120px"
-                    h="120px"
-                    fallbackSrc={`https://via.placeholder.com/120?text=${encodeURIComponent(member.alt.split(' ')[0])}`}
-                  />
-                ) : (
-                  <Icon as={FaUser} w="80px" h="80px" color="#F25C05" bg="white" borderRadius="full" p={4} />
-                )}
-              </Box>
-              <Box>
-                <Heading as="h3" size="md" mb={1} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-                  {member.name}
-                </Heading>
-                <Text color={bodyTextColor}>{member.description}</Text>
-              </Box>
-            </Flex>
-          ))}
-        </Stack>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+          <Box bg={cardBg} p={6} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
+            <Text fontSize="2xl" mb={2}>🔧</Text>
+            <Heading as="h3" size="md" mb={2} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              Builders, Not Just Advisors
+            </Heading>
+            <Text color={bodyTextColor} fontSize="md">
+              We write code, ship products, and maintain production software. When we say we can build something, we mean our team has already done it — repeatedly.
+            </Text>
+          </Box>
+
+          <Box bg={cardBg2} p={6} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
+            <Text fontSize="2xl" mb={2}>🤖</Text>
+            <Heading as="h3" size="md" mb={2} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              AI Where It Counts
+            </Heading>
+            <Text color={bodyTextColor} fontSize="md">
+              We don&apos;t bolt AI onto everything and call it innovation. We assess where artificial intelligence creates genuine value for your business, then we build purpose-fit solutions around it.
+            </Text>
+          </Box>
+
+          <Box bg={cardBg2} p={6} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
+            <Text fontSize="2xl" mb={2}>🌍</Text>
+            <Heading as="h3" size="md" mb={2} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              Global Experience, Practical Approach
+            </Heading>
+            <Text color={bodyTextColor} fontSize="md">
+              Our team has delivered projects across financial services, education, marine, manufacturing, and technology — spanning multiple countries. We bring broad perspective but stay grounded in what actually works.
+            </Text>
+          </Box>
+
+          <Box bg={cardBg} p={6} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
+            <Text fontSize="2xl" mb={2}>🏗️</Text>
+            <Heading as="h3" size="md" mb={2} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              End-to-End Ownership
+            </Heading>
+            <Text color={bodyTextColor} fontSize="md">
+              One team from assessment through go-live. We don&apos;t hand you a document and wish you luck. We design it, build it, deploy it, and make sure it keeps working.
+            </Text>
+          </Box>
+        </SimpleGrid>
+      </Box>
+
+      {/* How We Work */}
+      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={14}>
+        <Box flex={1}>
+          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
+            How We Work
+          </Heading>
+          <Text color={bodyTextColor} mb={3}>
+            Every engagement starts with understanding your business — not selling you a package. We figure out where you are, where AI can help, and what it would take to get there.
+          </Text>
+          <Text color={bodyTextColor} mb={3}>
+            From there, our engineering team designs and builds the solution. We work in tight cycles, ship early, and iterate based on what actually happens when real people use the software.
+          </Text>
+          <Text color={bodyTextColor}>
+            Senior people are involved throughout — not just at the pitch meeting. The people who understand your problem are the same people writing the code.
+          </Text>
+        </Box>
+        <Box flex={1} minW={{ base: '100%', md: '250px' }}>
+          <Image src="BoardRoomMeeting.webp" alt="How we work" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '160px', md: '220px' }} fallbackSrc="https://via.placeholder.com/250x220?text=How+We+Work" />
+        </Box>
+      </Flex>
+
+      {/* Our Products = Our Proof */}
+      <Box mb={10} textAlign="center">
+        <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
+          Our Products Are Our Proof
+        </Heading>
+        <Text color={bodyTextColor} maxW="700px" mx="auto" mb={6}>
+          We don&apos;t just build software for clients — we build and maintain our own. FlowForge and NovaCRM are production platforms serving real users. They represent the same engineering standards, design thinking, and AI integration we bring to every client project.
+        </Text>
+        <Flex justify="center" gap={4} flexWrap="wrap">
+          <Box
+            as="a"
+            href="/products"
+            bg={accentColor}
+            color="white"
+            px={6}
+            py={3}
+            borderRadius="md"
+            fontWeight={700}
+            fontFamily="Montserrat, Arial, sans-serif"
+            _hover={{ bg: '#d94e04' }}
+            transition="background 0.2s"
+          >
+            See Our Products
+          </Box>
+          <Box
+            as="a"
+            href="/contact"
+            bg="transparent"
+            color={headingColor}
+            px={6}
+            py={3}
+            borderRadius="md"
+            fontWeight={700}
+            fontFamily="Montserrat, Arial, sans-serif"
+            borderWidth="2px"
+            borderColor={borderColor}
+            _hover={{ borderColor: accentColor }}
+            transition="border-color 0.2s"
+          >
+            Start a Conversation
+          </Box>
+        </Flex>
       </Box>
     </Box>
     </>
