@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button, Image } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import Hero from "@/components/Hero";
@@ -30,12 +30,51 @@ export default function ProductsPage() {
           <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
             A Junior Consultant in your Browser
           </Text>
+
+          {/* Hero screenshot */}
+          <Image
+            src="/products/flowforge-hero.jpg"
+            alt="FlowForge platform dashboard"
+            borderRadius="lg"
+            objectFit="cover"
+            w="100%"
+            mb={8}
+            boxShadow="xl"
+          />
+
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
             FlowForge is an AI-driven conversation platform built for management consultants, coaches, and educators. It runs structured interviews and assessments in parallel using AI agents — then synthesizes everything into professional, actionable reports.
           </Text>
           <Text fontSize="lg" color={bodyTextColor} mb={6}>
             Instead of spending hours in back-to-back stakeholder interviews, your AI agents handle the conversations simultaneously. You get synthesized insights across all perspectives, ready for analysis and delivery.
           </Text>
+
+          {/* Secondary screenshots */}
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Image
+                src="/products/flowforge-interview.jpg"
+                alt="FlowForge AI interview conversation"
+                borderRadius="lg"
+                objectFit="cover"
+                w="100%"
+                boxShadow="md"
+              />
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">AI-facilitated stakeholder interview</Text>
+            </Box>
+            <Box flex={1}>
+              <Image
+                src="/products/flowforge-archetypes.jpg"
+                alt="FlowForge coaching results with archetype cards"
+                borderRadius="lg"
+                objectFit="cover"
+                w="100%"
+                boxShadow="md"
+              />
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Synthesized coaching results — white-labeled</Text>
+            </Box>
+          </Flex>
+
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
@@ -82,11 +121,26 @@ export default function ProductsPage() {
           <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
             AI where it counts — not where it&apos;s trendy.
           </Text>
+
+          <Image
+            src="/products/novacrm-login.jpg"
+            alt="NovaCRM platform branding"
+            borderRadius="lg"
+            objectFit="cover"
+            w="100%"
+            maxW="600px"
+            mb={8}
+            boxShadow="xl"
+          />
+
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
             NovaCRM is an AI-first CRM built for businesses that want artificial intelligence baked into their sales process from day one — not bolted on as an afterthought. Contact management, deal tracking, pipeline visualization, and activity logging, all with AI woven into the core.
           </Text>
-          <Text fontSize="lg" color={bodyTextColor} mb={6}>
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
             Most CRMs added AI as a checkbox feature. We built NovaCRM with AI at the foundation, so it actually helps your team work smarter instead of just adding another tab to click.
+          </Text>
+          <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
+            NovaCRM is currently in private beta. Interested in early access? Get in touch.
           </Text>
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>

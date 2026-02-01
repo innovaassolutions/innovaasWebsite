@@ -62,6 +62,16 @@ export default function HomePage() {
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
           We don&apos;t just talk about building software. Here&apos;s proof.
         </Text>
+        <Box mb={10}>
+          <Image
+            src="/products/flowforge-hero.jpg"
+            alt="FlowForge AI platform"
+            borderRadius="lg"
+            objectFit="cover"
+            w="100%"
+            boxShadow="xl"
+          />
+        </Box>
         <Flex direction={{ base: 'column', md: 'row' }} gap={8} mb={16}>
           <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
