@@ -64,7 +64,7 @@ export default function HomePage() {
         </Text>
         <Box mb={10}>
           <Image
-            src="/products/flowforge-hero.jpg"
+            src="/products/flowforge-hero.png"
             alt="FlowForge AI platform"
             borderRadius="lg"
             objectFit="cover"
