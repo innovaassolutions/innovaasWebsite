@@ -13,10 +13,9 @@ import { FiSun, FiMoon, FiMenu } from "react-icons/fi";
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/partners', label: 'Our Partners' },
-  { href: '/about', label: 'About Us' },
+  { href: '/products', label: 'Products' },
+  { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
-  // { href: '/login', label: 'Team Login' }, // Disabled for basic website deployment
 ];
 
 function ColorModeSwitcher() {

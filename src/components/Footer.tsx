@@ -23,20 +23,21 @@ export default function Footer() {
           <h3 style={{ fontFamily: 'Montserrat', fontWeight: 700, marginBottom: '1rem' }}>Useful Links</h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2' }}>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About us</Link></li>
+            <li><Link href="/about">About Us</Link></li>
             <li><Link href="/services">Services</Link></li>
+            <li><Link href="/products">Products</Link></li>
             <li><Link href="/legal">Legal</Link></li>
             <li><Link href="/privacy">Privacy Policy</Link></li>
-            <li><Link href="/contact">Contact us</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
         {/* About us */}
         <div style={{ minWidth: '250px', maxWidth: '350px' }}>
-          <h3 style={{ fontFamily: 'Montserrat', fontWeight: 700, marginBottom: '1rem' }}>About us</h3>
+          <h3 style={{ fontFamily: 'Montserrat', fontWeight: 700, marginBottom: '1rem' }}>About Us</h3>
           <p style={{ color: bodyTextColor, marginBottom: '1rem' }}>
-            Innovaas aims to disrupt. Disrupt the status quo of industry, by bringing value adding solutions to our customers in an open system, designed to meet their unique requirements.
+            We build custom AI-powered software that solves real business problems — from strategy and assessment through design, development, and deployment.
           </p>
-          <p style={{ color: bodyTextColor }}>Data Democratization & Governance for Industry.</p>
+          <p style={{ color: bodyTextColor }}>AI-powered digital transformation and custom software.</p>
         </div>
         {/* Connect with us */}
         <div>
@@ -48,8 +49,8 @@ export default function Footer() {
         </div>
       </div>
       <div style={{ background: '#131722', color: secondaryTextColor, textAlign: 'center', padding: '0.75rem 0', fontSize: '1rem' }}>
-        Copyright © Innovaas Solutions Pte. Ltd. 2025
+        Copyright © Innovaas Solutions Pte. Ltd. 2026
       </div>
     </footer>
   );
-} 
+}

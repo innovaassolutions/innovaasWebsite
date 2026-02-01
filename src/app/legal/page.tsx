@@ -28,7 +28,7 @@ export default function LegalPage() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-gray-800">Effective Date:</strong> 1 January 2025
+                <strong className="text-gray-800">Effective Date:</strong> 1 January 2026
               </p>
               <p>
                 These Terms of Service (&quot;Terms&quot;) govern your access to and use of the
@@ -52,8 +52,8 @@ export default function LegalPage() {
                 2. Description of Services
               </h3>
               <p>
-                Innovaas provides industrial IoT, data analytics, and digital transformation
-                solutions for businesses. Our services include consulting, software development,
+                Innovaas provides digital transformation, AI-powered software development,
+                and consulting services for businesses. Our services include consulting, software development,
                 system integration, and managed services. The specific scope of services is
                 defined in individual agreements with our clients.
               </p>
