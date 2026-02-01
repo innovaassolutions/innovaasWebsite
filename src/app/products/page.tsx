@@ -28,13 +28,13 @@ export default function ProductsPage() {
             FlowForge
           </Heading>
           <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
-            A Junior Consultant in your Browser
+            Encode your expertise. Scale your practice.
           </Text>
 
           {/* Hero screenshot */}
           <Image
-            src="/products/flowforge-hero.jpg"
-            alt="FlowForge platform dashboard"
+            src="/products/flowforge-hero.png"
+            alt="FlowForge platform — leadership archetype results"
             borderRadius="lg"
             objectFit="cover"
             w="100%"
@@ -53,7 +53,7 @@ export default function ProductsPage() {
           <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
             <Box flex={1}>
               <Image
-                src="/products/flowforge-interview.jpg"
+                src="/products/flowforge-interview.png"
                 alt="FlowForge AI interview conversation"
                 borderRadius="lg"
                 objectFit="cover"
@@ -64,8 +64,8 @@ export default function ProductsPage() {
             </Box>
             <Box flex={1}>
               <Image
-                src="/products/flowforge-archetypes.jpg"
-                alt="FlowForge coaching results with archetype cards"
+                src="/products/flowforge-archetypes.png"
+                alt="FlowForge coaching results — leadership archetype discovery"
                 borderRadius="lg"
                 objectFit="cover"
                 w="100%"
@@ -86,7 +86,7 @@ export default function ProductsPage() {
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
-              <b>Multiple Methodologies:</b> Supports Theory of Constraints, Lean Six Sigma, Industry 4.0 readiness, and more.
+              <b>Multiple Methodologies:</b> Leadership coaching, organizational assessments, strategic discovery — bring your framework, FlowForge runs it.
             </ListItem>
             <ListItem>
               <ListIcon as={CheckCircleIcon} color="#F25C05" />
@@ -123,7 +123,7 @@ export default function ProductsPage() {
           </Text>
 
           <Image
-            src="/products/novacrm-login.jpg"
+            src="/products/novacrm-login.png"
             alt="NovaCRM platform branding"
             borderRadius="lg"
             objectFit="cover"
