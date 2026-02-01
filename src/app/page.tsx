@@ -15,9 +15,9 @@ export default function HomePage() {
     <>
       <Hero
         image="/home-hero.webp"
-        heading="We Build the AI Tools Your Business Actually Needs"
-        subheading="Not another consulting deck. We build custom AI-powered software that solves real problems — from strategy through deployment."
-        buttonText="Let's Talk"
+        heading="Find Out Where Your Business Really Stands — Then Fix It"
+        subheading="Our digital readiness assessment shows you exactly where you are. Then we build the roadmap and the solutions to get you where you need to be. We don't just tell you what's wrong — we fix it."
+        buttonText="Book Your Assessment"
         buttonLink="/contact"
       />
       <Box maxW="1200px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
@@ -26,41 +26,41 @@ export default function HomePage() {
           What We Do
         </Heading>
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
-          We take you from &quot;we should probably use AI&quot; to running custom software that makes your team faster.
+          We figure out where you actually stand digitally, build a plan to close the gaps, and then do the work to get you there.
         </Text>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mb={16}>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Understand Your Business
+              Assess
             </Heading>
             <Text color={bodyTextColor}>
-              We start by figuring out where AI actually makes sense for you — not where it sounds impressive. Real assessment, real priorities.
+              We interview your stakeholders using AI to understand where you stand digitally. Technology, process, people — across the whole organization.
             </Text>
           </Box>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Design the Solution
+              Roadmap
             </Heading>
             <Text color={bodyTextColor}>
-              We architect software that fits your workflows, your team, and your budget. No off-the-shelf compromises.
+              We synthesize findings into a prioritized roadmap. Not a 200-page deck — a clear plan with realistic timelines.
             </Text>
           </Box>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              Build &amp; Deploy
+              Build
             </Heading>
             <Text color={bodyTextColor}>
-              We write the code, ship the product, and make sure it works in the real world. Then we stick around to make sure it keeps working.
+              We design and deploy the solutions your assessment revealed. Custom software, AI tools, system integrations — whatever moves the needle.
             </Text>
           </Box>
         </SimpleGrid>
 
         {/* Products Proof Section */}
         <Heading as="h2" size="xl" mb={2} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
-          Built by Us. Used by Real Businesses.
+          Powered by Our Own Technology
         </Heading>
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
-          We don&apos;t just talk about building software. Here&apos;s proof.
+          We don&apos;t just build for clients — we build and run our own platforms. Here&apos;s what powers our work.
         </Text>
         <Box mb={10}>
           <Image
@@ -78,16 +78,16 @@ export default function HomePage() {
               FlowForge
             </Heading>
             <Text color={bodyTextColor} mb={3}>
-              AI-driven platform that runs structured interviews and assessments in parallel — then synthesizes everything into professional reports. Built for consultants, coaches, and educators.
+              Our AI assessment platform interviews your team in parallel, synthesizes insights across all perspectives, and delivers professional reports — in days, not months.
             </Text>
-            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">&quot;A Junior Consultant in your Browser&quot;</Text>
+            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">Our assessment methodology, encoded in software.</Text>
           </Box>
           <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               NovaCRM
             </Heading>
             <Text color={bodyTextColor} mb={3}>
-              AI-first CRM for contact management, deal tracking, and pipeline visualization. Built for businesses that want AI baked in, not bolted on.
+              We built our own CRM from scratch — AI-first contact management, deal tracking, and pipeline visualization. We can build yours too.
             </Text>
             <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">AI where it counts — not where it&apos;s trendy.</Text>
           </Box>
@@ -106,16 +106,16 @@ export default function HomePage() {
           <Box textAlign="center" p={6}>
             <Icon as={FaCode} w={10} h={10} color="#F25C05" mb={4} />
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              We Build, Not Just Advise
+              We Build What We Recommend
             </Heading>
             <Text color={bodyTextColor}>
-              FlowForge and NovaCRM are production software serving real clients. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
+              FlowForge and NovaCRM are production software serving real users. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
             </Text>
           </Box>
           <Box textAlign="center" p={6}>
             <Icon as={FaBrain} w={10} h={10} color="#F25C05" mb={4} />
             <Heading as="h3" size="md" mb={3} color={headingColor} fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-              AI-First Approach
+              AI-First, Not AI-Hype
             </Heading>
             <Text color={bodyTextColor}>
               Every solution we design starts with one question: where does AI create real value here? We use it where it matters, skip it where it doesn&apos;t.
@@ -127,7 +127,7 @@ export default function HomePage() {
               Senior People, Start to Finish
             </Heading>
             <Text color={bodyTextColor}>
-              The people in your strategy meetings are the same people building your software. No junior handoffs. No lost context between teams.
+              The people in your assessment meetings are the same people building your software. No junior handoffs. No lost context between teams.
             </Text>
           </Box>
         </SimpleGrid>

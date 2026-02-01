@@ -14,11 +14,51 @@ export default function ServicesPage() {
       <Hero
         image="/hero-services.webp"
         heading="Our Services"
-        subheading="From AI strategy to production software — we help businesses work smarter, not just harder."
-        buttonText="Get In Touch"
+        subheading="It starts with understanding where you stand. Our Digital Readiness Assessment is the entry point — from there, we build what you need."
+        buttonText="Book Your Assessment"
         buttonLink="/contact"
       />
     <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
+
+      {/* Digital Readiness Assessment */}
+      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
+        <Box flex={1} pr={{ md: 6 }}>
+          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
+            Digital Readiness Assessment
+          </Heading>
+          <Text color={bodyTextColor} mb={2}>
+            Most companies know they need to modernize. Few know where to start. That&apos;s what this assessment tells you. We use AI-facilitated interviews to talk to stakeholders across your organization — in parallel, not sequentially — and synthesize everything into a clear picture of where you stand.
+          </Text>
+          <List spacing={2} color={bodyTextColor} pl={2}>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI-Facilitated Interviews:</b> Your team talks to our platform on their own time. No scheduling nightmares, no six-week engagement just to gather input.</ListItem>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Multi-Dimensional Analysis:</b> Technology maturity, process efficiency, team readiness, data infrastructure, and AI opportunities — all in one assessment.</ListItem>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Professional Report &amp; Roadmap:</b> A prioritized plan with realistic timelines. Not a shelf document — a working blueprint for what to do next.</ListItem>
+          </List>
+        </Box>
+        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
+          <Image src="DigitalTransformationService.webp" alt="Digital readiness assessment" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Assessment" />
+        </Box>
+      </Flex>
+
+      {/* Digital Transformation Strategy */}
+      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
+        <Box flex={1} pl={{ md: 6 }}>
+          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
+            Digital Transformation Strategy
+          </Heading>
+          <Text color={bodyTextColor} mb={2}>
+            Once you know where you stand, the next step is a detailed plan to get where you need to be. We work with your leadership team to turn assessment findings into a transformation strategy — with clear priorities, realistic budgets, and a timeline your team can actually execute.
+          </Text>
+          <List spacing={2} color={bodyTextColor} pl={2}>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Assessment-Informed:</b> Built on real data from your organization, not generic frameworks.</ListItem>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Prioritized Roadmap:</b> Clear plan with realistic timelines. No 200-page strategy decks that sit on a shelf.</ListItem>
+            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Implementation-Ready:</b> Every recommendation comes with a clear path to execution — because we&apos;re the ones who&apos;ll build it.</ListItem>
+          </List>
+        </Box>
+        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
+          <Image src="MatrixScreen.webp" alt="Digital transformation strategy" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Strategy" />
+        </Box>
+      </Flex>
 
       {/* Custom AI-Powered Software Development */}
       <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
@@ -56,33 +96,13 @@ export default function ServicesPage() {
           </List>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="MatrixScreen.webp" alt="Analytics and AI" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Analytics+AI" />
-        </Box>
-      </Flex>
-
-      {/* Digital Transformation Strategy */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Digital Transformation Strategy
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            &quot;We need to modernize&quot; is a starting point, not a plan. We work with your leadership team to figure out what digital transformation actually looks like for your business — then we build the roadmap to get there.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Current State Assessment:</b> Honest evaluation of where you are — what&apos;s working, what isn&apos;t, and what&apos;s costing you money.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Prioritized Roadmap:</b> Clear plan with realistic timelines. No 200-page strategy decks that sit on a shelf.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI Readiness:</b> Specifically assess where AI fits in your operations and where it doesn&apos;t.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="DigitalTransformationService.webp" alt="Digital strategy" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Strategy" />
+          <Image src="implementationServices.webp" alt="Analytics and AI" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Analytics+AI" />
         </Box>
       </Flex>
 
       {/* Systems Integration & Data Infrastructure */}
-      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pl={{ md: 6 }}>
+      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
+        <Box flex={1} pr={{ md: 6 }}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Systems Integration &amp; Data Infrastructure
           </Heading>
@@ -96,13 +116,13 @@ export default function ServicesPage() {
           </List>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="implementationServices.webp" alt="Systems integration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Integration" />
+          <Image src="Data Cloud.webp" alt="Systems integration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Integration" />
         </Box>
       </Flex>
 
       {/* Cloud Migration Services */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
+      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
+        <Box flex={1} pl={{ md: 6 }}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Cloud Migration Services
           </Heading>
@@ -116,13 +136,13 @@ export default function ServicesPage() {
           </List>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="Data Cloud.webp" alt="Cloud migration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Cloud+Migration" />
+          <Image src="advancedAnalytics.webp" alt="Cloud migration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Cloud+Migration" />
         </Box>
       </Flex>
 
       {/* Data Governance & Security */}
-      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pl={{ md: 6 }}>
+      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
+        <Box flex={1} pr={{ md: 6 }}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Data Governance &amp; Security
           </Heading>
@@ -195,11 +215,11 @@ export default function ServicesPage() {
                     <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M16.53 11.06l-4.24-4.24c-.39-.39-1.02-.39-1.41 0l-4.24 4.24c-.39.39-.39 1.02 0 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l4.24-4.24c.39-.39.39-1.02 0-1.41z"/></svg>
                   </Box>
                   <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    Strategy to Deployment
+                    Assessment to Deployment
                   </Heading>
                 </Box>
                 <Text color={whyTextColor} fontSize="lg">
-                  One team from assessment through go-live. No handoffs between firms, no lost context, no finger-pointing.
+                  One team from your first assessment through go-live. No handoffs between firms, no lost context, no finger-pointing.
                 </Text>
               </Box>
             </Box>

@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Hero
         image="/hero-about.webp"
         heading="About Innovaas"
-        subheading="We build custom AI-powered software that solves real business problems — from strategy through deployment."
+        subheading="We assess your digital readiness, build the roadmap, and deliver the solutions. From first interview to working software."
         buttonText="Get in Touch"
         buttonLink="/contact"
       />
@@ -29,13 +29,13 @@ export default function AboutPage() {
             Why We Exist
           </Heading>
           <Text color={bodyTextColor} mb={3}>
-            Too many businesses pay for strategy that never becomes real software. They get slide decks, roadmaps, and recommendations — then they&apos;re left to figure out the hard part on their own.
+            Too many businesses know they need to modernize but have no idea where to start. They get generic advice, expensive consulting decks, and recommendations nobody follows through on.
           </Text>
           <Text color={bodyTextColor} mb={3}>
-            Innovaas was founded to close that gap. We take projects from assessment through to working software. No handoffs between firms. No lost context. No finger-pointing.
+            Innovaas was founded to close that gap. We assess where you actually stand, build a roadmap that makes sense, and then do the work — custom software, AI tools, system integrations. No handoffs between firms. No lost context. No finger-pointing.
           </Text>
           <Text color={bodyTextColor}>
-            We&apos;re a team of engineers, architects, and strategists who build AI-powered tools for real businesses. FlowForge and NovaCRM are products we built and maintain ourselves — and they&apos;re the same standard we bring to every client engagement.
+            We built FlowForge to power our own assessment process and NovaCRM to prove we practice what we preach. They&apos;re the same standard we bring to every client engagement.
           </Text>
         </Box>
         <Box flex={1} minW={{ base: '100%', md: '250px' }}>
@@ -98,10 +98,10 @@ export default function AboutPage() {
             How We Work
           </Heading>
           <Text color={bodyTextColor} mb={3}>
-            Every engagement starts with understanding your business — not selling you a package. We figure out where you are, where AI can help, and what it would take to get there.
+            Every engagement starts with a digital readiness assessment — not a sales pitch. We interview your stakeholders, analyze where you stand across technology, process, and people, and give you an honest picture.
           </Text>
           <Text color={bodyTextColor} mb={3}>
-            From there, our engineering team designs and builds the solution. We work in tight cycles, ship early, and iterate based on what actually happens when real people use the software.
+            From there, we build the roadmap and the solutions. We work in tight cycles, ship early, and iterate based on what actually happens when real people use the software.
           </Text>
           <Text color={bodyTextColor}>
             Senior people are involved throughout — not just at the pitch meeting. The people who understand your problem are the same people writing the code.
