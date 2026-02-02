@@ -187,7 +187,7 @@ export default function HomePage() {
           >
             <Box mb={4} h="60px" display="flex" alignItems="center" justifyContent="center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/clients/cisgenics.svg" alt="Cisgenics" style={{ maxHeight: '50px', maxWidth: '180px' }} />
+              <img src="/clients/cisgenics.png" alt="Cisgenics" style={{ maxHeight: '50px', maxWidth: '50px' }} />
             </Box>
             <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               Cisgenics
