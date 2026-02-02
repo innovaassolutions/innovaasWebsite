@@ -10,6 +10,9 @@ import FlowForgeReport from "@/components/mockups/FlowForgeReport";
 import NovaCRMDashboard from "@/components/mockups/NovaCRMDashboard";
 import NovaCRMContact from "@/components/mockups/NovaCRMContact";
 import NovaCRMPipeline from "@/components/mockups/NovaCRMPipeline";
+import NovaKMSDashboard from "@/components/mockups/NovaKMSDashboard";
+import NovaKMSSearch from "@/components/mockups/NovaKMSSearch";
+import NovaKMSChat from "@/components/mockups/NovaKMSChat";
 
 export default function ProductsPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -180,13 +183,88 @@ export default function ProductsPage() {
           </Button>
         </Box>
 
+        {/* NovaKMS */}
+        <Box mb={16}>
+          <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
+            NovaKMS
+          </Heading>
+          <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
+            Stop losing knowledge when people leave. Start finding answers in seconds.
+          </Text>
+
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <NovaKMSDashboard />
+          </Box>
+
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            NovaKMS is an enterprise-grade, AI-powered Knowledge Management System built on RAG technology. Upload your SOPs, training videos, process documents, and meeting recordings — NovaKMS processes them all and makes your entire knowledge base searchable through natural language.
+          </Text>
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            New employees ask questions in plain English and get accurate, cited answers drawn from your actual documents. Multi-modal processing handles PDFs, DOCX, audio, and video files up to 5GB — with automatic transcription, video frame extraction, and intelligent chunking that preserves context.
+          </Text>
+
+          {/* Secondary screenshots */}
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaKMSSearch />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Semantic search across documents, videos, and audio</Text>
+            </Box>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaKMSChat />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">RAG-powered chat assistant with source citations</Text>
+            </Box>
+          </Flex>
+
+          <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
+            NovaKMS is currently in private beta. Interested in early access? Get in touch.
+          </Text>
+          <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Multi-Modal Document Processing:</b> Upload PDFs, DOCX, audio recordings, and video files up to 5GB. Automatic text extraction, transcription, and video frame analysis.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>AI-Powered Semantic Search:</b> Natural language queries across all content types with results ranked by semantic relevance and similarity scores.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>RAG Chat Assistant:</b> Ask questions in plain English and get accurate answers with source citations linking to specific documents, pages, and timestamps.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Video Intelligence:</b> Automatic scene detection, frame extraction, and Claude Vision analysis turns training videos into searchable, referenceable content.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Employee Onboarding:</b> New hires get instant answers from your entire knowledge base — reducing onboarding time from months to weeks.
+            </ListItem>
+          </List>
+          <Button
+            as={Link}
+            href="/products/novakms"
+            bg="#F25C05"
+            color="#fff"
+            _hover={{ bg: "#d94e04" }}
+            fontWeight={700}
+            borderRadius="6px"
+            size="md"
+          >
+            Learn More About NovaKMS →
+          </Button>
+        </Box>
+
         {/* CTA Section */}
         <Box textAlign="center" py={10} px={4} bg={cardBg} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Need Something Custom?
           </Heading>
           <Text fontSize="lg" color={bodyTextColor} mb={6} maxW="600px" mx="auto">
-            FlowForge and NovaCRM started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
+            FlowForge, NovaCRM, and NovaKMS started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
           </Text>
           <Button
             as={Link}

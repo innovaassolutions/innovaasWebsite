@@ -25,6 +25,7 @@ const INTEREST_OPTIONS = [
   { value: "custom-software", label: "Custom AI-Powered Software" },
   { value: "novacrm", label: "NovaCRM — Custom CRM Deployment" },
   { value: "flowforge", label: "FlowForge — AI Assessment Platform" },
+  { value: "novakms", label: "NovaKMS — AI Knowledge Management" },
   { value: "systems-integration", label: "Systems Integration & Data Infrastructure" },
   { value: "other", label: "Something else" },
 ];
