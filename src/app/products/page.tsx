@@ -1,9 +1,15 @@
 "use client";
 
-import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button, Image } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import Hero from "@/components/Hero";
+import FlowForgeDashboard from "@/components/mockups/FlowForgeDashboard";
+import FlowForgeInterview from "@/components/mockups/FlowForgeInterview";
+import FlowForgeReport from "@/components/mockups/FlowForgeReport";
+import NovaCRMDashboard from "@/components/mockups/NovaCRMDashboard";
+import NovaCRMContact from "@/components/mockups/NovaCRMContact";
+import NovaCRMPipeline from "@/components/mockups/NovaCRMPipeline";
 
 export default function ProductsPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -32,15 +38,9 @@ export default function ProductsPage() {
           </Text>
 
           {/* Hero screenshot */}
-          <Image
-            src="/products/flowforge-hero.png"
-            alt="FlowForge platform — encode your expertise, scale your practice"
-            borderRadius="lg"
-            objectFit="cover"
-            w="100%"
-            mb={8}
-            boxShadow="xl"
-          />
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <FlowForgeDashboard />
+          </Box>
 
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
             FlowForge is an AI-driven conversation platform built for management consultants, coaches, and educators. It runs structured interviews and assessments in parallel using AI agents — then synthesizes everything into professional, actionable reports.
@@ -52,25 +52,15 @@ export default function ProductsPage() {
           {/* Secondary screenshots */}
           <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
             <Box flex={1}>
-              <Image
-                src="/products/flowforge-interview.png"
-                alt="FlowForge AI interview mockup and campaign management"
-                borderRadius="lg"
-                objectFit="cover"
-                w="100%"
-                boxShadow="md"
-              />
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <FlowForgeInterview />
+              </Box>
               <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">AI interview agent and campaign management</Text>
             </Box>
             <Box flex={1}>
-              <Image
-                src="/products/flowforge-features.png"
-                alt="FlowForge value propositions and target personas"
-                borderRadius="lg"
-                objectFit="cover"
-                w="100%"
-                boxShadow="md"
-              />
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <FlowForgeReport />
+              </Box>
               <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Built for solo consultants, firms, and coaching practices</Text>
             </Box>
           </Flex>
@@ -122,15 +112,9 @@ export default function ProductsPage() {
             AI where it counts — not where it&apos;s trendy.
           </Text>
 
-          <Image
-            src="/products/novacrm-dashboard.png"
-            alt="NovaCRM sales dashboard with pipeline metrics"
-            borderRadius="lg"
-            objectFit="cover"
-            w="100%"
-            mb={8}
-            boxShadow="xl"
-          />
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <NovaCRMDashboard />
+          </Box>
 
           <Text fontSize="lg" color={bodyTextColor} mb={4}>
             We built NovaCRM because every CRM we tried bolted AI on as an afterthought. Ours has it at the foundation — AI deal health scoring that flags at-risk opportunities before you lose them, multi-provider AI (Anthropic, OpenAI, Gemini) powering everything from email copy to image generation, and intelligent activity tracking that keeps your team focused on what moves the needle.
@@ -142,25 +126,15 @@ export default function ProductsPage() {
           {/* Secondary screenshots */}
           <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
             <Box flex={1}>
-              <Image
-                src="/products/novacrm-contacts.png"
-                alt="NovaCRM contact management"
-                borderRadius="lg"
-                objectFit="cover"
-                w="100%"
-                boxShadow="md"
-              />
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaCRMContact />
+              </Box>
               <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Contact management with campaign tracking</Text>
             </Box>
             <Box flex={1}>
-              <Image
-                src="/products/novacrm-deals.png"
-                alt="NovaCRM deal pipeline and tracking"
-                borderRadius="lg"
-                objectFit="cover"
-                w="100%"
-                boxShadow="md"
-              />
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaCRMPipeline />
+              </Box>
               <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Deal pipeline with AI health scoring</Text>
             </Box>
           </Flex>

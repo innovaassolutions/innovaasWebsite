@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Flex, Heading, Text, Image, useColorModeValue, SimpleGrid, Icon } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, useColorModeValue, SimpleGrid, Icon } from '@chakra-ui/react';
 import { FaCode, FaBrain, FaUserTie } from 'react-icons/fa';
 import Link from 'next/link';
 import Hero from "@/components/Hero";
+import FlowForgeDashboard from "@/components/mockups/FlowForgeDashboard";
 
 export default function HomePage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -62,15 +63,8 @@ export default function HomePage() {
         <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="700px" mx="auto">
           Anyone can write a report. We build real software that solves real problems. These are platforms we built and run ourselves — the same team that would work on your project.
         </Text>
-        <Box mb={10}>
-          <Image
-            src="/products/flowforge-hero.png"
-            alt="FlowForge AI platform"
-            borderRadius="lg"
-            objectFit="cover"
-            w="100%"
-            boxShadow="xl"
-          />
+        <Box mb={10} borderRadius="lg" overflow="hidden" boxShadow="xl">
+          <FlowForgeDashboard />
         </Box>
         <Flex direction={{ base: 'column', md: 'row' }} gap={8} mb={16}>
           <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
