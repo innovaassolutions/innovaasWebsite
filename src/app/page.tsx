@@ -92,6 +92,88 @@ export default function HomePage() {
           </Link>
         </Box>
 
+        {/* Companies We've Worked With */}
+        <Heading as="h2" size="xl" mb={2} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
+          Companies We&apos;ve Worked With
+        </Heading>
+        <Text fontSize="lg" color={bodyTextColor} textAlign="center" mb={10} maxW="600px" mx="auto">
+          From precision manufacturing to industrial coatings — we work with companies that make real things.
+        </Text>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mb={16}>
+          <Box
+            bg="white"
+            borderRadius="xl"
+            p={8}
+            borderWidth="1px"
+            borderColor={borderColor}
+            boxShadow="md"
+            textAlign="center"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box mb={4} h="60px" display="flex" alignItems="center" justifyContent="center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/clients/jazeera-paints.svg" alt="Jazeera Paints" style={{ maxHeight: '50px', maxWidth: '180px' }} />
+            </Box>
+            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              Jazeera Paints
+            </Heading>
+            <Text fontSize="sm" color="#555">
+              Paints &amp; Coatings Manufacturer · Saudi Arabia · 46+ Years
+            </Text>
+          </Box>
+          <Box
+            bg="white"
+            borderRadius="xl"
+            p={8}
+            borderWidth="1px"
+            borderColor={borderColor}
+            boxShadow="md"
+            textAlign="center"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box mb={4} h="60px" display="flex" alignItems="center" justifyContent="center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/clients/alimex.jpg" alt="Alimex" style={{ maxHeight: '50px', maxWidth: '180px' }} />
+            </Box>
+            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              Alimex
+            </Heading>
+            <Text fontSize="sm" color="#555">
+              Aluminium Cast Plate Manufacturing · Germany &amp; Malaysia · 50+ Years
+            </Text>
+          </Box>
+          <Box
+            bg="white"
+            borderRadius="xl"
+            p={8}
+            borderWidth="1px"
+            borderColor={borderColor}
+            boxShadow="md"
+            textAlign="center"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Box mb={4} h="60px" display="flex" alignItems="center" justifyContent="center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/clients/tamawira.svg" alt="Tamawira Enterprise" style={{ maxHeight: '50px', maxWidth: '180px' }} />
+            </Box>
+            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              Tamawira Enterprise
+            </Heading>
+            <Text fontSize="sm" color="#555">
+              Precision Springs &amp; Wire-Forming · Automotive &amp; Electronics · Est. 1995
+            </Text>
+          </Box>
+        </SimpleGrid>
+
         {/* Why Innovaas */}
         <Heading as="h2" size="xl" mb={10} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
           Why Innovaas
