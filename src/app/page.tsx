@@ -66,8 +66,8 @@ export default function HomePage() {
         <Box mb={10} borderRadius="lg" overflow="hidden" boxShadow="xl">
           <FlowForgeDashboard />
         </Box>
-        <Flex direction={{ base: 'column', md: 'row' }} gap={8} mb={16}>
-          <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mb={16}>
+          <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               FlowForge
             </Heading>
@@ -76,7 +76,7 @@ export default function HomePage() {
             </Text>
             <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">The engine behind every assessment we deliver.</Text>
           </Box>
-          <Box flex={1} bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
+          <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               NovaCRM
             </Heading>
@@ -85,7 +85,16 @@ export default function HomePage() {
             </Text>
             <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">AI where it counts — not where it&apos;s trendy.</Text>
           </Box>
-        </Flex>
+          <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
+            <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              NovaKMS
+            </Heading>
+            <Text color={bodyTextColor} mb={3}>
+              An AI-powered knowledge management system that processes documents, videos, and audio — then lets your team search and chat with your entire knowledge base in plain English.
+            </Text>
+            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">Your team&apos;s knowledge shouldn&apos;t walk out the door.</Text>
+          </Box>
+        </SimpleGrid>
         <Box textAlign="center" mb={16}>
           <Link href="/products" style={{ color: '#F25C05', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'underline' }}>
             See our products →
@@ -257,7 +266,7 @@ export default function HomePage() {
               We Build What We Recommend
             </Heading>
             <Text color={bodyTextColor}>
-              FlowForge and NovaCRM are production software serving real users. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
+              FlowForge, NovaCRM, and NovaKMS are production software serving real users. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
             </Text>
           </Box>
           <Box textAlign="center" p={6}>
