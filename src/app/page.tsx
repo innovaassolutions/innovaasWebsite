@@ -173,11 +173,11 @@ export default function HomePage() {
             </Text>
           </Box>
           <Box
-            bg="#004744"
+            bg="white"
             borderRadius="xl"
             p={8}
             borderWidth="1px"
-            borderColor="#005a56"
+            borderColor={borderColor}
             boxShadow="md"
             textAlign="center"
             display="flex"
@@ -187,12 +187,12 @@ export default function HomePage() {
           >
             <Box mb={4} h="60px" display="flex" alignItems="center" justifyContent="center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/clients/cisgenics.png" alt="Cisgenics" style={{ maxHeight: '50px', maxWidth: '180px' }} />
+              <img src="/clients/cisgenics.svg" alt="Cisgenics" style={{ maxHeight: '50px', maxWidth: '180px' }} />
             </Box>
-            <Heading as="h3" size="sm" mb={1} color="#fff" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               Cisgenics
             </Heading>
-            <Text fontSize="sm" color="#a8d8d5">
+            <Text fontSize="sm" color="#555">
               AI-Powered Irrigation Control Systems · Agriculture &amp; Landscaping · 45+ Years
             </Text>
           </Box>
