@@ -101,7 +101,7 @@ export default function HomePage() {
         </Text>
         <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8} mb={16}>
           <Box
-            bg="white"
+            bg="#1a2332"
             borderRadius="xl"
             p={8}
             borderWidth="1px"
@@ -117,10 +117,10 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/clients/jazeera-paints.svg" alt="Jazeera Paints" style={{ maxHeight: '50px', maxWidth: '180px' }} />
             </Box>
-            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+            <Heading as="h3" size="sm" mb={1} color="#fff" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               Jazeera Paints
             </Heading>
-            <Text fontSize="sm" color="#555">
+            <Text fontSize="sm" color="#a0aec0">
               Paints &amp; Coatings Manufacturer · Saudi Arabia · 46+ Years
             </Text>
           </Box>
@@ -173,7 +173,7 @@ export default function HomePage() {
             </Text>
           </Box>
           <Box
-            bg="white"
+            bg="#1a2332"
             borderRadius="xl"
             p={8}
             borderWidth="1px"
@@ -189,10 +189,10 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/clients/cisgenics.png" alt="Cisgenics" style={{ maxHeight: '50px', maxWidth: '180px' }} />
             </Box>
-            <Heading as="h3" size="sm" mb={1} color="#181f2a" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+            <Heading as="h3" size="sm" mb={1} color="#fff" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               Cisgenics
             </Heading>
-            <Text fontSize="sm" color="#555">
+            <Text fontSize="sm" color="#a0aec0">
               AI-Powered Irrigation Control Systems · Agriculture &amp; Landscaping · 45+ Years
             </Text>
           </Box>
