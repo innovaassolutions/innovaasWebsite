@@ -13,6 +13,9 @@ import NovaCRMPipeline from "@/components/mockups/NovaCRMPipeline";
 import NovaKMSDashboard from "@/components/mockups/NovaKMSDashboard";
 import NovaKMSSearch from "@/components/mockups/NovaKMSSearch";
 import NovaKMSChat from "@/components/mockups/NovaKMSChat";
+import NovaPredictDashboard from "@/components/mockups/NovaPredictDashboard";
+import NovaPredictFactory from "@/components/mockups/NovaPredictFactory";
+import NovaPredictAlerts from "@/components/mockups/NovaPredictAlerts";
 
 export default function ProductsPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -258,13 +261,94 @@ export default function ProductsPage() {
           </Button>
         </Box>
 
+        {/* NovaPredict */}
+        <Box mb={16}>
+          <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
+            NovaPredict
+          </Heading>
+          <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
+            Predict. Prevent. Perform.
+          </Text>
+
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <NovaPredictDashboard />
+          </Box>
+
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            NovaPredict is a real-time predictive maintenance platform built on Unified Namespace (UNS) architecture and machine learning. It connects directly to your factory floor via MQTT and SparkplugB, ingesting sensor data from every machine — temperature, vibration, pressure, current draw — and runs ML models that detect failure patterns weeks before they happen.
+          </Text>
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            Instead of reactive maintenance that costs you unplanned downtime, or calendar-based preventive schedules that waste parts and labor, NovaPredict gives you condition-based intelligence. It monitors your machines 24/7, learns their normal behavior, and alerts your maintenance team with specific recommendations — what&apos;s failing, when it&apos;ll fail, and exactly what to do about it.
+          </Text>
+
+          {/* Secondary screenshots */}
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaPredictFactory />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Live factory floor with machine health status</Text>
+            </Box>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaPredictAlerts />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Predictive alerts with actionable recommendations</Text>
+            </Box>
+          </Flex>
+
+          <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
+            NovaPredict is currently in private beta. Interested in early access? Get in touch.
+          </Text>
+          <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Real-Time Machine Monitoring:</b> Live sensor data from every machine on your floor — temperature, vibration, pressure, current draw — updated every second.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Predictive ML Analytics:</b> Machine learning models trained on your equipment&apos;s behavior detect anomalies and predict failures 2-4 weeks in advance.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Unified Namespace Architecture:</b> Built on MQTT and SparkplugB — a single source of truth for all your operational data, from sensor to boardroom.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Role-Based Dashboards:</b> Executives see OEE and cost savings. Maintenance teams see alerts and work orders. Operators see their machines. Everyone gets what they need.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>50+ Industrial Protocol Support:</b> Connect PLCs, SCADA systems, and IoT sensors across OPC-UA, Modbus, EtherNet/IP, PROFINET, and more.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Single Container Deployment:</b> Runs as a single Docker container on your infrastructure. No cloud dependency, no data leaving your network.
+            </ListItem>
+          </List>
+          <Button
+            as="a"
+            href="https://novapredict.innovaas.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            bg="#F25C05"
+            color="#fff"
+            _hover={{ bg: "#d94e04" }}
+            fontWeight={700}
+            borderRadius="6px"
+            size="md"
+          >
+            Visit NovaPredict →
+          </Button>
+        </Box>
+
         {/* CTA Section */}
         <Box textAlign="center" py={10} px={4} bg={cardBg} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Need Something Custom?
           </Heading>
           <Text fontSize="lg" color={bodyTextColor} mb={6} maxW="600px" mx="auto">
-            FlowForge, NovaCRM, and NovaKMS started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
+            FlowForge, NovaCRM, NovaKMS, and NovaPredict started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
           </Text>
           <Button
             as={Link}
