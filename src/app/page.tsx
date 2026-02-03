@@ -5,6 +5,7 @@ import { FaCode, FaBrain, FaUserTie } from 'react-icons/fa';
 import Link from 'next/link';
 import Hero from "@/components/Hero";
 import FlowForgeDashboard from "@/components/mockups/FlowForgeDashboard";
+import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -298,6 +299,9 @@ export default function HomePage() {
           </Box>
         </SimpleGrid>
       </Box>
+
+      {/* Testimonials - only renders if there are approved testimonials */}
+      <Testimonials />
     </>
   );
 }

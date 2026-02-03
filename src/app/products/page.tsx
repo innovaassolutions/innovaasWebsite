@@ -342,6 +342,86 @@ export default function ProductsPage() {
           </Button>
         </Box>
 
+        {/* NovaPredict */}
+        <Box mb={16}>
+          <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
+            NovaPredict
+          </Heading>
+          <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
+            Predict. Prevent. Perform.
+          </Text>
+
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <NovaPredictDashboard />
+          </Box>
+
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            NovaPredict is a real-time predictive maintenance platform built on unified namespace architecture and enterprise-class data streaming technology. It connects every machine, sensor, and system on your factory floor into a single intelligence platform — then uses ML models to predict equipment failures 2-4 weeks before they happen.
+          </Text>
+          <Text fontSize="lg" color={bodyTextColor} mb={6}>
+            Instead of fighting fires and reacting to breakdowns, your maintenance team gets advance warnings with confidence scores, remaining useful life predictions, and automated work order creation. Deploy in 60 seconds with a single Docker container — no Kubernetes complexity, no months-long integration projects.
+          </Text>
+
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaPredictFactory />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Real-time factory floor monitoring with 50+ protocol support</Text>
+            </Box>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaPredictAlerts />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">ML-powered predictive alerts with remaining useful life analysis</Text>
+            </Box>
+          </Flex>
+
+          <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
+            NovaPredict is currently in private beta. Interested in early access? Get in touch.
+          </Text>
+          <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Real-Time Machine Monitoring:</b> Sub-100ms latency from sensor to dashboard. Every temperature, vibration, and pressure reading flowing in real-time across your entire fleet.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Predictive ML Analytics:</b> ML models trained on 400K+ NASA bearing dataset data points. Predict failures 2-4 weeks before they happen with 85%+ accuracy.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Unified Namespace Architecture:</b> ISA-95 compliant topic structure connecting all machines through one integration point. No more spaghetti architecture.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Role-Based Dashboards:</b> Executives see KPIs. Floor managers see machines. Maintenance sees predictions. Everyone sees what matters.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>50+ Industrial Protocol Support:</b> OPC UA, Modbus, Siemens S7, Ethernet/IP, IO-Link, MQTT, REST APIs, and SQL databases — all built in.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Single Container Deployment:</b> Deploy in 60 seconds with a single Docker command. No Kubernetes, no complex infrastructure, no vendor lock-in.
+            </ListItem>
+          </List>
+          <Button
+            as="a"
+            href="https://novapredict.innovaas.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            bg="#F25C05"
+            color="#fff"
+            _hover={{ bg: "#d94e04" }}
+            fontWeight={700}
+            borderRadius="6px"
+            size="md"
+          >
+            Visit NovaPredict →
+          </Button>
+        </Box>
+
         {/* CTA Section */}
         <Box textAlign="center" py={10} px={4} bg={cardBg} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">

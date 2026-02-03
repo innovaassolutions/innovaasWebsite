@@ -20,160 +20,154 @@ export default function NovaPredictFactory() {
       {/* Header */}
       <rect x="0" y="36" width="800" height="44" fill="#1e2a3a" />
       <text x="30" y="63" fontSize="14" fontWeight="bold" fill="#fff">
-        Factory Floor — Machine Status
+        Factory Floor — Real-Time Monitoring
       </text>
-      <text x="580" y="63" fontSize="11" fill="#a0aec0">
-        Line 1 · Building A · Live
-      </text>
-      <circle cx="720" cy="58" r="4" fill="#22c55e" />
-      <text x="728" y="62" fontSize="10" fill="#22c55e">LIVE</text>
+      <rect x="600" y="48" width="16" height="16" rx="8" fill="#22c55e" />
+      <text x="622" y="61" fontSize="10" fill="#22c55e">LIVE</text>
+      <text x="660" y="61" fontSize="10" fill="#718096">30.2 msg/sec</text>
 
-      {/* Machine Card 1 — CW-L1-01 (Green/Normal) */}
-      <rect x="20" y="92" width="245" height="140" rx="8" fill="#232b39" />
-      <circle cx="38" cy="112" r="6" fill="#22c55e" />
-      <text x="50" y="116" fontSize="12" fontWeight="bold" fill="#fff">
-        CW-L1-01
-      </text>
-      <text x="150" y="116" fontSize="9" fill="#22c55e">RUNNING</text>
-      <text x="34" y="136" fontSize="9" fill="#718096">Cold Wire Drawing · Line 1</text>
-      <rect x="34" y="146" width="215" height="1" fill="#2d3748" />
-      <text x="34" y="164" fontSize="9" fill="#718096">Temperature</text>
-      <text x="180" y="164" fontSize="9" fill="#22c55e" textAnchor="end">42.3°C</text>
-      <rect x="34" y="170" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="34" y="170" width="130" height="4" rx="2" fill="#22c55e" />
-      <text x="34" y="190" fontSize="9" fill="#718096">Vibration</text>
-      <text x="180" y="190" fontSize="9" fill="#22c55e" textAnchor="end">2.1 mm/s</text>
-      <rect x="34" y="196" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="34" y="196" width="90" height="4" rx="2" fill="#22c55e" />
-      <text x="34" y="218" fontSize="8" fill="#718096">Health: 96% · Next PM: 14d</text>
+      {/* Machine 1 - CNC-001 */}
+      <rect x="20" y="92" width="375" height="160" rx="8" fill="#232b39" />
+      <rect x="20" y="92" width="375" height="32" rx="8" fill="#1a2233" />
+      <circle cx="38" cy="108" r="5" fill="#22c55e" />
+      <text x="50" y="112" fontSize="11" fontWeight="600" fill="#e2e8f0">CNC-001 — Assembly Line A</text>
+      <text x="310" y="112" fontSize="9" fill="#22c55e">RUNNING</text>
 
-      {/* Machine Card 2 — PRESS-L1-01 (Yellow/Warning) */}
-      <rect x="278" y="92" width="245" height="140" rx="8" fill="#232b39" />
-      <circle cx="296" cy="112" r="6" fill="#eab308" />
-      <text x="308" y="116" fontSize="12" fontWeight="bold" fill="#fff">
-        PRESS-L1-01
-      </text>
-      <text x="420" y="116" fontSize="9" fill="#eab308">WARNING</text>
-      <text x="292" y="136" fontSize="9" fill="#718096">Hydraulic Press · Line 1</text>
-      <rect x="292" y="146" width="215" height="1" fill="#2d3748" />
-      <text x="292" y="164" fontSize="9" fill="#718096">Temperature</text>
-      <text x="438" y="164" fontSize="9" fill="#eab308" textAnchor="end">68.7°C</text>
-      <rect x="292" y="170" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="292" y="170" width="175" height="4" rx="2" fill="#eab308" />
-      <text x="292" y="190" fontSize="9" fill="#718096">Vibration</text>
-      <text x="438" y="190" fontSize="9" fill="#eab308" textAnchor="end">4.8 mm/s</text>
-      <rect x="292" y="196" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="292" y="196" width="160" height="4" rx="2" fill="#eab308" />
-      <text x="292" y="218" fontSize="8" fill="#eab308">Health: 72% · Bearing wear detected</text>
+      <text x="34" y="144" fontSize="9" fill="#718096">Spindle Temp</text>
+      <text x="34" y="158" fontSize="16" fontWeight="bold" fill="#fff">42.3°C</text>
+      <rect x="34" y="164" width="100" height="4" rx="2" fill="#2d3748" />
+      <rect x="34" y="164" width="42" height="4" rx="2" fill="#22c55e" />
 
-      {/* Machine Card 3 — CNC-L1-01 (Green/Normal) */}
-      <rect x="536" y="92" width="245" height="140" rx="8" fill="#232b39" />
-      <circle cx="554" cy="112" r="6" fill="#22c55e" />
-      <text x="566" y="116" fontSize="12" fontWeight="bold" fill="#fff">
-        CNC-L1-01
-      </text>
-      <text x="670" y="116" fontSize="9" fill="#22c55e">RUNNING</text>
-      <text x="550" y="136" fontSize="9" fill="#718096">CNC Lathe · Line 1</text>
-      <rect x="550" y="146" width="215" height="1" fill="#2d3748" />
-      <text x="550" y="164" fontSize="9" fill="#718096">Temperature</text>
-      <text x="696" y="164" fontSize="9" fill="#22c55e" textAnchor="end">38.1°C</text>
-      <rect x="550" y="170" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="550" y="170" width="110" height="4" rx="2" fill="#22c55e" />
-      <text x="550" y="190" fontSize="9" fill="#718096">Vibration</text>
-      <text x="696" y="190" fontSize="9" fill="#22c55e" textAnchor="end">1.4 mm/s</text>
-      <rect x="550" y="196" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="550" y="196" width="60" height="4" rx="2" fill="#22c55e" />
-      <text x="550" y="218" fontSize="8" fill="#718096">Health: 98% · Next PM: 21d</text>
+      <text x="150" y="144" fontSize="9" fill="#718096">Vibration</text>
+      <text x="150" y="158" fontSize="16" fontWeight="bold" fill="#fff">0.8 mm/s</text>
+      <rect x="150" y="164" width="100" height="4" rx="2" fill="#2d3748" />
+      <rect x="150" y="164" width="20" height="4" rx="2" fill="#22c55e" />
 
-      {/* Machine Card 4 — WELD-L1-01 (Red/Critical) */}
-      <rect x="20" y="244" width="245" height="140" rx="8" fill="#232b39" />
-      <rect x="20" y="244" width="245" height="140" rx="8" fill="none" stroke="#ef4444" strokeWidth="1" opacity="0.5" />
-      <circle cx="38" cy="264" r="6" fill="#ef4444" />
-      <text x="50" y="268" fontSize="12" fontWeight="bold" fill="#fff">
-        WELD-L1-01
-      </text>
-      <text x="155" y="268" fontSize="9" fill="#ef4444">CRITICAL</text>
-      <text x="34" y="288" fontSize="9" fill="#718096">Robot Welder · Line 1</text>
-      <rect x="34" y="298" width="215" height="1" fill="#2d3748" />
-      <text x="34" y="316" fontSize="9" fill="#718096">Temperature</text>
-      <text x="180" y="316" fontSize="9" fill="#ef4444" textAnchor="end">89.2°C</text>
-      <rect x="34" y="322" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="34" y="322" width="200" height="4" rx="2" fill="#ef4444" />
-      <text x="34" y="342" fontSize="9" fill="#718096">Vibration</text>
-      <text x="180" y="342" fontSize="9" fill="#ef4444" textAnchor="end">7.6 mm/s</text>
-      <rect x="34" y="348" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="34" y="348" width="195" height="4" rx="2" fill="#ef4444" />
-      <text x="34" y="370" fontSize="8" fill="#ef4444">Health: 34% · Failure in ~12 days</text>
+      <text x="270" y="144" fontSize="9" fill="#718096">Spindle Speed</text>
+      <text x="270" y="158" fontSize="16" fontWeight="bold" fill="#F25C05">8,400 RPM</text>
 
-      {/* Machine Card 5 — CONV-L1-01 (Green/Normal) */}
-      <rect x="278" y="244" width="245" height="140" rx="8" fill="#232b39" />
-      <circle cx="296" cy="264" r="6" fill="#22c55e" />
-      <text x="308" y="268" fontSize="12" fontWeight="bold" fill="#fff">
-        CONV-L1-01
-      </text>
-      <text x="420" y="268" fontSize="9" fill="#22c55e">RUNNING</text>
-      <text x="292" y="288" fontSize="9" fill="#718096">Conveyor System · Line 1</text>
-      <rect x="292" y="298" width="215" height="1" fill="#2d3748" />
-      <text x="292" y="316" fontSize="9" fill="#718096">Temperature</text>
-      <text x="438" y="316" fontSize="9" fill="#22c55e" textAnchor="end">35.4°C</text>
-      <rect x="292" y="322" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="292" y="322" width="100" height="4" rx="2" fill="#22c55e" />
-      <text x="292" y="342" fontSize="9" fill="#718096">Vibration</text>
-      <text x="438" y="342" fontSize="9" fill="#22c55e" textAnchor="end">1.8 mm/s</text>
-      <rect x="292" y="348" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="292" y="348" width="75" height="4" rx="2" fill="#22c55e" />
-      <text x="292" y="370" fontSize="8" fill="#718096">Health: 94% · Next PM: 28d</text>
+      <text x="34" y="190" fontSize="8" fill="#718096">Temperature (1h)</text>
+      <polyline points="34,210 60,208 86,212 112,206 138,210 164,204 190,208 216,206 242,210 268,204 294,208 320,206 346,210 372,204"
+        stroke="#22c55e" strokeWidth="1.5" fill="none" />
 
-      {/* Machine Card 6 — GRIND-L1-01 (Green/Normal) */}
-      <rect x="536" y="244" width="245" height="140" rx="8" fill="#232b39" />
-      <circle cx="554" cy="264" r="6" fill="#22c55e" />
-      <text x="566" y="268" fontSize="12" fontWeight="bold" fill="#fff">
-        GRIND-L1-01
-      </text>
-      <text x="680" y="268" fontSize="9" fill="#22c55e">RUNNING</text>
-      <text x="550" y="288" fontSize="9" fill="#718096">Surface Grinder · Line 1</text>
-      <rect x="550" y="298" width="215" height="1" fill="#2d3748" />
-      <text x="550" y="316" fontSize="9" fill="#718096">Temperature</text>
-      <text x="696" y="316" fontSize="9" fill="#22c55e" textAnchor="end">41.0°C</text>
-      <rect x="550" y="322" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="550" y="322" width="120" height="4" rx="2" fill="#22c55e" />
-      <text x="550" y="342" fontSize="9" fill="#718096">Vibration</text>
-      <text x="696" y="342" fontSize="9" fill="#22c55e" textAnchor="end">2.3 mm/s</text>
-      <rect x="550" y="348" width="215" height="4" rx="2" fill="#2d3748" />
-      <rect x="550" y="348" width="95" height="4" rx="2" fill="#22c55e" />
-      <text x="550" y="370" fontSize="8" fill="#718096">Health: 91% · Next PM: 17d</text>
+      <text x="34" y="236" fontSize="9" fill="#718096">Bearing Health</text>
+      <rect x="120" y="228" width="120" height="10" rx="5" fill="#2d3748" />
+      <rect x="120" y="228" width="108" height="10" rx="5" fill="#22c55e" />
+      <text x="246" y="236" fontSize="9" fill="#22c55e">90%</text>
 
-      {/* Summary Footer */}
-      <rect x="20" y="398" width="760" height="44" rx="8" fill="#232b39" />
-      <circle cx="44" cy="420" r="6" fill="#22c55e" />
-      <text x="56" y="416" fontSize="9" fill="#22c55e">4 Normal</text>
-      <circle cx="130" cy="420" r="6" fill="#eab308" />
-      <text x="142" y="416" fontSize="9" fill="#eab308">1 Warning</text>
-      <circle cx="220" cy="420" r="6" fill="#ef4444" />
-      <text x="232" y="416" fontSize="9" fill="#ef4444">1 Critical</text>
-      <text x="56" y="432" fontSize="8" fill="#718096">UNS: spBv1.0/Factory/Line1/*</text>
-      <text x="560" y="424" fontSize="10" fill="#F25C05" fontWeight="600">
-        Unified Namespace Connected
+      {/* Machine 2 - CNC-003 Warning */}
+      <rect x="405" y="92" width="375" height="160" rx="8" fill="#232b39" />
+      <rect x="405" y="92" width="375" height="32" rx="8" fill="#1a2233" />
+      <circle cx="423" cy="108" r="5" fill="#F25C05" />
+      <text x="435" y="112" fontSize="11" fontWeight="600" fill="#e2e8f0">CNC-003 — Assembly Line A</text>
+      <text x="690" y="112" fontSize="9" fill="#F25C05">⚠ WARNING</text>
+
+      <text x="419" y="144" fontSize="9" fill="#718096">Spindle Temp</text>
+      <text x="419" y="158" fontSize="16" fontWeight="bold" fill="#F25C05">67.8°C</text>
+      <rect x="419" y="164" width="100" height="4" rx="2" fill="#2d3748" />
+      <rect x="419" y="164" width="68" height="4" rx="2" fill="#F25C05" />
+
+      <text x="535" y="144" fontSize="9" fill="#718096">Vibration</text>
+      <text x="535" y="158" fontSize="16" fontWeight="bold" fill="#ef4444">4.2 mm/s</text>
+      <rect x="535" y="164" width="100" height="4" rx="2" fill="#2d3748" />
+      <rect x="535" y="164" width="84" height="4" rx="2" fill="#ef4444" />
+
+      <text x="655" y="144" fontSize="9" fill="#718096">Spindle Speed</text>
+      <text x="655" y="158" fontSize="16" fontWeight="bold" fill="#fff">6,200 RPM</text>
+
+      <text x="419" y="190" fontSize="8" fill="#718096">Vibration (1h) — TRENDING UP</text>
+      <polyline points="419,210 445,208 471,210 497,206 523,208 549,204 575,206 601,200 627,196 653,192 679,188 705,184 731,180 757,176"
+        stroke="#ef4444" strokeWidth="1.5" fill="none" />
+
+      <text x="419" y="236" fontSize="9" fill="#718096">Bearing Health</text>
+      <rect x="505" y="228" width="120" height="10" rx="5" fill="#2d3748" />
+      <rect x="505" y="228" width="36" height="10" rx="5" fill="#ef4444" />
+      <text x="631" y="236" fontSize="9" fill="#ef4444">30% — DEGRADING</text>
+
+      {/* UNS Topic Browser */}
+      <rect x="20" y="264" width="375" height="180" rx="8" fill="#232b39" />
+      <text x="34" y="286" fontSize="12" fontWeight="600" fill="#e2e8f0">
+        UNS Topic Browser (Live)
       </text>
 
-      {/* Line selector tabs */}
-      <rect x="20" y="454" width="760" height="40" rx="8" fill="#232b39" />
-      <rect x="30" y="460" width="80" height="28" rx="4" fill="#F25C05" />
-      <text x="70" y="478" fontSize="10" fill="#fff" textAnchor="middle" fontWeight="600">Line 1</text>
-      <rect x="120" y="460" width="80" height="28" rx="4" fill="#1a2233" />
-      <text x="160" y="478" fontSize="10" fill="#718096" textAnchor="middle">Line 2</text>
-      <rect x="210" y="460" width="80" height="28" rx="4" fill="#1a2233" />
-      <text x="250" y="478" fontSize="10" fill="#718096" textAnchor="middle">Line 3</text>
-      <rect x="300" y="460" width="100" height="28" rx="4" fill="#1a2233" />
-      <text x="350" y="478" fontSize="10" fill="#718096" textAnchor="middle">Packaging</text>
-      <rect x="410" y="460" width="80" height="28" rx="4" fill="#1a2233" />
-      <text x="450" y="478" fontSize="10" fill="#718096" textAnchor="middle">Utility</text>
+      <rect x="34" y="298" width="347" height="22" rx="4" fill="#1a2233" />
+      <text x="44" y="313" fontSize="9" fontFamily="monospace" fill="#22c55e">uns/enterprise/site-kl/area-a/cnc-001/spindle/temp</text>
+      <text x="340" y="313" fontSize="9" fill="#fff">42.3</text>
 
-      {/* Bottom status */}
-      <rect x="20" y="506" width="760" height="34" rx="8" fill="#1e2a3a" />
-      <text x="34" y="528" fontSize="9" fill="#718096">
-        MQTT Broker: connected · SparkplugB · 6 devices · Polling: 1s · Data points: 847,291 today
+      <rect x="34" y="324" width="347" height="22" rx="4" fill="#1a2233" />
+      <text x="44" y="339" fontSize="9" fontFamily="monospace" fill="#F25C05">uns/enterprise/site-kl/area-a/cnc-003/vibration/rms</text>
+      <text x="340" y="339" fontSize="9" fill="#F25C05">4.2</text>
+
+      <rect x="34" y="350" width="347" height="22" rx="4" fill="#1a2233" />
+      <text x="44" y="365" fontSize="9" fontFamily="monospace" fill="#22c55e">uns/enterprise/site-kl/area-a/cnc-004/spindle/speed</text>
+      <text x="326" y="365" fontSize="9" fill="#fff">7800</text>
+
+      <rect x="34" y="376" width="347" height="22" rx="4" fill="#1a2233" />
+      <text x="44" y="391" fontSize="9" fontFamily="monospace" fill="#22c55e">uns/enterprise/site-kl/area-b/cnc-006/power/draw</text>
+      <text x="332" y="391" fontSize="9" fill="#fff">11.2</text>
+
+      <text x="34" y="424" fontSize="9" fill="#718096">80+ ISA-95 compliant topics · 2.8M+ messages processed</text>
+
+      {/* Protocol Connections */}
+      <rect x="405" y="264" width="375" height="180" rx="8" fill="#232b39" />
+      <text x="419" y="286" fontSize="12" fontWeight="600" fill="#e2e8f0">
+        Connected Protocols
       </text>
+
+      <rect x="419" y="298" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="435" cy="314" r="4" fill="#22c55e" />
+      <text x="445" y="310" fontSize="9" fill="#a0aec0">OPC UA Server</text>
+      <text x="445" y="322" fontSize="8" fill="#22c55e">Connected · 10 nodes</text>
+
+      <rect x="589" y="298" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="605" cy="314" r="4" fill="#22c55e" />
+      <text x="615" y="310" fontSize="9" fill="#a0aec0">Modbus TCP</text>
+      <text x="615" y="322" fontSize="8" fill="#22c55e">Connected · 6 devices</text>
+
+      <rect x="419" y="338" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="435" cy="354" r="4" fill="#22c55e" />
+      <text x="445" y="350" fontSize="9" fill="#a0aec0">MQTT Broker</text>
+      <text x="445" y="362" fontSize="8" fill="#22c55e">Active · 30.2 msg/sec</text>
+
+      <rect x="589" y="338" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="605" cy="354" r="4" fill="#22c55e" />
+      <text x="615" y="350" fontSize="9" fill="#a0aec0">Siemens S7</text>
+      <text x="615" y="362" fontSize="8" fill="#22c55e">Connected · 4 PLCs</text>
+
+      <rect x="419" y="378" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="435" cy="394" r="4" fill="#22c55e" />
+      <text x="445" y="390" fontSize="9" fill="#a0aec0">REST APIs</text>
+      <text x="445" y="402" fontSize="8" fill="#22c55e">3 endpoints active</text>
+
+      <rect x="589" y="378" width="160" height="32" rx="6" fill="#1a2233" />
+      <circle cx="605" cy="394" r="4" fill="#22c55e" />
+      <text x="615" y="390" fontSize="9" fill="#a0aec0">Ethernet/IP</text>
+      <text x="615" y="402" fontSize="8" fill="#22c55e">Connected · 2 devices</text>
+
+      {/* Throughput stats */}
+      <rect x="20" y="458" width="760" height="80" rx="8" fill="#232b39" />
+      <text x="34" y="480" fontSize="12" fontWeight="600" fill="#e2e8f0">
+        System Throughput
+      </text>
+      <rect x="34" y="494" width="160" height="32" rx="6" fill="#1a2233" />
+      <text x="48" y="510" fontSize="9" fill="#a0aec0">Messages Today</text>
+      <text x="48" y="524" fontSize="14" fontWeight="bold" fill="#fff">284,392</text>
+
+      <rect x="204" y="494" width="140" height="32" rx="6" fill="#1a2233" />
+      <text x="218" y="510" fontSize="9" fill="#a0aec0">Throughput</text>
+      <text x="218" y="524" fontSize="14" fontWeight="bold" fill="#F25C05">30.2 msg/s</text>
+
+      <rect x="354" y="494" width="120" height="32" rx="6" fill="#1a2233" />
+      <text x="368" y="510" fontSize="9" fill="#a0aec0">Latency</text>
+      <text x="368" y="524" fontSize="14" fontWeight="bold" fill="#22c55e">&lt;100ms</text>
+
+      <rect x="484" y="494" width="140" height="32" rx="6" fill="#1a2233" />
+      <text x="498" y="510" fontSize="9" fill="#a0aec0">Success Rate</text>
+      <text x="498" y="524" fontSize="14" fontWeight="bold" fill="#22c55e">100%</text>
+
+      <rect x="634" y="494" width="140" height="32" rx="6" fill="#1a2233" />
+      <text x="648" y="510" fontSize="9" fill="#a0aec0">Topics</text>
+      <text x="648" y="524" fontSize="14" fontWeight="bold" fill="#fff">80+ ISA-95</text>
     </svg>
   );
 }
