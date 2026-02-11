@@ -127,9 +127,13 @@ export default function ProductsPage() {
               transition="all 0.2s"
               _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
             >
-              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
-                NovaVoice
-              </Heading>
+              <Flex align="center" gap={2} mb={1}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/products/novavoice-icon.svg" alt="" style={{ width: '22px', height: '22px' }} />
+                <Heading as="h3" size="sm" color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                  NovaVoice
+                </Heading>
+              </Flex>
               <Text fontSize="xs" color={bodyTextColor}>
                 AI phone agents — 24/7 call answering &amp; booking
               </Text>
@@ -450,9 +454,13 @@ export default function ProductsPage() {
 
         {/* NovaVoice */}
         <Box mb={16} id="novavoice">
-          <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
-            NovaVoice
-          </Heading>
+          <Flex align="center" gap={3} mb={2}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/products/novavoice-icon.svg" alt="NovaVoice" style={{ width: '48px', height: '48px' }} />
+            <Heading as="h2" size="xl" color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
+              NovaVoice
+            </Heading>
+          </Flex>
           <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
             AI Phone Agents that answer every call, book appointments, and never miss a business opportunity.
           </Text>

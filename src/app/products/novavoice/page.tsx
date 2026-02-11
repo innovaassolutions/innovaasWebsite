@@ -158,16 +158,19 @@ export default function NovaVoicePage() {
 
         {/* Product Overview */}
         <Box id="overview" mb={16}>
-          <Heading
-            as="h2"
-            size="xl"
-            mb={2}
-            color="#F25C05"
-            fontWeight={900}
-            fontFamily="Montserrat, Arial, sans-serif"
-          >
-            NovaVoice
-          </Heading>
+          <Flex align="center" gap={4} mb={2}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/products/novavoice-icon.svg" alt="NovaVoice" style={{ width: '56px', height: '56px' }} />
+            <Heading
+              as="h2"
+              size="xl"
+              color="#F25C05"
+              fontWeight={900}
+              fontFamily="Montserrat, Arial, sans-serif"
+            >
+              NovaVoice
+            </Heading>
+          </Flex>
           <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
             Every missed call is a missed opportunity. NovaVoice makes sure you never miss one again.
           </Text>
