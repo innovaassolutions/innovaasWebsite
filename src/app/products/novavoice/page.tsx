@@ -25,6 +25,7 @@ import NovaVoiceDashboard from "@/components/mockups/NovaVoiceDashboard";
 import NovaVoiceCallFlow from "@/components/mockups/NovaVoiceCallFlow";
 import NovaVoiceAnalytics from "@/components/mockups/NovaVoiceAnalytics";
 import Link from "next/link";
+import Script from "next/script";
 
 const NOVACRM_API_URL =
   process.env.NEXT_PUBLIC_NOVACRM_API_URL || "https://nova-cyan-mu.vercel.app";
@@ -812,6 +813,14 @@ export default function NovaVoicePage() {
           </Flex>
         </Box>
       </Box>
+
+      {/* ElevenLabs ConvAI Widget — Lou, NovaVoice assistant */}
+      {/* @ts-expect-error — elevenlabs-convai is a web component not known to React's JSX types */}
+      <elevenlabs-convai agent-id="agent_2901kh6db6n6fjk94rms1ns8vrtt"></elevenlabs-convai>
+      <Script
+        src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+        strategy="lazyOnload"
+      />
     </>
   );
 }
