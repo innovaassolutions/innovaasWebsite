@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button, SimpleGrid } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import Hero from "@/components/Hero";
@@ -24,6 +24,7 @@ export default function ProductsPage() {
   const bodyTextColor = useColorModeValue('#222', '#d1d5db');
   const cardBg = useColorModeValue('white', '#232b39');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const dirBg = useColorModeValue('gray.50', '#1a2130');
 
   return (
     <>
@@ -34,10 +35,113 @@ export default function ProductsPage() {
         buttonText="Let's Talk"
         buttonLink="/contact"
       />
+      {/* Product Directory */}
+      <Box bg={dirBg} py={{ base: 8, md: 10 }} px={{ base: 4, md: 8 }}>
+        <Box maxW="1000px" mx="auto">
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 5 }} spacing={4}>
+            <Box
+              as="a"
+              href="#flowforge"
+              bg={cardBg}
+              p={5}
+              borderRadius="lg"
+              borderWidth="1px"
+              borderColor={borderColor}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
+            >
+              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                FlowForge
+              </Heading>
+              <Text fontSize="xs" color={bodyTextColor}>
+                AI interview &amp; assessment platform for consultants
+              </Text>
+            </Box>
+            <Box
+              as="a"
+              href="#novacrm"
+              bg={cardBg}
+              p={5}
+              borderRadius="lg"
+              borderWidth="1px"
+              borderColor={borderColor}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
+            >
+              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                NovaCRM
+              </Heading>
+              <Text fontSize="xs" color={bodyTextColor}>
+                AI-first CRM with deal scoring &amp; full sales stack
+              </Text>
+            </Box>
+            <Box
+              as="a"
+              href="#novakms"
+              bg={cardBg}
+              p={5}
+              borderRadius="lg"
+              borderWidth="1px"
+              borderColor={borderColor}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
+            >
+              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                NovaKMS
+              </Heading>
+              <Text fontSize="xs" color={bodyTextColor}>
+                AI-powered knowledge management with RAG search
+              </Text>
+            </Box>
+            <Box
+              as="a"
+              href="#novapredict"
+              bg={cardBg}
+              p={5}
+              borderRadius="lg"
+              borderWidth="1px"
+              borderColor={borderColor}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
+            >
+              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                NovaPredict
+              </Heading>
+              <Text fontSize="xs" color={bodyTextColor}>
+                Predictive maintenance with ML &amp; real-time monitoring
+              </Text>
+            </Box>
+            <Box
+              as="a"
+              href="#novavoice"
+              bg={cardBg}
+              p={5}
+              borderRadius="lg"
+              borderWidth="1px"
+              borderColor={borderColor}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{ borderColor: '#F25C05', transform: 'translateY(-2px)', boxShadow: 'lg' }}
+            >
+              <Heading as="h3" size="sm" mb={1} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+                NovaVoice
+              </Heading>
+              <Text fontSize="xs" color={bodyTextColor}>
+                AI phone agents — 24/7 call answering &amp; booking
+              </Text>
+            </Box>
+          </SimpleGrid>
+        </Box>
+      </Box>
+
       <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
 
         {/* FlowForge */}
-        <Box mb={16}>
+        <Box mb={16} id="flowforge">
           <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
             FlowForge
           </Heading>
@@ -112,7 +216,7 @@ export default function ProductsPage() {
         </Box>
 
         {/* NovaCRM */}
-        <Box mb={16}>
+        <Box mb={16} id="novacrm">
           <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
             NovaCRM
           </Heading>
@@ -189,7 +293,7 @@ export default function ProductsPage() {
         </Box>
 
         {/* NovaKMS */}
-        <Box mb={16}>
+        <Box mb={16} id="novakms">
           <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
             NovaKMS
           </Heading>
@@ -264,7 +368,7 @@ export default function ProductsPage() {
         </Box>
 
         {/* NovaPredict */}
-        <Box mb={16}>
+        <Box mb={16} id="novapredict">
           <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
             NovaPredict
           </Heading>
@@ -345,7 +449,7 @@ export default function ProductsPage() {
         </Box>
 
         {/* NovaVoice */}
-        <Box mb={16}>
+        <Box mb={16} id="novavoice">
           <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
             NovaVoice
           </Heading>

@@ -422,17 +422,23 @@ export default function NovaVoicePage() {
               <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
                 Healthcare &amp; Dental
               </Heading>
-              <Text fontSize="md" color={bodyTextColor}>
+              <Text fontSize="md" color={bodyTextColor} mb={3}>
                 Schedule appointments, handle prescription refill inquiries, confirm insurance details, and send appointment reminders. 36% of healthcare consumers prefer voice calls over any other channel.
               </Text>
+              <Link href="/products/novavoice/use-cases/veterinarian" style={{ color: '#F25C05', fontWeight: 700, fontSize: '0.9rem' }}>
+                See Case Study: Veterinary Clinic →
+              </Link>
             </Box>
             <Box bg={cardBg} p={6} borderRadius="lg" borderWidth="1px" borderColor={borderColor}>
               <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
                 Home Services
               </Heading>
-              <Text fontSize="md" color={bodyTextColor}>
+              <Text fontSize="md" color={bodyTextColor} mb={3}>
                 Plumbers, electricians, HVAC, and contractors miss 62% of inbound calls — at $1,200 lost per missed call. NovaVoice captures every lead and books service appointments on the spot.
               </Text>
+              <Link href="/products/novavoice/use-cases/home-services" style={{ color: '#F25C05', fontWeight: 700, fontSize: '0.9rem' }}>
+                See Case Study: Roofing Company →
+              </Link>
             </Box>
             <Box bg={cardBg} p={6} borderRadius="lg" borderWidth="1px" borderColor={borderColor}>
               <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
@@ -462,9 +468,12 @@ export default function NovaVoicePage() {
               <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
                 Restaurants &amp; Hospitality
               </Heading>
-              <Text fontSize="md" color={bodyTextColor}>
+              <Text fontSize="md" color={bodyTextColor} mb={3}>
                 Handle reservations, answer menu questions, take catering inquiries, and manage event bookings. Restaurants lose up to $1,500/month from just five missed calls daily.
               </Text>
+              <Link href="/products/novavoice/use-cases/restaurant" style={{ color: '#F25C05', fontWeight: 700, fontSize: '0.9rem' }}>
+                See Case Study: Italian Restaurant →
+              </Link>
             </Box>
           </SimpleGrid>
         </Box>
