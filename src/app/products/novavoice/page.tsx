@@ -113,7 +113,7 @@ export default function NovaVoicePage() {
   return (
     <>
       <Hero
-        image="/hero-services.webp"
+        image="/NovaVoiceHero.png"
         heading="NovaVoice"
         subheading="AI Phone Agents that answer every call, book appointments, and never miss a business opportunity — 24/7/365."
         buttonText="See How It Works"
