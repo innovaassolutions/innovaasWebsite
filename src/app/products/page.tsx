@@ -25,6 +25,7 @@ export default function ProductsPage() {
   const cardBg = useColorModeValue('white', '#232b39');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
   const dirBg = useColorModeValue('gray.50', '#1a2130');
+  const novaVoiceLogo = useColorModeValue('/products/novavoice-logo-light.png', '/products/novavoice-logo-dark.png');
 
   return (
     <>
@@ -129,7 +130,7 @@ export default function ProductsPage() {
             >
               <Flex align="center" gap={2} mb={1}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/products/novavoice-icon.svg" alt="" style={{ width: '22px', height: '22px' }} />
+                <img src={novaVoiceLogo} alt="" style={{ width: '22px', height: '22px', borderRadius: '50%' }} />
                 <Heading as="h3" size="sm" color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
                   NovaVoice
                 </Heading>
@@ -456,7 +457,7 @@ export default function ProductsPage() {
         <Box mb={16} id="novavoice">
           <Flex align="center" gap={3} mb={2}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/products/novavoice-icon.svg" alt="NovaVoice" style={{ width: '48px', height: '48px' }} />
+            <img src={novaVoiceLogo} alt="NovaVoice" style={{ width: '48px', height: '48px', borderRadius: '50%' }} />
             <Heading as="h2" size="xl" color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
               NovaVoice
             </Heading>

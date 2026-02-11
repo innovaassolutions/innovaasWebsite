@@ -51,6 +51,7 @@ export default function NovaVoicePage() {
   const border = useColorModeValue("#e2e8f0", "#2d3748");
   const text = useColorModeValue("#181f2a", "#fff");
   const problemBg = useColorModeValue("gray.50", "#1a2130");
+  const novaVoiceLogo = useColorModeValue("/products/novavoice-logo-light.png", "/products/novavoice-logo-dark.png");
   const statCardBg = useColorModeValue("#fff5ed", "#2a1f14");
   const statBorder = useColorModeValue("#fed7aa", "#5c3a1a");
 
@@ -160,7 +161,7 @@ export default function NovaVoicePage() {
         <Box id="overview" mb={16}>
           <Flex align="center" gap={4} mb={2}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/products/novavoice-icon.svg" alt="NovaVoice" style={{ width: '56px', height: '56px' }} />
+            <img src={novaVoiceLogo} alt="NovaVoice" style={{ width: '56px', height: '56px', borderRadius: '50%' }} />
             <Heading
               as="h2"
               size="xl"
