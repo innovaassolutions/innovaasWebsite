@@ -16,6 +16,8 @@ import NovaKMSChat from "@/components/mockups/NovaKMSChat";
 import NovaPredictDashboard from "@/components/mockups/NovaPredictDashboard";
 import NovaPredictFactory from "@/components/mockups/NovaPredictFactory";
 import NovaPredictAlerts from "@/components/mockups/NovaPredictAlerts";
+import NovaVoiceDashboard from "@/components/mockups/NovaVoiceDashboard";
+import NovaVoiceCallFlow from "@/components/mockups/NovaVoiceCallFlow";
 
 export default function ProductsPage() {
   const headingColor = useColorModeValue('#181f2a', '#fff');
@@ -342,13 +344,79 @@ export default function ProductsPage() {
           </Button>
         </Box>
 
+        {/* NovaVoice */}
+        <Box mb={16}>
+          <Heading as="h2" size="xl" mb={2} color="#F25C05" fontWeight={900} fontFamily="Montserrat, Arial, sans-serif">
+            NovaVoice
+          </Heading>
+          <Text fontSize="lg" fontStyle="italic" color={bodyTextColor} mb={6}>
+            AI Phone Agents that answer every call, book appointments, and never miss a business opportunity.
+          </Text>
+
+          <Box borderRadius="lg" overflow="hidden" boxShadow="xl" mb={8}>
+            <NovaVoiceDashboard />
+          </Box>
+
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            NovaVoice is a custom-built AI phone agent that answers your business calls with the intelligence of a trained receptionist and the availability of a machine. It understands why callers are reaching out, books appointments directly into your calendar, answers questions about your services and pricing, and routes complex issues to the right person on your team.
+          </Text>
+          <Text fontSize="lg" color={bodyTextColor} mb={4}>
+            Unlike robotic IVR menus or generic chatbots, NovaVoice holds natural conversations. Small businesses lose an estimated $126,000 per year from unanswered calls — NovaVoice makes sure your phone is always answered, 24/7/365.
+          </Text>
+
+          {/* Secondary screenshot */}
+          <Flex direction={{ base: 'column', md: 'row' }} gap={6} mb={8}>
+            <Box flex={1}>
+              <Box borderRadius="lg" overflow="hidden" boxShadow="md">
+                <NovaVoiceCallFlow />
+              </Box>
+              <Text fontSize="sm" color={bodyTextColor} mt={2} textAlign="center">Live call transcript with real-time intent detection and automated actions</Text>
+            </Box>
+          </Flex>
+
+          <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>24/7 Call Answering:</b> Every call answered within seconds — day or night. No voicemail, no missed opportunities.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Appointment Booking:</b> Integrated with your calendar. Books, confirms, and reschedules appointments during the call.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Custom-Trained on Your Business:</b> Knows your services, pricing, hours, policies, and FAQs. Sounds like it works for you — because it does.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Intelligent Escalation:</b> Complex issues automatically routed to the right person with full context and call summary.
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckCircleIcon} color="#F25C05" />
+              <b>Real-Time Analytics:</b> Every call transcribed, analyzed for sentiment, and logged. See what your callers want and how your agent performs.
+            </ListItem>
+          </List>
+          <Button
+            as={Link}
+            href="/products/novavoice"
+            bg="#F25C05"
+            color="#fff"
+            _hover={{ bg: "#d94e04" }}
+            fontWeight={700}
+            borderRadius="6px"
+            size="md"
+          >
+            Learn More About NovaVoice →
+          </Button>
+        </Box>
+
         {/* CTA Section */}
         <Box textAlign="center" py={10} px={4} bg={cardBg} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
           <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
             Need Something Custom?
           </Heading>
           <Text fontSize="lg" color={bodyTextColor} mb={6} maxW="600px" mx="auto">
-            FlowForge, NovaCRM, NovaKMS, and NovaPredict started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
+            FlowForge, NovaCRM, NovaKMS, NovaPredict, and NovaVoice started as solutions to real problems. If your business has a problem that off-the-shelf software can&apos;t solve, let&apos;s talk about building something that can.
           </Text>
           <Button
             as={Link}

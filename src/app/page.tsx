@@ -67,7 +67,7 @@ export default function HomePage() {
         <Box mb={10} borderRadius="lg" overflow="hidden" boxShadow="xl">
           <FlowForgeDashboard />
         </Box>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} mb={16}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} mb={16}>
           <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
             <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
               FlowForge
@@ -103,6 +103,15 @@ export default function HomePage() {
               Real-time predictive maintenance powered by ML and unified namespace architecture. We monitor your factory floor and predict failures 2-4 weeks before they happen.
             </Text>
             <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">Predict. Prevent. Perform.</Text>
+          </Box>
+          <Box bg={cardBg} borderRadius="xl" p={8} borderWidth="1px" borderColor={borderColor} boxShadow="md">
+            <Heading as="h3" size="md" mb={2} color="#F25C05" fontWeight={700} fontFamily="Montserrat, Arial, sans-serif">
+              NovaVoice
+            </Heading>
+            <Text color={bodyTextColor} mb={3}>
+              AI phone agents that answer every business call 24/7, book appointments, capture leads, and never miss an opportunity. Custom-trained on your business.
+            </Text>
+            <Text fontSize="sm" color={bodyTextColor} fontStyle="italic">Every missed call is a missed opportunity.</Text>
           </Box>
         </SimpleGrid>
         <Box textAlign="center" mb={16}>
@@ -276,7 +285,7 @@ export default function HomePage() {
               We Build What We Recommend
             </Heading>
             <Text color={bodyTextColor}>
-              FlowForge, NovaCRM, NovaKMS, and NovaPredict are production software serving real users. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
+              FlowForge, NovaCRM, NovaKMS, NovaPredict, and NovaVoice are production software serving real users. That&apos;s not a pitch — it&apos;s a portfolio. We build what we recommend.
             </Text>
           </Box>
           <Box textAlign="center" p={6}>
