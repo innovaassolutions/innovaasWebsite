@@ -359,8 +359,10 @@ export default function ProductsPage() {
             </ListItem>
           </List>
           <Button
-            as={Link}
-            href="/products/novakms"
+            as="a"
+            href="https://novakms.innovaas.co"
+            target="_blank"
+            rel="noopener noreferrer"
             bg="#F25C05"
             color="#fff"
             _hover={{ bg: "#d94e04" }}
@@ -368,7 +370,7 @@ export default function ProductsPage() {
             borderRadius="6px"
             size="md"
           >
-            Learn More About NovaKMS →
+            Visit NovaKMS →
           </Button>
         </Box>
 
@@ -439,7 +441,7 @@ export default function ProductsPage() {
           </List>
           <Button
             as="a"
-            href="https://novapredict.innovaas.co"
+            href="https://novapredicts.innovaas.co"
             target="_blank"
             rel="noopener noreferrer"
             bg="#F25C05"
@@ -510,8 +512,10 @@ export default function ProductsPage() {
             </ListItem>
           </List>
           <Button
-            as={Link}
-            href="/products/novavoice"
+            as="a"
+            href="https://novavoice.innovaas.co"
+            target="_blank"
+            rel="noopener noreferrer"
             bg="#F25C05"
             color="#fff"
             _hover={{ bg: "#d94e04" }}
@@ -519,7 +523,7 @@ export default function ProductsPage() {
             borderRadius="6px"
             size="md"
           >
-            Learn More About NovaVoice →
+            Visit NovaVoice →
           </Button>
         </Box>
 
