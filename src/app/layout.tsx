@@ -1,6 +1,7 @@
 import ClientLayout from "../components/ClientLayout";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -104,6 +105,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
+      <Script
+        id="reb2b-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("GNLKQH7W8R6Q");`,
+        }}
+      />
+      <Script
+        src="https://analytics.innovaas.co/script.js"
+        data-website-id="WEBSITE_ID_FROM_UMAMI"
+        strategy="afterInteractive"
+      />
       <body className={`${inter.variable} antialiased`}>
         <ChakraProviders>
           <Header />
