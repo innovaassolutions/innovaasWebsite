@@ -104,6 +104,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          id="cookieyes"
+          type="text/javascript"
+          src="https://cdn-cookieyes.com/client_data/d847d4600e8aab3ff26548001d53fcb3/script.js"
+        />
       </head>
       <Script
         id="reb2b-analytics"
