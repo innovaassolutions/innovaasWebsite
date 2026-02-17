@@ -22,7 +22,7 @@ export default function PrivacyPage() {
 
         <div className="space-y-4 text-gray-600 leading-relaxed mb-12">
           <p>
-            <strong className="text-gray-800">Effective Date:</strong> 1 January 2025
+            <strong className="text-gray-800">Effective Date:</strong> 17 February 2026
           </p>
           <p>
             Innovaas Solutions Pte. Ltd. (&quot;Innovaas&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is
@@ -70,6 +70,33 @@ export default function PrivacyPage() {
                   Legal
                 </a>{' '}
                 page for details.
+              </p>
+
+              <p>
+                <strong className="text-gray-800">Online data partners:</strong> We work with online data
+                partners who use cookies and similar technologies to associate your website
+                activity with personal information they hold about you, including your
+                email address. This enables our service providers to send marketing
+                communications to the email addresses collected through these partnerships.
+                If you would like to opt out of this data collection, please visit{' '}
+                <a href="https://app.retention.com/optout"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style={{ color: '#F25C05' }}
+                   className="underline decoration-transparent
+                              hover:decoration-current transition-all">
+                  https://app.retention.com/optout
+                </a>.
+                If you are located in the European Economic Area, you may also exercise
+                your GDPR rights by visiting{' '}
+                <a href="https://www.rb2b.com/rb2b-gdpr-opt-out"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style={{ color: '#F25C05' }}
+                   className="underline decoration-transparent
+                              hover:decoration-current transition-all">
+                  https://www.rb2b.com/rb2b-gdpr-opt-out
+                </a>.
               </p>
 
               <p>
