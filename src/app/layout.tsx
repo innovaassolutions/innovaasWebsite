@@ -119,7 +119,7 @@ export default function RootLayout({
       />
       <Script
         src="https://analytics.innovaas.co/script.js"
-        data-website-id="WEBSITE_ID_FROM_UMAMI"
+        data-website-id="8703e9d2-01a7-4301-9700-f1362c9bda40"
         strategy="afterInteractive"
       />
       <body className={`${inter.variable} antialiased`}>
