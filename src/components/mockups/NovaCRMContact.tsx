@@ -18,7 +18,7 @@ export default function NovaCRMContact() {
       {/* URL Bar */}
       <rect x="90" y="10" width="600" height="20" rx="4" fill="#FFFFFF" />
       <text x="100" y="25" fontSize="11" fill="#71706B" fontFamily="monospace">
-        app.novacrm.io/contacts/sarah-chen
+        novacrm.innovaas.co/contacts/sarah-chen
       </text>
 
       {/* Header */}

@@ -18,7 +18,7 @@ export default function FlowForgeInterview() {
       {/* URL Bar */}
       <rect x="90" y="10" width="600" height="20" rx="4" fill="#FFFFFF" />
       <text x="100" y="25" fontSize="12" fill="#71706B" fontFamily="monospace">
-        flowforge.ai/session/digital-readiness-assessment
+        flowforge.innovaas.co/session/digital-readiness-assessment
       </text>
 
       {/* Header */}

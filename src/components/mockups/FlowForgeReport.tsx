@@ -18,7 +18,7 @@ export default function FlowForgeReport() {
       {/* URL Bar */}
       <rect x="90" y="10" width="600" height="20" rx="4" fill="#FFFFFF" />
       <text x="100" y="25" fontSize="12" fill="#71706B" fontFamily="monospace">
-        flowforge.ai/reports/strategic-assessment
+        flowforge.innovaas.co/reports/strategic-assessment
       </text>
 
       {/* Header */}

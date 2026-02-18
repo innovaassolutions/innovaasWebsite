@@ -16,7 +16,7 @@ export default function NovaCRMPipeline() {
       <circle cx="60" cy="20" r="6" fill="#22c55e" />
       <rect x="90" y="10" width="600" height="20" rx="4" fill="#FFFFFF" />
       <text x="100" y="25" fontSize="11" fill="#71706B" fontFamily="monospace">
-        app.novacrm.io/deals/pipeline
+        novacrm.innovaas.co/deals/pipeline
       </text>
 
       {/* Header */}
