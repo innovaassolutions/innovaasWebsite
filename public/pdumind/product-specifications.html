@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Intelligent Rack PDU Product Specifications | Innovaas Solutions × PDUMind</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal:   #00b4c8;
+  --navy:   #0d1b2a;
+  --text:   #1a1a2e;
+  --muted:  #5a6480;
+  --rule:   #dde1ea;
+  --light:  #f5f7fa;
+  --sans:   Arial, Helvetica, sans-serif;
+  --mono:   'Courier New', Courier, monospace;
+}
+
+html { background: #bbb; }
+body { font-family: var(--sans); font-size: 9pt; line-height: 1.5; color: var(--text); background: #bbb; }
+
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  html, body { background: #fff; margin: 0; padding: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0 !important;
+    padding: 0;
+    height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+/* ── Page shell ─────────────────────────────────────────────────────────── */
+.page {
+  width: 210mm; height: 297mm;
+  margin: 8mm auto; background: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.page-accent { height: 4mm; background: var(--teal); flex-shrink: 0; }
+.page-content { flex: 1; padding: 14mm 16mm 8mm 16mm; overflow: hidden; }
+
+/* ── Running header / footer ────────────────────────────────────────────── */
+.pg-hdr {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1pt solid var(--rule); padding-bottom: 3mm; margin-bottom: 5mm;
+}
+.pg-hdr-brand { font-size: 7.5pt; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.8px; }
+.pg-hdr-section { font-size: 7.5pt; color: var(--muted); }
+
+.pg-ftr {
+  height: 11mm; padding: 0 16mm;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 0.5pt solid var(--rule); flex-shrink: 0;
+}
+.pg-ftr-l { font-size: 6.5pt; color: var(--muted); }
+.pg-ftr-r { font-size: 6.5pt; color: var(--muted); font-family: var(--mono); }
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+.eyebrow { font-size: 6.5pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5mm; }
+.sec-title { font-size: 12pt; font-weight: 700; color: var(--navy); border-bottom: 1.5pt solid var(--teal); padding-bottom: 2mm; margin-bottom: 4mm; }
+.sec-title-sm { font-size: 9pt; font-weight: 700; color: var(--navy); border-bottom: 0.5pt solid var(--rule); padding-bottom: 1.5mm; margin-bottom: 3mm; margin-top: 4mm; }
+.product-name { font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 1.5mm; }
+.product-desc { font-size: 8pt; color: var(--muted); line-height: 1.55; margin-bottom: 3mm; }
+.hr { border: none; border-top: 0.5pt solid var(--rule); margin: 4mm 0; }
+
+/* ── Spec table ─────────────────────────────────────────────────────────── */
+table.spec { width: 100%; border-collapse: collapse; font-size: 8pt; margin-bottom: 4mm; }
+table.spec thead tr { background: var(--navy); }
+table.spec thead th { color: #fff; padding: 2.5mm 3.5mm; text-align: left; font-size: 7.5pt; font-weight: 700; }
+table.spec thead th.c { text-align: center; }
+table.spec tbody tr:nth-child(even) { background: var(--light); }
+table.spec tbody td { padding: 2mm 3.5mm; border-bottom: 0.5pt solid var(--rule); vertical-align: middle; }
+table.spec tbody td.lbl { font-size: 7pt; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; width: 38mm; white-space: nowrap; }
+table.spec tbody td.cat { font-size: 7.5pt; font-weight: 700; color: var(--navy); background: #eaf9fb; border-left: 2pt solid var(--teal); }
+table.spec tbody td.val { font-family: var(--mono); font-size: 8pt; }
+table.spec tfoot td { padding: 1.5mm 3.5mm; font-size: 6.5pt; color: var(--muted); border-top: 0.5pt solid var(--rule); font-style: italic; }
+
+/* ── App tags ───────────────────────────────────────────────────────────── */
+.app-row { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-bottom: 4mm; }
+.app-tag { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--navy); background: var(--light); border: 0.5pt solid #cdd3e0; padding: 1mm 2.5mm; }
+
+/* ── Feature grid ───────────────────────────────────────────────────────── */
+.feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-bottom: 4mm; }
+.feat-item { border: 0.5pt solid var(--rule); padding: 3mm 3.5mm; }
+.feat-num  { font-size: 6.5pt; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.5px; }
+.feat-title{ font-size: 8pt; font-weight: 700; color: var(--navy); margin: 0.5mm 0 1mm; }
+.feat-body { font-size: 7.5pt; color: var(--muted); line-height: 1.5; }
+
+/* ── Col boxes ──────────────────────────────────────────────────────────── */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr;     gap: 4mm; margin-bottom: 4mm; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 4mm; }
+.col-box { border: 0.5pt solid var(--rule); padding: 3.5mm; }
+.col-box-t { font-size: 7.5pt; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5pt solid var(--rule); padding-bottom: 1.5mm; margin-bottom: 2mm; }
+.col-box ul { list-style: none; }
+.col-box ul li { font-size: 7.5pt; font-family: var(--mono); color: var(--text); padding: 1mm 0; border-bottom: 0.5pt solid #f0f1f4; }
+.col-box ul li:last-child { border-bottom: none; }
+
+/* ── SKU / model grid ───────────────────────────────────────────────────── */
+.sku-lbl { font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); padding-bottom: 1.5mm; margin-bottom: 2mm; border-bottom: 0.5pt solid #d0f4f8; }
+.model-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2mm; margin-bottom: 4mm; }
+.model-item { font-size: 7pt; font-family: var(--mono); color: var(--text); padding: 1.5mm 2.5mm; border-left: 2pt solid var(--teal); background: var(--light); }
+.model-item strong { display: block; font-size: 7.5pt; color: var(--navy); }
+
+/* ── Info box ───────────────────────────────────────────────────────────── */
+.info-box { background: var(--light); border-left: 2.5pt solid var(--teal); padding: 3mm 4mm; margin-bottom: 4mm; font-size: 8pt; line-height: 1.55; }
+
+/* ── Overview table ─────────────────────────────────────────────────────── */
+table.overview { width: 100%; border-collapse: collapse; font-size: 8pt; margin-bottom: 4mm; }
+table.overview thead tr { background: var(--teal); }
+table.overview thead th { color: #fff; padding: 2.5mm 3.5mm; text-align: left; font-size: 7.5pt; font-weight: 700; }
+table.overview tbody tr:nth-child(even) { background: var(--light); }
+table.overview tbody td { padding: 2mm 3.5mm; border-bottom: 0.5pt solid var(--rule); vertical-align: top; font-size: 7.5pt; }
+table.overview tbody td:first-child { font-weight: 700; color: var(--navy); width: 42mm; }
+
+/* ── Cover page ─────────────────────────────────────────────────────────── */
+.cover-bg {
+  width: 210mm; height: 297mm;
+  background: linear-gradient(160deg, #0d1b2a 0%, #0a2a35 55%, #003d4d 100%);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  margin: 8mm auto; box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+@media print {
+  .cover-bg {
+    margin: 0 !important;
+    box-shadow: none;
+  }
+}
+.cover-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,180,200,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,200,0.06) 1px, transparent 1px);
+  background-size: 12mm 12mm;
+}
+.cover-glow {
+  position: absolute; top: -40mm; right: -30mm;
+  width: 130mm; height: 130mm;
+  background: radial-gradient(circle, rgba(0,180,200,0.18) 0%, transparent 70%);
+}
+.cover-body { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; padding: 18mm 18mm 0 18mm; }
+.cover-badge {
+  display: inline-block; font-size: 7pt; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--teal); border: 1pt solid var(--teal);
+  padding: 1.5mm 3mm; margin-bottom: 8mm;
+}
+.cover-title {
+  font-size: 28pt; font-weight: 900; color: #ffffff;
+  line-height: 1.1; margin-bottom: 4mm;
+}
+.cover-title span { color: var(--teal); }
+.cover-sub {
+  font-size: 11pt; color: #9fb8c8; line-height: 1.6; margin-bottom: 10mm; max-width: 140mm;
+}
+.cover-divider { width: 20mm; height: 1.5pt; background: var(--teal); margin-bottom: 8mm; }
+.cover-products { display: flex; flex-direction: column; gap: 2.5mm; }
+.cover-product-line {
+  font-size: 8pt; color: #c8dde8;
+  padding-left: 3.5mm; border-left: 2pt solid var(--teal);
+  line-height: 1.4;
+}
+.cover-product-line strong { color: #ffffff; display: block; font-size: 8.5pt; }
+.cover-footer {
+  position: relative; z-index: 1;
+  padding: 6mm 18mm;
+  border-top: 0.5pt solid rgba(0,180,200,0.25);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cover-partner-box {
+  display: flex; align-items: center; gap: 4mm;
+}
+.cover-partner-label { font-size: 6.5pt; color: #6b8fa0; text-transform: uppercase; letter-spacing: 1px; }
+.cover-partner-name  { font-size: 9pt; font-weight: 700; color: #fff; }
+.cover-contact { font-size: 7pt; color: #6b8fa0; text-align: right; line-height: 1.6; }
+.cover-contact a { color: var(--teal); text-decoration: none; }
+.cover-teal-dot { width: 2.5mm; height: 2.5mm; background: var(--teal); border-radius: 50%; display: inline-block; margin-right: 1.5mm; }
+
+/* ── Contact / ordering page ────────────────────────────────────────────── */
+.order-box { border: 0.5pt solid var(--rule); padding: 5mm 6mm; margin-bottom: 4mm; }
+.order-box-t { font-size: 9pt; font-weight: 700; color: var(--navy); border-bottom: 1pt solid var(--teal); padding-bottom: 2mm; margin-bottom: 3mm; }
+.order-row { display: flex; gap: 4mm; }
+.order-col { flex: 1; }
+.order-lbl { font-size: 6.5pt; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 1mm; }
+.order-val { font-size: 8.5pt; color: var(--text); line-height: 1.5; }
+.order-val a { color: var(--teal); text-decoration: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 1 — COVER                                                        -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="cover-bg">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+
+  <div class="cover-body">
+    <div class="cover-badge">Authorized Reseller — Southeast Asia</div>
+
+    <div style="font-size:10pt; font-weight:800; color:#fff; letter-spacing:0.5px; margin-bottom:3mm;">
+      <span style="color:var(--teal);">INNOVAAS</span>
+      <span style="color:#5a7a8a; margin: 0 2mm;">×</span>
+      PDUMIND
+    </div>
+
+    <div class="cover-title">
+      Intelligent<br>
+      <span>Rack PDU</span><br>
+      Solutions
+    </div>
+
+    <div class="cover-sub">
+      Metered, switched, and 3-phase power distribution units
+      for AI infrastructure, high-density data centers,
+      and HPC environments worldwide.
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div style="font-size:7pt; font-weight:700; color:#6b8fa0; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:3mm;">
+      Product Lines
+    </div>
+
+    <div class="cover-products">
+      <div class="cover-product-line">
+        <strong>CPDU Series — Intelligent Rack PDUs</strong>
+        Single-phase &amp; 3-phase · Metered &amp; Switched · Up to 48 outlets · TFT display · SNMP v1/v2c/v3
+      </div>
+      <div class="cover-product-line">
+        <strong>CM-V-3P16A-36C39-3M — 3-Phase Monitoring PDU</strong>
+        380–433Vac · 16A · 11.5kW · 36×C39 · Schneider breaker · Hot-swap meter
+      </div>
+      <div class="cover-product-line">
+        <strong>CM-V-3P16A-1806-3M — 3-Phase Distribution PDU</strong>
+        380–433Vac · 16A · 18×C13 + 6×C19 · Aluminum 1U · IPDU control head
+      </div>
+      <div class="cover-product-line">
+        <strong>CM-V-3P32A-1806-3M — 3-Phase High-Current PDU</strong>
+        380–433Vac · 32A · 18×C13 + 6×C19 · Aluminum 1.4U · Heavy-duty 32A industrial plug
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-partner-box">
+      <div>
+        <div class="cover-partner-label">Authorized Reseller</div>
+        <div class="cover-partner-name">Innovaas Solutions Sdn. Bhd.</div>
+      </div>
+      <div style="width:0.5pt; height:8mm; background:rgba(0,180,200,0.3);"></div>
+      <div>
+        <div class="cover-partner-label">Manufacturer</div>
+        <div class="cover-partner-name">PDUMind</div>
+      </div>
+    </div>
+    <div class="cover-contact">
+      sales@innovaas.co<br>
+      innovaas.co/solutions/data-center-power
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 2 — CPDU SERIES OVERVIEW & FEATURES                             -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas × PDUMind — Product Specifications</span>
+      <span class="pg-hdr-section">CPDU Series — Intelligent Rack PDUs</span>
+    </div>
+
+    <div class="eyebrow">Product Overview</div>
+    <div class="sec-title">CPDU Series — Intelligent Rack PDUs</div>
+
+    <div class="info-box">
+      Single-phase and three-phase IPDU smart meter products built on PDUMind's innovative <strong>SUM</strong> (Sustainable, Upgradable, Maintainable) design concept. Active metering for energy optimisation and circuit protection with user-programmable alarm thresholds — real-time local and remote alerts for potential circuit overloads.
+    </div>
+
+    <div class="app-row">
+      <span class="app-tag">AI Clusters</span>
+      <span class="app-tag">HPC</span>
+      <span class="app-tag">Hyper-scale DC</span>
+      <span class="app-tag">Colocation</span>
+      <span class="app-tag">IDC</span>
+      <span class="app-tag">Finance &amp; Banking</span>
+      <span class="app-tag">Government</span>
+      <span class="app-tag">Enterprise</span>
+    </div>
+
+    <div class="eyebrow" style="margin-top:2mm;">Key Features</div>
+    <div class="feat-grid">
+      <div class="feat-item">
+        <div class="feat-num">01</div>
+        <div class="feat-title">Energy-Efficient Latching Relays</div>
+        <div class="feat-body">Bi-stable latching relays consume up to 70% less energy than alternatives. In case of PDU failure, power distribution to the rack is maintained.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">02</div>
+        <div class="feat-title">PDU Cascading — Up to 16 Units</div>
+        <div class="feat-body">Daisy-chain up to 16 PDUs from a single IP address via Cat5/6 cable, dramatically reducing network port requirements in large deployments.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">03</div>
+        <div class="feat-title">±1% Billing-Grade kWh Accuracy</div>
+        <div class="feat-body">Enables precise allocation of data center energy expenses with billing-grade ±1% metering accuracy per outlet or phase.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">04</div>
+        <div class="feat-title">IEX Universal Combo Socket</div>
+        <div class="feat-body">UL and IEC tested C13/C19 combo socket accepts C14 or C20 plugs. Alternating phase on 3-phase systems helps balance load across branches.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">05</div>
+        <div class="feat-title">Dual Gigabit Ethernet Ports</div>
+        <div class="feat-body">World's first dual GbE port PDU. Share monitoring between data center management systems and end clients across two separate networks.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">06</div>
+        <div class="feat-title">Advanced Security</div>
+        <div class="feat-body">256-bit AES encryption · RADIUS · SNMP v3 · SSHv2 · SSL · HTTPS. Supports the most stringent data center security requirements.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">07</div>
+        <div class="feat-title">RCM Residual Current Monitoring</div>
+        <div class="feat-body">Optional BENDER RCM module measures ground wire current, reducing risk of electric shock and simplifying regulatory auditing.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-num">08</div>
+        <div class="feat-title">Hydraulic-Magnetic Circuit Breakers</div>
+        <div class="feat-body">Not affected by ambient temperature. Proactively monitors breaker status and sends overload alerts before a tripped circuit causes downtime.</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:1mm;">Platform Capabilities</div>
+    <table class="overview">
+      <thead><tr><th>Feature Category</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Screen Display</td><td>OLED / TFT Multi-Colour Screen with push-button interface (Up / Menu / Down / Reset)</td></tr>
+        <tr><td>Alerts &amp; Metrics</td><td>Live alarms and power metrics — V, A, PF, W, kWh per outlet or phase</td></tr>
+        <tr><td>Network Connectivity</td><td>Dual Gigabit Ethernet ports + optional Wireless LAN adapter</td></tr>
+        <tr><td>Mobile Integration</td><td>iOS compatible — IECView App</td></tr>
+        <tr><td>Configuration</td><td>Flash drive bulk configuration · Web UI · Telnet CLI</td></tr>
+        <tr><td>Reboot Functionality</td><td>Reset button for full electronics reboot without interrupting power output</td></tr>
+        <tr><td>Environmental Monitoring</td><td>Cascading sensors: temperature, humidity, water leakage, door contact, motion, vibration, smoke</td></tr>
+        <tr><td>PDU Management</td><td>Link up to 16 PDUs per IP address for simplified fleet management</td></tr>
+        <tr><td>DCIM Integration</td><td>Exports rack-level power and environmental data to third-party DCIM solutions</td></tr>
+        <tr><td>Secure Locking Outlets</td><td>IEX lock standard cord retention + P-Lock and V-Lock cord compatible</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">Innovaas Solutions Sdn. Bhd. · sales@innovaas.co · innovaas.co</span>
+    <span class="pg-ftr-r">Page 2 of 5</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 3 — CPDU TECHNICAL SPECIFICATIONS                               -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas × PDUMind — Product Specifications</span>
+      <span class="pg-hdr-section">CPDU Series — Technical Specifications</span>
+    </div>
+
+    <div class="eyebrow">Technical Specifications</div>
+    <div class="sec-title" style="margin-bottom:3mm;">CPDU Series — Electrical &amp; Physical Parameters</div>
+
+    <table class="spec">
+      <thead><tr><th style="width:30mm;">Category</th><th style="width:50mm;">Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td class="cat" colspan="3">Electrical Parameters</td></tr>
+        <tr><td class="lbl">Input Voltage</td><td>AC Input</td><td class="val">176–264 VAC, 1-Phase or 3-Phase</td></tr>
+        <tr><td class="lbl">Input Current</td><td>Maximum</td><td class="val">63 A / 80 A (model dependent)</td></tr>
+        <tr><td class="lbl">Frequency</td><td>AC Frequency</td><td class="val">50 / 60 Hz</td></tr>
+        <tr><td class="lbl">Output Outlets</td><td>Maximum</td><td class="val">Optional — up to 48 outlets</td></tr>
+        <tr><td class="lbl">Circuit Breaker</td><td>Protection</td><td class="val">Optional (specify brand and quantity)</td></tr>
+        <tr><td class="cat" colspan="3">Physical / Structure</td></tr>
+        <tr><td class="lbl">Installation</td><td>Orientation</td><td class="val">Vertical (standard)</td></tr>
+        <tr><td class="lbl">Form Factor</td><td>Width</td><td class="val">1U and 1.5U and above</td></tr>
+        <tr><td class="lbl">Socket Protrusion</td><td>Height</td><td class="val">22 mm</td></tr>
+        <tr><td class="lbl">Shell Material</td><td>Enclosure</td><td class="val">Plastic PC</td></tr>
+        <tr><td class="lbl">Meter Dimensions</td><td>Controller head</td><td class="val">153 × 44.5 × 22 mm</td></tr>
+        <tr><td class="cat" colspan="3">Working Environment</td></tr>
+        <tr><td class="lbl">Operating Temp</td><td>Ambient</td><td class="val">−10 °C to +50 °C</td></tr>
+        <tr><td class="lbl">Humidity</td><td>Working</td><td class="val">5–95 % RH (non-condensing)</td></tr>
+        <tr><td class="lbl">Altitude</td><td>Max</td><td class="val">0–3,000 m</td></tr>
+        <tr><td class="cat" colspan="3">User Interface</td></tr>
+        <tr><td class="lbl">Display</td><td>Screen type</td><td class="val">TFT colour screen</td></tr>
+        <tr><td class="lbl">Controls</td><td>Buttons</td><td class="val">Up · Down · Menu · Reset</td></tr>
+        <tr><td class="lbl">Interfaces</td><td>Ports</td><td class="val">Ethernet × 1 · RS485 × 2 · USB × 1</td></tr>
+        <tr><td class="lbl">Env. Sensor</td><td>T/H Interface</td><td class="val">YES — cascadable up to 8 EMD sensors</td></tr>
+        <tr><td class="lbl">Indicators</td><td>LED Status</td><td class="val">Operation · Electrical energy · Communication</td></tr>
+        <tr><td class="cat" colspan="3">Measurement &amp; Control</td></tr>
+        <tr><td class="lbl">PDU Totals</td><td>Measurements</td><td class="val">Voltage · Current · Power · Electrical energy (kWh)</td></tr>
+        <tr><td class="lbl">Alarm Thresholds</td><td>Custom</td><td class="val">Current and voltage — user-configurable</td></tr>
+        <tr><td class="lbl">Alarm Modes</td><td>Notification</td><td class="val">Buzzer · LCD flash · Email · SNMP trap · Serial</td></tr>
+        <tr><td class="lbl">Access Methods</td><td>Remote</td><td class="val">Web UI (HTTPS/HTTP) · SNMP v1/v2c/v3 · Telnet</td></tr>
+        <tr><td class="lbl">Cascade</td><td>RS485 daisy-chain</td><td class="val">YES — up to 16 PDUs per IP address</td></tr>
+        <tr><td class="lbl">Security</td><td>Protocols</td><td class="val">256-bit AES · RADIUS · SNMP v3 · SSHv2 · SSL · HTTPS</td></tr>
+        <tr><td class="cat" colspan="3">Certifications</td></tr>
+        <tr><td class="lbl">Compliance</td><td>Safety</td><td class="val">CE</td></tr>
+      </tbody>
+    </table>
+
+    <div class="eyebrow" style="margin-top:1mm;">Model Number Structure</div>
+    <div style="font-size:8pt; font-weight:700; color:var(--navy); font-family:var(--mono); letter-spacing:1px; margin-bottom:2mm; padding:2.5mm 3.5mm; background:var(--light); border-left:2pt solid var(--teal);">
+      CPDU - [Orientation] [Phase] [Branch] [Current] - [T/H] [Switching] [USB] [RS485]
+    </div>
+    <div class="three-col">
+      <div class="col-box">
+        <div class="col-box-t">Orientation [2]</div>
+        <ul>
+          <li>0 = Vertical</li>
+          <li>1 = Horizontal</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Phase Config [3]</div>
+        <ul>
+          <li>1 = Single phase</li>
+          <li>2 = 2-phase 4-wire</li>
+          <li>3 = 3-phase 3-wire</li>
+          <li>4 = 4-phase 3-wire</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Branch Function [4]</div>
+        <ul>
+          <li>0 = Not monitored</li>
+          <li>1 = Branch control</li>
+          <li>2 = Branch monitoring</li>
+          <li>3 = Monitored + controlled</li>
+        </ul>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-t">Connectivity [8] / [9]</div>
+        <ul>
+          <li>USB: 0 = None · 1 = With USB</li>
+          <li>RS485: 0 = None · 1 = With RS485</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Standard Config</div>
+        <ul>
+          <li>Network port (Ethernet)</li>
+          <li>USB port</li>
+          <li>T/H sensor interface</li>
+          <li>Two RS485 ports</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">Innovaas Solutions Sdn. Bhd. · sales@innovaas.co · innovaas.co</span>
+    <span class="pg-ftr-r">Page 3 of 5</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 4 — CM-V 3-PHASE DISTRIBUTION PDUs                              -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas × PDUMind — Product Specifications</span>
+      <span class="pg-hdr-section">CM-V Series — 3-Phase Distribution PDUs</span>
+    </div>
+
+    <div class="eyebrow">3-Phase Distribution &amp; Monitoring PDUs</div>
+    <div class="sec-title" style="margin-bottom:3mm;">CM-V Series</div>
+
+    <div class="info-box">
+      The CM-V series are vertical rack-mount, 3-phase intelligent distribution PDUs built from 1U/1.4U aluminum extrusion profiles. Each unit ships with a 3-metre IEC60309 industrial power cord and integrates a hot-swappable IPDU meter head for total detection of voltage, current, power, and energy consumption. Hydraulic-magnetic circuit breakers provide IT-grade overload protection on every branch.
+    </div>
+
+    <!-- Model 1 -->
+    <div class="sec-title-sm" style="margin-top:0;">CM-V-3P16A-36C39-3M — Monitoring IPDU (36 × C39 Outlets)</div>
+
+    <div class="two-col">
+      <div>
+        <table class="spec" style="margin-bottom:0;">
+          <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Rated Voltage</td><td class="val">380–433 Vac</td></tr>
+            <tr><td class="lbl">Frequency</td><td class="val">50/60 Hz</td></tr>
+            <tr><td class="lbl">Input Plug</td><td class="val">IEC60309 16A 3-phase industrial</td></tr>
+            <tr><td class="lbl">Cable</td><td class="val">3G × 2.5 mm² × 3 m</td></tr>
+            <tr><td class="lbl">Max Power</td><td class="val">11.5 kW</td></tr>
+            <tr><td class="lbl">Max Input Current</td><td class="val">16A 3-phase</td></tr>
+            <tr><td class="lbl">Max Circuit Current</td><td class="val">16 A</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="spec" style="margin-bottom:0;">
+          <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Output Voltage</td><td class="val">220–250 Vac</td></tr>
+            <tr><td class="lbl">Overload Protection</td><td class="val">1P 16A Schneider Breaker</td></tr>
+            <tr><td class="lbl">Max Output Current</td><td class="val">16 A</td></tr>
+            <tr><td class="lbl">Output Receptacles</td><td class="val">36 × C39</td></tr>
+            <tr><td class="lbl">Dimensions (W×D×H)</td><td class="val">1910 × 56 × 44.5 mm</td></tr>
+            <tr><td class="lbl">Case Material</td><td class="val">Aluminum · Black</td></tr>
+            <tr><td class="lbl">Warranty / RoHS</td><td class="val">1 year / RoHS compliant</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sec-title-sm">Monitoring Functions — CM-V-3P16A-36C39-3M</div>
+    <div class="three-col">
+      <div class="col-box">
+        <div class="col-box-t">Display (Hot-swap meter)</div>
+        <ul>
+          <li>Voltage: FS 300V, ±1%</li>
+          <li>Current: FS 32A, ±1%</li>
+          <li>Energy: 0.1 kWh res.</li>
+          <li>Temp: 0.1°C res.</li>
+          <li>Humidity: 0.1% res.</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Monitoring Functions</div>
+        <ul>
+          <li>Total load current</li>
+          <li>Total input voltage</li>
+          <li>Total load power</li>
+          <li>Electricity consumption</li>
+          <li>Temp &amp; humidity</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Access &amp; Alarms</div>
+        <ul>
+          <li>Web UI (HTTPS)</li>
+          <li>SNMP v1/v2c/v3</li>
+          <li>Telnet CLI</li>
+          <li>Email alarm</li>
+          <li>SNMP trap</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <!-- Models 2 & 3 -->
+    <div class="sec-title-sm" style="margin-top:2mm;">CM-V-3P16A-1806-3M &amp; CM-V-3P32A-1806-3M — Distribution PDUs</div>
+
+    <table class="spec">
+      <thead>
+        <tr>
+          <th style="width:40mm;">Parameter</th>
+          <th>CM-V-3P16A-1806-3M</th>
+          <th>CM-V-3P32A-1806-3M</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="lbl">Input Voltage</td><td class="val">380–433 V 50/60 Hz</td><td class="val">380–433 V 50/60 Hz</td></tr>
+        <tr><td class="lbl">Input Plug</td><td class="val">IEC60309 6-core 16A industrial</td><td class="val">IEC60309 5-core 32A industrial</td></tr>
+        <tr><td class="lbl">Input Cable</td><td class="val">5G × 2.5 mm² × 3 m</td><td class="val">5G × 6 mm² × 3 m</td></tr>
+        <tr><td class="lbl">Max Current</td><td class="val">16 A</td><td class="val">32 A</td></tr>
+        <tr><td class="lbl">Output Voltage</td><td class="val">220–250 Vac</td><td class="val">220–250 Vac</td></tr>
+        <tr><td class="lbl">Output Receptacles</td><td class="val">18 × C13 + 6 × C19 (24 total)</td><td class="val">18 × C13 + 6 × C19 (24 total)</td></tr>
+        <tr><td class="lbl">Circuit Breakers</td><td class="val">3 × 1P 16A hydraulic-magnetic</td><td class="val">3 × 1P 32A hydraulic-magnetic</td></tr>
+        <tr><td class="lbl">Shell</td><td class="val">Aluminum 1U (62 × 44.5 mm)</td><td class="val">Aluminum 1.4U (60 × 50 mm)</td></tr>
+        <tr><td class="lbl">Dimensions (L×H)</td><td class="val">1477 mm × 44.5 mm</td><td class="val">1497 mm × 50 mm</td></tr>
+        <tr><td class="lbl">Installation</td><td class="val">Vertical · Upper cable</td><td class="val">Vertical · Upper cable</td></tr>
+        <tr><td class="lbl">Control</td><td class="val">IPDU table head · Total detection</td><td class="val">IPDU table head · Total detection</td></tr>
+        <tr><td class="lbl">Internal Cable</td><td class="val">Main 6 mm² · Branch 1.5 mm²</td><td class="val">Main 6 mm² · Branch 1.5 mm²</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">All CM-V series PDUs: Operating temp 0–55°C · Humidity 5–95% · Altitude 0–3,000 m · Storage −20 to +70°C</td></tr></tfoot>
+    </table>
+
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">Innovaas Solutions Sdn. Bhd. · sales@innovaas.co · innovaas.co</span>
+    <span class="pg-ftr-r">Page 4 of 5</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- PAGE 5 — WHY INNOVAAS / ORDERING                                     -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas × PDUMind — Product Specifications</span>
+      <span class="pg-hdr-section">Ordering &amp; Contact</span>
+    </div>
+
+    <div class="eyebrow">Why Innovaas</div>
+    <div class="sec-title" style="margin-bottom:4mm;">Authorized Reseller — Southeast Asia &amp; Beyond</div>
+
+    <div class="feat-grid" style="margin-bottom:5mm;">
+      <div class="feat-item">
+        <div class="feat-title" style="margin-top:0;">Authorized PDUMind Reseller</div>
+        <div class="feat-body">Innovaas is an officially authorized reseller for PDUMind intelligent rack PDUs across Southeast Asia. Direct manufacturer access means competitive pricing and accurate technical guidance.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-title" style="margin-top:0;">Global Availability</div>
+        <div class="feat-body">All products are available for worldwide delivery. Our team coordinates customs documentation, freight forwarding, and logistics to your data center location.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-title" style="margin-top:0;">Pre-Sales Technical Support</div>
+        <div class="feat-body">Our engineers assist with topology reviews, outlet count planning, phase balancing calculations, and compatibility with your existing power infrastructure.</div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-title" style="margin-top:0;">Custom Configuration</div>
+        <div class="feat-body">PDUMind's modular architecture supports custom outlet counts, breaker specifications, cable lengths, and outlet types. Contact us with your requirements.</div>
+      </div>
+    </div>
+
+    <div class="eyebrow">Product Summary</div>
+    <table class="overview" style="margin-bottom:5mm;">
+      <thead><tr><th>Model</th><th>Type</th><th>Phase</th><th>Max Current</th><th>Key Feature</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>CPDU Series</td>
+          <td>Intelligent Rack PDU</td>
+          <td>1PH / 3PH</td>
+          <td>63A / 80A</td>
+          <td>Per-outlet metering, SNMP, cascade 16</td>
+        </tr>
+        <tr>
+          <td>CM-V-3P16A-36C39-3M</td>
+          <td>Monitoring IPDU</td>
+          <td>3-Phase</td>
+          <td>16A</td>
+          <td>36×C39, hot-swap meter, Schneider MCB</td>
+        </tr>
+        <tr>
+          <td>CM-V-3P16A-1806-3M</td>
+          <td>Distribution PDU</td>
+          <td>3-Phase</td>
+          <td>16A</td>
+          <td>18×C13 + 6×C19, aluminum 1U</td>
+        </tr>
+        <tr>
+          <td>CM-V-3P32A-1806-3M</td>
+          <td>Distribution PDU</td>
+          <td>3-Phase</td>
+          <td>32A</td>
+          <td>18×C13 + 6×C19, aluminum 1.4U, 32A plug</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="eyebrow">Ordering &amp; Contact</div>
+    <div class="order-box">
+      <div class="order-box-t">Get a Quote or Request Samples</div>
+      <div class="order-row">
+        <div class="order-col">
+          <div class="order-lbl">Sales Enquiries</div>
+          <div class="order-val"><a href="mailto:sales@innovaas.co">sales@innovaas.co</a></div>
+          <div style="height:3mm;"></div>
+          <div class="order-lbl">Website</div>
+          <div class="order-val"><a href="https://innovaas.co/solutions/data-center-power">innovaas.co/solutions/data-center-power</a></div>
+        </div>
+        <div class="order-col">
+          <div class="order-lbl">Manufacturer</div>
+          <div class="order-val">PDUMind · <a href="https://www.pdumind.com">www.pdumind.com</a></div>
+          <div style="height:3mm;"></div>
+          <div class="order-lbl">Lead Time</div>
+          <div class="order-val">Standard stock items: 2–4 weeks<br>Custom configurations: 4–8 weeks</div>
+        </div>
+        <div class="order-col">
+          <div class="order-lbl">Minimum Order</div>
+          <div class="order-val">Single unit available<br>Volume pricing from 5+ units</div>
+          <div style="height:3mm;"></div>
+          <div class="order-lbl">Warranty</div>
+          <div class="order-val">1 year standard<br>Extended warranty available</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-bottom:0;">
+      <strong>To place an order or request a quotation:</strong> email <strong>sales@innovaas.co</strong> with your model number(s), quantity, outlet configuration, input voltage, and delivery location. Our team will respond within one business day with pricing and lead-time confirmation.
+    </div>
+
+  </div>
+  <div class="pg-ftr">
+    <div style="display:flex; flex-direction:column; gap:0.5mm;">
+      <span class="pg-ftr-l">Innovaas Solutions Sdn. Bhd. · Kuala Lumpur, Malaysia · sales@innovaas.co · innovaas.co</span>
+      <span class="pg-ftr-l" style="font-size:5.5pt;">Specifications subject to change without notice. All trademarks belong to their respective owners. © 2025 Innovaas Solutions Sdn. Bhd.</span>
+    </div>
+    <span class="pg-ftr-r">Page 5 of 5</span>
+  </div>
+</div>
+
+</body>
+</html>

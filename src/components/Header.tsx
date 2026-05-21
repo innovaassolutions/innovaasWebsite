@@ -14,7 +14,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/products', label: 'Products' },
-  { href: '/solutions/data-center-connectivity', label: 'Solutions' },
+  { href: '/solutions', label: 'Solutions' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -69,8 +69,8 @@ export default function Header() {
               style={{
                 padding: "0.4rem 1rem",
                 borderRadius: "999px",
-                background: pathname === link.href ? 'var(--color-accent)' : 'transparent',
-                color: pathname === link.href ? '#fff' : navTextColor,
+                background: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? 'var(--color-accent)' : 'transparent',
+                color: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? '#fff' : navTextColor,
                 fontWeight: 700,
                 fontFamily: 'Montserrat, Arial, sans-serif',
                 fontSize: "1rem",
@@ -114,8 +114,8 @@ export default function Header() {
                   style={{
                     padding: "0.75rem 1.5rem",
                     borderRadius: "999px",
-                    background: pathname === link.href ? 'var(--color-accent)' : 'transparent',
-                    color: pathname === link.href ? '#fff' : navTextColor,
+                    background: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? 'var(--color-accent)' : 'transparent',
+                    color: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? '#fff' : navTextColor,
                     fontWeight: 700,
                     fontFamily: 'Montserrat, Arial, sans-serif',
                     fontSize: "1.1rem",
