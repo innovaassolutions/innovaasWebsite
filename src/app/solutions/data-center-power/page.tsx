@@ -924,7 +924,7 @@ function WhyInnovaasSection() {
     {
       num: "05",
       title: "Global Reach, Local Expertise",
-      desc: "Headquartered in Kuala Lumpur with the ability to supply data center operators across the Asia-Pacific region and beyond.",
+      desc: "Headquartered in Singapore with the ability to supply data center operators across the Asia-Pacific region and beyond.",
     },
   ];
 
