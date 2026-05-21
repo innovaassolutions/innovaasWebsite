@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>High-Speed Interconnect Product Specifications | Innovaas Solutions</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #F25C05;
+  --navy:   #0d1b2a;
+  --text:   #1a1a2e;
+  --muted:  #5a6480;
+  --rule:   #dde1ea;
+  --light:  #f5f7fa;
+  --sans:   Arial, Helvetica, sans-serif;
+  --mono:   'Courier New', Courier, monospace;
+}
+
+html { background: #bbb; }
+body { font-family: var(--sans); font-size: 9pt; line-height: 1.5; color: var(--text); background: #bbb; }
+
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  html, body { background: #fff; margin: 0; padding: 0; }
+  .page {
+    box-shadow: none;
+    margin: 0 !important;
+    padding: 0;
+    height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+/* ── Page shell ───────────────────────────────────────────────────────── */
+.page {
+  width: 210mm; height: 297mm;
+  margin: 8mm auto; background: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.page-accent { height: 4mm; background: var(--orange); flex-shrink: 0; }
+.page-content { flex: 1; padding: 14mm 16mm 8mm 16mm; overflow: hidden; }
+
+/* ── Running header / footer ──────────────────────────────────────────── */
+.pg-hdr {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1pt solid var(--rule); padding-bottom: 3mm; margin-bottom: 5mm;
+}
+.pg-hdr-brand { font-size: 7.5pt; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.8px; }
+.pg-hdr-section { font-size: 7.5pt; color: var(--muted); }
+
+.pg-ftr {
+  height: 11mm; padding: 0 16mm;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 0.5pt solid var(--rule); flex-shrink: 0;
+}
+.pg-ftr-l { font-size: 6.5pt; color: var(--muted); }
+.pg-ftr-r { font-size: 6.5pt; color: var(--muted); font-family: var(--mono); }
+
+/* ── Typography ───────────────────────────────────────────────────────── */
+.eyebrow { font-size: 6.5pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5mm; }
+.sec-title { font-size: 12pt; font-weight: 700; color: var(--navy); border-bottom: 1.5pt solid var(--orange); padding-bottom: 2mm; margin-bottom: 4mm; }
+.sec-title-sm { font-size: 9pt; font-weight: 700; color: var(--navy); border-bottom: 0.5pt solid var(--rule); padding-bottom: 1.5mm; margin-bottom: 3mm; margin-top: 4mm; }
+.product-name { font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 1.5mm; }
+.product-desc { font-size: 8pt; color: var(--muted); line-height: 1.55; margin-bottom: 3mm; }
+.hr { border: none; border-top: 0.5pt solid var(--rule); margin: 4mm 0; }
+
+/* ── Product image panel ──────────────────────────────────────────────── */
+.product-row { display: grid; gap: 5mm; margin-bottom: 4mm; }
+.product-row-img-right { grid-template-columns: 1fr 52mm; }
+.product-row-img-left  { grid-template-columns: 52mm 1fr; }
+
+.img-panel {
+  background: var(--light); border-radius: 6pt;
+  display: flex; align-items: center; justify-content: center;
+  padding: 4mm; min-height: 44mm;
+}
+.img-panel img { max-width: 100%; max-height: 46mm; object-fit: contain; display: block; }
+.img-panel-sm { min-height: 32mm; padding: 3mm; }
+.img-panel-sm img { max-height: 32mm; }
+
+/* ── Spec table ───────────────────────────────────────────────────────── */
+table.spec { width: 100%; border-collapse: collapse; font-size: 8pt; margin-bottom: 4mm; }
+table.spec thead tr { background: var(--navy); }
+table.spec thead th { color: #fff; padding: 2.5mm 3.5mm; text-align: left; font-size: 7.5pt; font-weight: 700; }
+table.spec thead th.c { text-align: center; }
+table.spec tbody tr:nth-child(even) { background: var(--light); }
+table.spec tbody td { padding: 2mm 3.5mm; border-bottom: 0.5pt solid var(--rule); vertical-align: middle; }
+table.spec tbody td.lbl { font-size: 7pt; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; width: 36mm; white-space: nowrap; }
+table.spec tbody td.val { font-family: var(--mono); font-size: 8pt; }
+table.spec tbody td.vc  { font-family: var(--mono); font-size: 8pt; text-align: center; }
+table.spec tfoot td { padding: 1.5mm 3.5mm; font-size: 6.5pt; color: var(--muted); border-top: 0.5pt solid var(--rule); font-style: italic; }
+
+/* ── App tags ─────────────────────────────────────────────────────────── */
+.app-row { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-bottom: 4mm; }
+.app-tag { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--navy); background: var(--light); border: 0.5pt solid #cdd3e0; padding: 1mm 2.5mm; }
+
+/* ── SKU grid ─────────────────────────────────────────────────────────── */
+.sku-lbl { font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--orange); padding-bottom: 1.5mm; margin-bottom: 2mm; border-bottom: 0.5pt solid #f5ddd0; }
+.sku-grid { display: grid; gap: 1mm 3mm; margin-bottom: 3mm; }
+.sku-4 { grid-template-columns: repeat(4,1fr); }
+.sku-3 { grid-template-columns: repeat(3,1fr); }
+.sku-2 { grid-template-columns: repeat(2,1fr); }
+.sku-item { font-size: 7.5pt; font-family: var(--mono); color: var(--text); padding: 1.2mm 2mm; border-left: 2pt solid var(--orange); background: var(--light); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── Col boxes ────────────────────────────────────────────────────────── */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr;     gap: 4mm; margin-bottom: 4mm; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin-bottom: 4mm; }
+.col-box { border: 0.5pt solid var(--rule); padding: 3.5mm; }
+.col-box-t { font-size: 7.5pt; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5pt solid var(--rule); padding-bottom: 1.5mm; margin-bottom: 2mm; }
+.col-box ul { list-style: none; }
+.col-box ul li { font-size: 7.5pt; font-family: var(--mono); color: var(--text); padding: 1mm 0; border-bottom: 0.5pt solid #f0f1f4; }
+.col-box ul li:last-child { border-bottom: none; }
+
+/* ── Info box ─────────────────────────────────────────────────────────── */
+.info-box { background: var(--light); border-left: 2.5pt solid var(--orange); padding: 3mm 4mm; margin-bottom: 4mm; font-size: 8pt; line-height: 1.55; }
+
+/* ── Cert badges ──────────────────────────────────────────────────────── */
+.cert-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 3mm; margin-bottom: 4mm; }
+.cert-badge { border: 0.5pt solid var(--rule); padding: 3mm 2.5mm; text-align: center; }
+.cert-name { font-size: 9pt; font-weight: 700; color: var(--navy); display: block; margin-bottom: 1mm; }
+.cert-desc { font-size: 6.5pt; color: var(--muted); line-height: 1.4; display: block; }
+
+/* ── Service grid ─────────────────────────────────────────────────────── */
+.svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-bottom: 4mm; }
+.svc-item { border-top: 2pt solid var(--orange); padding-top: 2.5mm; }
+.svc-title { font-size: 8.5pt; font-weight: 700; color: var(--navy); margin-bottom: 1mm; }
+.svc-desc  { font-size: 7.5pt; color: var(--muted); line-height: 1.5; }
+
+/* ── Contact block ────────────────────────────────────────────────────── */
+.contact-block { background: var(--navy); padding: 5mm 6mm; }
+.contact-title { font-size: 7pt; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 4mm; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+.contact-row { font-size: 7.5pt; margin-bottom: 2mm; line-height: 1.5; }
+.contact-row strong { color: rgba(255,255,255,0.45); font-size: 6.5pt; text-transform: uppercase; letter-spacing: 0.5px; display: block; }
+.contact-row span { color: rgba(255,255,255,0.9); }
+
+/* ── Copper image strip ───────────────────────────────────────────────── */
+.copper-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 3mm; margin-bottom: 4mm; }
+.copper-img-card { background: var(--light); border-radius: 6pt; padding: 3mm; text-align: center; }
+.copper-img-card img { max-height: 28mm; object-fit: contain; display: block; margin: 0 auto 2mm; }
+.copper-img-card span { font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+
+/* ── Cover ────────────────────────────────────────────────────────────── */
+.cover-content { flex: 1; padding: 14mm 16mm 0 16mm; display: flex; flex-direction: column; }
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 0.5pt solid var(--rule); padding-bottom: 4mm; margin-bottom: 0; }
+.cover-brand { font-size: 10pt; font-weight: 700; color: var(--orange); }
+.cover-brand-sub { font-size: 8pt; color: var(--muted); margin-top: 0.5mm; }
+.cover-date { font-size: 7.5pt; color: var(--muted); text-align: right; }
+.cover-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10mm 0 8mm; }
+.cover-eyebrow { font-size: 7pt; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 4mm; }
+.cover-title { font-size: 24pt; font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 5mm; }
+.cover-title em { font-style: normal; color: var(--orange); }
+.cover-sub { font-size: 10pt; color: var(--muted); line-height: 1.65; max-width: 148mm; margin-bottom: 10mm; }
+.cover-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 3mm; margin-bottom: 10mm; }
+.cover-stat { background: var(--light); border-top: 2.5pt solid var(--orange); padding: 4mm 3.5mm; }
+.cover-stat-val { font-size: 14pt; font-weight: 700; color: var(--navy); display: block; }
+.cover-stat-lbl { font-size: 6pt; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; display: block; margin-top: 0.8mm; }
+.cover-toc { border: 0.5pt solid var(--rule); margin-bottom: 10mm; }
+.cover-toc-title { background: var(--light); padding: 2.5mm 4mm; font-size: 7pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border-bottom: 0.5pt solid var(--rule); }
+.cover-toc-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.cover-toc-item { display: flex; justify-content: space-between; padding: 2mm 4mm; font-size: 8pt; border-bottom: 0.5pt solid var(--rule); border-right: 0.5pt solid var(--rule); }
+.cover-toc-item:nth-child(even) { border-right: none; }
+.cover-toc-item:nth-last-child(-n+2) { border-bottom: none; }
+.cover-toc-pg { font-family: var(--mono); font-size: 7.5pt; color: var(--muted); }
+.cover-footer-row { border-top: 0.5pt solid var(--rule); padding: 4mm 0; display: flex; justify-content: space-between; align-items: center; }
+.cover-footer-text { font-size: 7pt; color: var(--muted); line-height: 1.6; }
+.cover-conf { font-size: 6.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); border: 0.5pt solid var(--rule); padding: 2mm 4mm; }
+
+.mb2 { margin-bottom: 2mm; } .mb3 { margin-bottom: 3mm; } .mb4 { margin-bottom: 4mm; } .mb5 { margin-bottom: 5mm; }
+.mt4 { margin-top: 4mm; } .mt5 { margin-top: 5mm; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════ PAGE 1 — COVER ════════════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="cover-content">
+    <div class="cover-top">
+      <div>
+        <div class="cover-brand">Innovaas Solutions</div>
+        <div class="cover-brand-sub">Authorized Reseller — Black Sea Technology Pte. Ltd.</div>
+      </div>
+      <div class="cover-date">Product Specification Document<br>Rev 1.0 &nbsp;·&nbsp; May 2026</div>
+    </div>
+
+    <div class="cover-hero">
+      <div class="cover-eyebrow">Black Sea Technology &nbsp;·&nbsp; Complete Product Reference</div>
+      <div class="cover-title">High-Speed Interconnect<br><em>Product Specifications</em></div>
+      <div class="cover-sub">
+        400G&thinsp;/&thinsp;800G&thinsp;/&thinsp;1.6T optical modules, high-speed copper cables,
+        active optical cables, and fiber patch cords — ISO 9001:2015 certified, IEEE and CMIS compliant,
+        engineered for AI clusters, hyperscale data centers, and HPC environments worldwide.
+      </div>
+
+      <div class="cover-stats">
+        <div class="cover-stat"><span class="cover-stat-val">1.6T</span><span class="cover-stat-lbl">Peak port bandwidth</span></div>
+        <div class="cover-stat"><span class="cover-stat-val">40+</span><span class="cover-stat-lbl">SKUs across 6 categories</span></div>
+        <div class="cover-stat"><span class="cover-stat-val">ISO 9001</span><span class="cover-stat-lbl">Quality certified</span></div>
+        <div class="cover-stat"><span class="cover-stat-val">2-Year</span><span class="cover-stat-lbl">Product warranty</span></div>
+      </div>
+
+      <div class="cover-toc">
+        <div class="cover-toc-title">Contents</div>
+        <div class="cover-toc-grid">
+          <div class="cover-toc-item"><span>1.6T Optical Module</span><span class="cover-toc-pg">pg 2</span></div>
+          <div class="cover-toc-item"><span>800G Optical Modules</span><span class="cover-toc-pg">pg 3</span></div>
+          <div class="cover-toc-item"><span>400G Optical — Single &amp; Multimode</span><span class="cover-toc-pg">pg 4</span></div>
+          <div class="cover-toc-item"><span>25G – 200G Legacy Optical</span><span class="cover-toc-pg">pg 5</span></div>
+          <div class="cover-toc-item"><span>High-Speed Copper Cables</span><span class="cover-toc-pg">pg 6</span></div>
+          <div class="cover-toc-item"><span>Fiber Patch Cords &amp; Quality</span><span class="cover-toc-pg">pg 7</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer-row">
+      <div class="cover-footer-text">
+        Distributed by Innovaas Solutions &nbsp;·&nbsp; sales@innovaas.co &nbsp;·&nbsp; innovaas.co/solutions/data-center-connectivity
+      </div>
+      <div class="cover-conf">For Recipient Use Only</div>
+    </div>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">1 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════ PAGE 2 — 1.6T OPTICAL ════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">Optical Modules — 1.6T Series</span>
+    </div>
+
+    <div class="eyebrow">Optical Interconnect · Next-Generation</div>
+    <div class="sec-title">1.6T Optical Module Series</div>
+
+    <!-- Image + description row -->
+    <div class="product-row product-row-img-right mb3">
+      <div>
+        <div class="product-name">1.6T OSFP DR8 IHS Transceiver</div>
+        <div class="product-desc">
+          The flagship next-generation interconnect module. Adopts an OSFP DR8 IHS package with
+          1600&thinsp;Gbps single-port bandwidth using PAM4 modulation. Engineered for high-density
+          data centers and AI training clusters. Hot-pluggable with DDMI digital diagnostics.
+          RoHS 2.0 compliant. Fully compatible with mainstream switching equipment.
+        </div>
+        <div class="app-row">
+          <span class="app-tag">AI Training &amp; Inference</span>
+          <span class="app-tag">Supercomputing / HPC</span>
+          <span class="app-tag">High-Density Data Centers</span>
+          <span class="app-tag">1600G Ethernet</span>
+        </div>
+      </div>
+      <div class="img-panel">
+        <img src="/blackseatech/optical-1600g.png" alt="1.6T OSFP DR8 IHS Transceiver">
+      </div>
+    </div>
+
+    <!-- Spec table -->
+    <div class="eyebrow">Technical Parameters</div>
+    <table class="spec mb4">
+      <thead><tr><th style="width:38mm">Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Transmission Rate</td><td class="val">1600 Gbps &nbsp;·&nbsp; 8 × 106.25 GBd PAM4</td></tr>
+        <tr><td class="lbl">Form Factor</td><td class="val">OSFP DR8 IHS &nbsp;·&nbsp; Hot-pluggable</td></tr>
+        <tr><td class="lbl">Power Consumption</td><td class="val">≤ 25 W</td></tr>
+        <tr><td class="lbl">Operating Temperature</td><td class="val">0 °C – 70 °C</td></tr>
+        <tr><td class="lbl">Transmission Distance</td><td class="val">500 m on G.652 single-mode fiber</td></tr>
+        <tr><td class="lbl">Core Functions</td><td class="val">DDMI digital diagnosis &nbsp;·&nbsp; Hot-pluggable</td></tr>
+        <tr><td class="lbl">Compliance</td><td class="val">ISO 9001:2015 &nbsp;·&nbsp; IEEE &nbsp;·&nbsp; CMIS &nbsp;·&nbsp; RoHS 2.0</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Manufactured by Black Sea Technology Pte. Ltd. Specifications subject to change. Contact sales@innovaas.co for current datasheet.</td></tr></tfoot>
+    </table>
+
+    <div class="eyebrow mt4">Key Advantages</div>
+    <table class="spec">
+      <thead><tr><th style="width:38mm">Advantage</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">High Bandwidth</td><td>1600 Gbps rate eliminates network bottlenecks in the most demanding AI training workloads</td></tr>
+        <tr><td class="lbl">Low Power</td><td>≤ 25 W stable operation in high-temperature, high-density data center environments</td></tr>
+        <tr><td class="lbl">Compatibility</td><td>Compliant with international standards; compatible with mainstream equipment; plug-and-play deployment</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">2 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════ PAGE 3 — 800G OPTICAL ═════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">Optical Modules — 800G Series</span>
+    </div>
+
+    <div class="eyebrow">Optical Interconnect · High-Density</div>
+    <div class="sec-title">800G Optical Module Series</div>
+
+    <div class="product-row product-row-img-right mb3">
+      <div>
+        <div class="product-name">800G OSFP DR4 &amp; DR8 Transceivers</div>
+        <div class="product-desc">
+          Dual OSFP form-factor 800G modules for AI computing centers, GPU cluster interconnect,
+          and large cloud data centers. Both models adopt PAM4 modulation with hot-plug support
+          and DDMI diagnostics, targeting short-to-medium reach across spine-leaf and
+          rack-to-rack fabric runs.
+        </div>
+        <div class="app-row">
+          <span class="app-tag">AI Computing Centers</span>
+          <span class="app-tag">Supercomputing / HPC</span>
+          <span class="app-tag">Cloud Data Centers</span>
+          <span class="app-tag">GPU Cluster Interconnect</span>
+        </div>
+      </div>
+      <div class="img-panel">
+        <img src="/blackseatech/optical-800g-dr4.png" alt="800G OSFP DR4 Transceiver">
+      </div>
+    </div>
+
+    <div class="eyebrow">Technical Parameters — DR4 vs DR8</div>
+    <table class="spec mb4">
+      <thead>
+        <tr><th style="width:36mm">Parameter</th><th class="c">OSFP DR4</th><th class="c">OSFP DR8</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="lbl">Transmission Rate</td><td class="vc">850 Gbps</td><td class="vc">850 Gbps</td></tr>
+        <tr><td class="lbl">Modulation</td><td class="vc">4 × 106.25 GBd PAM4</td><td class="vc">8 × 53.125 GBd PAM4</td></tr>
+        <tr><td class="lbl">Power Consumption</td><td class="vc">≤ 18 W</td><td class="vc">≤ 16 W</td></tr>
+        <tr><td class="lbl">Transmission Distance</td><td class="vc">500 m on G.652 SMF</td><td class="vc">500 m on G.652 SMF</td></tr>
+        <tr><td class="lbl">Core Functions</td><td class="vc">DDMI &nbsp;·&nbsp; Hot-pluggable</td><td class="vc">DDMI &nbsp;·&nbsp; Hot-pluggable</td></tr>
+        <tr><td class="lbl">Compliance</td><td class="vc">RoHS 2.0 · IEEE · CMIS</td><td class="vc">RoHS 2.0 · IEEE · CMIS</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="3">Manufactured by Black Sea Technology Pte. Ltd. Both models are single-mode, single-fiber-pair designs. Contact sales@innovaas.co for compatibility matrix.</td></tr></tfoot>
+    </table>
+
+    <div class="hr"></div>
+
+    <div class="eyebrow">800G Additional SKUs</div>
+    <div class="sec-title-sm" style="margin-top:2mm">Multimode SR &amp; Active Optical</div>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-t">Multimode SR</div>
+        <ul><li>800G OSFP SR8 Transceiver</li></ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">Active Optical Cable (AOC)</div>
+        <ul><li>800G OSFP AOC &nbsp;(1 – 50 m)</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">3 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════ PAGE 4 — 400G OPTICAL ═════════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">Optical Modules — 400G Series</span>
+    </div>
+
+    <div class="eyebrow">Optical Interconnect · 400G</div>
+    <div class="sec-title">400G Optical Module Series</div>
+
+    <div class="product-row product-row-img-right mb3">
+      <div>
+        <div class="product-desc">
+          Full 400G coverage across QSFP112, QSFP-DD, OSFP-RHS, and OSFP form factors.
+          Single-mode DR4 for fabric runs; multimode SR4/SR8 for short-reach rack connections;
+          AOC assemblies for flexible cabling; breakout variants for fan-out to 100G or 200G ports.
+        </div>
+        <div class="app-row">
+          <span class="app-tag">Spine-Leaf Architecture</span>
+          <span class="app-tag">AI Fabric Interconnect</span>
+          <span class="app-tag">DCI</span>
+          <span class="app-tag">Top-of-Rack Switching</span>
+        </div>
+      </div>
+      <div class="img-panel img-panel-sm">
+        <img src="/blackseatech/optical-400g.png" alt="400G Optical Transceiver">
+      </div>
+    </div>
+
+    <div class="sec-title-sm">Single-Mode Transceivers</div>
+    <div class="sku-grid sku-3 mb3">
+      <div class="sku-item">400G QSFP112 DR4</div>
+      <div class="sku-item">400G OSFP-RHS DR4</div>
+      <div class="sku-item">400G QSFP-DD DR4</div>
+    </div>
+
+    <div class="sec-title-sm">Multimode SR Transceivers</div>
+    <div class="sku-grid sku-3 mb3">
+      <div class="sku-item">400G QSFP-DD SR8</div>
+      <div class="sku-item">400G QSFP112 SR4</div>
+      <div class="sku-item">400G OSFP SR4</div>
+    </div>
+
+    <div class="sec-title-sm">Active Optical Cables (AOC)</div>
+    <div class="sku-grid sku-3 mb3">
+      <div class="sku-item">400G QSFP-DD AOC</div>
+      <div class="sku-item">400G QSFP112 AOC</div>
+      <div class="sku-item">400G OSFP AOC</div>
+    </div>
+
+    <div class="sec-title-sm">Breakout Assemblies</div>
+    <div class="sku-grid sku-2 mb4">
+      <div class="sku-item">400G QSFP-DD &rarr; 4 × 100G QSFP28</div>
+      <div class="sku-item">400G QSFP-DD &rarr; 2 × 200G QSFP56</div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="eyebrow">Single-Mode Reference — All Speeds</div>
+    <table class="spec" style="margin-top:2mm">
+      <thead><tr><th style="width:24mm">Speed</th><th>SKU</th><th style="width:24mm">Form Factor</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">1.6T</td><td class="val">1.6T DR8 OSFP Transceiver</td><td class="val">OSFP DR8 IHS</td></tr>
+        <tr><td class="lbl">800G DR4</td><td class="val">800G OSFP DR4 Transceiver</td><td class="val">OSFP</td></tr>
+        <tr><td class="lbl">800G DR8</td><td class="val">800G OSFP DR8 Transceiver</td><td class="val">OSFP</td></tr>
+        <tr><td class="lbl">400G</td><td class="val">400G QSFP112 DR4 &nbsp;·&nbsp; 400G OSFP-RHS DR4 &nbsp;·&nbsp; 400G QSFP-DD DR4</td><td class="val">Multi</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">4 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════ PAGE 5 — LEGACY OPTICAL ══════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">Optical Modules — 25G to 200G Legacy Series</span>
+    </div>
+
+    <div class="eyebrow">Optical Interconnect · Legacy Multimode</div>
+    <div class="sec-title">25G – 200G Optical Module Series</div>
+
+    <div class="product-row product-row-img-right mb3">
+      <div>
+        <div class="product-desc">
+          Field-proven SFP28, QSFP+, QSFP28, and QSFP56 transceivers and AOC assemblies from
+          25G through 200G. SR variants for short-reach data center connections; AOC for flexible
+          rack-to-rack cabling; breakout assemblies for fan-out to legacy host interfaces.
+          Full compatibility with international standards.
+        </div>
+        <div class="app-row">
+          <span class="app-tag">Legacy Infrastructure Upgrade</span>
+          <span class="app-tag">ToR Fan-Out</span>
+          <span class="app-tag">Mixed-Speed Fabric</span>
+          <span class="app-tag">Campus &amp; Edge DCs</span>
+        </div>
+      </div>
+      <div class="img-panel img-panel-sm">
+        <img src="/blackseatech/optical-800g-dr8.png" alt="Multimode Optical Transceiver">
+      </div>
+    </div>
+
+    <div class="sec-title-sm">SR Transceivers</div>
+    <div class="sku-grid sku-4 mb3">
+      <div class="sku-item">25G SFP28 SR</div>
+      <div class="sku-item">40G QSFP+ SR</div>
+      <div class="sku-item">100G QSFP28 SR4</div>
+      <div class="sku-item">200G QSFP56 SR4</div>
+      <div class="sku-item">400G QSFP-DD SR8</div>
+      <div class="sku-item">400G QSFP112 SR4</div>
+      <div class="sku-item">400G OSFP SR4</div>
+      <div class="sku-item">800G OSFP SR8</div>
+    </div>
+
+    <div class="sec-title-sm">Active Optical Cables (AOC)</div>
+    <div class="sku-grid sku-4 mb3">
+      <div class="sku-item">25G SFP28 AOC</div>
+      <div class="sku-item">40G QSFP+ AOC</div>
+      <div class="sku-item">100G QSFP28 AOC</div>
+      <div class="sku-item">200G QSFP56 AOC</div>
+      <div class="sku-item">400G QSFP-DD AOC</div>
+      <div class="sku-item">400G QSFP112 AOC</div>
+      <div class="sku-item">400G OSFP AOC</div>
+      <div class="sku-item">800G OSFP AOC</div>
+    </div>
+
+    <div class="sec-title-sm">Breakout Assemblies</div>
+    <div class="sku-grid sku-2 mb4">
+      <div class="sku-item">40G QSFP+ &rarr; 4 × 10G SFP+</div>
+      <div class="sku-item">100G QSFP28 &rarr; 4 × 25G SFP28</div>
+      <div class="sku-item">200G QSFP56 &rarr; 2 × 100G QSFP28</div>
+      <div class="sku-item">200G QSFP56 &rarr; 8 × 25G SFP28</div>
+      <div class="sku-item">400G QSFP-DD &rarr; 4 × 100G QSFP28</div>
+      <div class="sku-item">400G QSFP-DD &rarr; 2 × 200G QSFP56</div>
+    </div>
+
+    <div class="info-box">
+      <strong>Compatibility:</strong> All modules comply with international industry standards and ship with complete test reports.
+      Contact <strong>sales@innovaas.co</strong> for compatibility matrices, qualification reports, or custom BoM generation.
+    </div>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">5 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════ PAGE 6 — COPPER CABLES ═══════════════════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">High-Speed Copper Cable Series</span>
+    </div>
+
+    <div class="eyebrow">Electrical Interconnect</div>
+    <div class="sec-title">High-Speed Copper — DAC / ACC / AEC</div>
+
+    <!-- Three product images -->
+    <div class="copper-strip">
+      <div class="copper-img-card">
+        <img src="/blackseatech/copper-dac.png" alt="Passive DAC Cable">
+        <span>Passive DAC</span>
+      </div>
+      <div class="copper-img-card">
+        <img src="/blackseatech/copper-acc.png" alt="Active ACC Cable">
+        <span>Active ACC</span>
+      </div>
+      <div class="copper-img-card">
+        <img src="/blackseatech/copper-aec.png" alt="Active AEC Cable">
+        <span>Active AEC</span>
+      </div>
+    </div>
+
+    <div class="eyebrow">Technical Parameters</div>
+    <table class="spec mb4">
+      <thead><tr><th style="width:28mm">Cable Type</th><th>Max Rate</th><th>Reach</th><th>Power / End</th><th>Signal Conditioning</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Passive DAC</td><td class="val">800 Gbps</td><td class="val">0.5 – 1.5 m</td><td class="val">0.005 W</td><td class="val">None</td></tr>
+        <tr><td class="lbl">Active ACC</td><td class="val">1.6 T</td><td class="val">0.5 – 2.5 m</td><td class="val">1.2 W</td><td class="val">Linear re-driver</td></tr>
+        <tr><td class="lbl">Active AEC</td><td class="val">1.6 T</td><td class="val">1 – 5 m</td><td class="val">12 W</td><td class="val">Full retimer / CDR</td></tr>
+        <tr><td class="lbl">Active AOC</td><td class="val">800 Gbps</td><td class="val">1 – 50 m</td><td class="val">12 W</td><td class="val">Optical (multimode)</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="5">All copper assemblies use OSFP form factor. Contact sales@innovaas.co for reach-vs-power selection guidance.</td></tr></tfoot>
+    </table>
+
+    <div class="eyebrow mt4">Complete SKU Catalog</div>
+    <div class="three-col" style="margin-top:2mm">
+      <div class="col-box">
+        <div class="col-box-t">DAC — Passive Direct Attach</div>
+        <ul>
+          <li>100G DAC</li><li>100G Breakout DAC</li><li>200G DAC</li>
+          <li>200G Breakout DAC</li><li>400G DAC</li><li>400G Breakout DAC</li><li>800G DAC</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">ACC — Active Copper Cable</div>
+        <ul><li>800G ACC</li><li>800G Breakout ACC</li><li>1.6T ACC</li><li>1.6T Breakout ACC</li></ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-t">AEC — Active Electrical Cable</div>
+        <ul><li>400G AEC</li><li>800G AEC</li><li>800G Breakout AEC</li><li>1.6T AEC</li><li>1.6T Breakout AEC</li></ul>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top:2mm">
+      <strong>Selection guide:</strong> DAC for lowest cost/power at ≤ 1.5 m &nbsp;·&nbsp; ACC for ≤ 2.5 m with minimal overhead &nbsp;·&nbsp; AEC for ≤ 5 m where reach matters &nbsp;·&nbsp; AOC for 1 – 50 m runs
+    </div>
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">6 / 7</span>
+  </div>
+</div>
+
+
+<!-- ════════════════ PAGE 7 — FIBER · QUALITY · SERVICE · CONTACT ═════ -->
+<div class="page">
+  <div class="page-accent"></div>
+  <div class="page-content">
+    <div class="pg-hdr">
+      <span class="pg-hdr-brand">Innovaas Solutions</span>
+      <span class="pg-hdr-section">Fiber Patch Cords · Quality · Service</span>
+    </div>
+
+    <div class="eyebrow">Optical Interconnect</div>
+    <div class="sec-title">Fiber Patch Cords &amp; Custom Assemblies</div>
+
+    <div class="product-row product-row-img-right mb3">
+      <div>
+        <div class="product-desc">
+          MPO ↔ MPO and MPO ↔ LC patch cords in single-mode (OS2) and multimode (OM3/OM4) variants.
+          All assemblies are fully customizable to wavelength, length, and connector specification.
+        </div>
+        <div class="two-col" style="margin-bottom:0">
+          <div class="col-box">
+            <div class="col-box-t">Single-Mode (OS2)</div>
+            <ul><li>Single-Mode MPO ↔ MPO</li><li>Single-Mode MPO ↔ LC</li></ul>
+          </div>
+          <div class="col-box">
+            <div class="col-box-t">Multimode (OM3/OM4)</div>
+            <ul><li>Multimode MPO ↔ MPO</li><li>Multimode MPO ↔ LC</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="img-panel img-panel-sm">
+        <img src="/blackseatech/fiber-aoc.png" alt="Fiber Patch Cord Assembly">
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="eyebrow">Quality &amp; Certification</div>
+    <div class="cert-grid" style="margin-top:2mm">
+      <div class="cert-badge"><span class="cert-name">ISO 9001:2015</span><span class="cert-desc">Full lifecycle quality management system</span></div>
+      <div class="cert-badge"><span class="cert-name">IEEE</span><span class="cert-desc">International electrical &amp; electronics standards</span></div>
+      <div class="cert-badge"><span class="cert-name">CMIS</span><span class="cert-desc">Common Management Interface Specification</span></div>
+      <div class="cert-badge"><span class="cert-name">RoHS 2.0</span><span class="cert-desc">EU environmental compliance</span></div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="eyebrow">Service &amp; Support</div>
+    <div class="svc-grid" style="margin-top:2mm">
+      <div class="svc-item">
+        <div class="svc-title">2-Year Product Warranty</div>
+        <div class="svc-desc">Full manufacturer warranty on all products. Non-human damage covered — free repair or advance replacement.</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-title">7 × 24 Technical Support</div>
+        <div class="svc-desc">Around-the-clock professional support for consultations and problem troubleshooting.</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-title">Solution Architecture Consulting</div>
+        <div class="svc-desc">Fabric topology design, SKU selection, BoM generation, and compatibility validation — at no extra cost.</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-title">After-Sales Tracking</div>
+        <div class="svc-desc">Regular deployment tracking with continuous product and service optimisation over the lifecycle.</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <!-- Contact — Innovaas only -->
+    <div class="contact-block">
+      <div class="contact-title">Contact Innovaas Solutions</div>
+      <div class="contact-inner">
+        <div>
+          <div class="contact-row"><strong>Sales Enquiries</strong><span>sales@innovaas.co</span></div>
+          <div class="contact-row"><strong>Website</strong><span>innovaas.co</span></div>
+        </div>
+        <div>
+          <div class="contact-row"><strong>Data Center Connectivity</strong><span>innovaas.co/solutions/data-center-connectivity</span></div>
+        </div>
+        <div>
+          <div class="contact-row"><strong>Solution Architecture</strong><span>Included with every enquiry</span></div>
+          <div class="contact-row"><strong>Response Time</strong><span>Within one business day</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pg-ftr">
+    <span class="pg-ftr-l">High-Speed Interconnect Product Specifications &nbsp;·&nbsp; Innovaas Solutions</span>
+    <span class="pg-ftr-r">7 / 7</span>
+  </div>
+</div>
+
+</body>
+</html>
