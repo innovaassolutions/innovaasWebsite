@@ -54,7 +54,9 @@ type SpecSheetFormState = {
 
 const NOVACRM_URL =
   process.env.NEXT_PUBLIC_NOVACRM_API_URL || "https://novacrm.innovaas.co";
-const COLLATERAL_URL = process.env.NEXT_PUBLIC_PDUMIND_SPEC_SHEET_URL || "";
+const COLLATERAL_URL =
+  process.env.NEXT_PUBLIC_PDUMIND_SPEC_SHEET_URL ||
+  "https://rklmklzzkzntdgcsuuma.supabase.co/storage/v1/object/public/ai-generated-images/f0cb83cb-f863-46d7-93cb-83935a91cd08/1779369774393_PDUMind-Product-Specifications.pdf";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Page
