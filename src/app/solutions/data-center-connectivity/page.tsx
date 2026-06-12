@@ -167,7 +167,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
             <Heading
               as="h1"
               color="white"
-              fontFamily="Montserrat, Arial, sans-serif"
+              fontFamily="var(--font-display)"
               fontWeight={900}
               fontSize={{ base: "2.6rem", md: "3.4rem", lg: "3.8rem" }}
               lineHeight={1.06}
@@ -206,7 +206,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 px={8}
                 py={4}
                 borderRadius="full"
-                fontFamily="Montserrat, Arial, sans-serif"
+                fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize="0.95rem"
                 textDecoration="none"
@@ -225,7 +225,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 px={8}
                 py={4}
                 borderRadius="full"
-                fontFamily="Montserrat, Arial, sans-serif"
+                fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize="0.95rem"
                 cursor="pointer"
@@ -307,7 +307,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                   </Text>
                   <Text
                     color="white"
-                    fontFamily="Montserrat, Arial, sans-serif"
+                    fontFamily="var(--font-display)"
                     fontWeight={800}
                     fontSize="0.95rem"
                   >
@@ -327,7 +327,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                   </Text>
                   <Text
                     color="#F25C05"
-                    fontFamily="Montserrat, Arial, sans-serif"
+                    fontFamily="var(--font-display)"
                     fontWeight={900}
                     fontSize="1.3rem"
                   >
@@ -420,7 +420,7 @@ function StatsStrip() {
               >
                 <Text
                   color="#F25C05"
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={900}
                   fontSize={{ base: "1.6rem", md: "2rem" }}
                   lineHeight={1}
@@ -507,7 +507,7 @@ function CategoryCards() {
           <Heading
             as="h2"
             color={headingColor}
-            fontFamily="Montserrat, Arial, sans-serif"
+            fontFamily="var(--font-display)"
             fontWeight={900}
             fontSize={{ base: "2rem", md: "2.75rem" }}
             letterSpacing="-1.5px"
@@ -577,7 +577,7 @@ function CategoryCards() {
                 <Heading
                   as="h3"
                   color={headingColor}
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={800}
                   fontSize="1.2rem"
                   mb={3}
@@ -770,7 +770,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 <Tab
                   key={t.label}
                   color={useColorModeValue("#6b7280", "#9ca3af")}
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={700}
                   fontSize="0.82rem"
                   letterSpacing="0.2px"
@@ -836,7 +836,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                     <Heading
                       as="h3"
                       color={headingColor}
-                      fontFamily="Montserrat, Arial, sans-serif"
+                      fontFamily="var(--font-display)"
                       fontWeight={800}
                       fontSize={{ base: "1.4rem", md: "1.7rem" }}
                       letterSpacing="-0.5px"
@@ -1040,7 +1040,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
               px={5}
               py={2.5}
               borderRadius="full"
-              fontFamily="Montserrat, Arial, sans-serif"
+              fontFamily="var(--font-display)"
               fontWeight={700}
               fontSize="0.8rem"
               cursor="pointer"
@@ -1126,7 +1126,7 @@ function SolutionsSection() {
           <Heading
             as="h2"
             color="white"
-            fontFamily="Montserrat, Arial, sans-serif"
+            fontFamily="var(--font-display)"
             fontWeight={900}
             fontSize={{ base: "2rem", md: "2.75rem" }}
             letterSpacing="-1.5px"
@@ -1163,7 +1163,7 @@ function SolutionsSection() {
             >
               <Text
                 color="rgba(255,255,255,0.15)"
-                fontFamily="Montserrat, Arial, sans-serif"
+                fontFamily="var(--font-display)"
                 fontWeight={900}
                 fontSize="2rem"
                 lineHeight={1}
@@ -1175,7 +1175,7 @@ function SolutionsSection() {
                 <Heading
                   as="h3"
                   color="white"
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={700}
                   fontSize={{ base: "1.1rem", md: "1.25rem" }}
                   mb={3}
@@ -1370,7 +1370,7 @@ function WhyInnovaasSection() {
             <Heading
               as="h2"
               color="#111827"
-              fontFamily="Montserrat, Arial, sans-serif"
+              fontFamily="var(--font-display)"
               fontWeight={900}
               fontSize={{ base: "2rem", md: "2.6rem" }}
               letterSpacing="-1.5px"
@@ -1392,7 +1392,7 @@ function WhyInnovaasSection() {
               px={7}
               py={3.5}
               borderRadius="full"
-              fontFamily="Montserrat, Arial, sans-serif"
+              fontFamily="var(--font-display)"
               fontWeight={700}
               fontSize="0.9rem"
               textDecoration="none"
@@ -1420,7 +1420,7 @@ function WhyInnovaasSection() {
               >
                 <Text
                   color="rgba(0,0,0,0.12)"
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={900}
                   fontSize="1.4rem"
                   lineHeight={1.2}
@@ -1432,7 +1432,7 @@ function WhyInnovaasSection() {
                   <Heading
                     as="h3"
                     color="#111827"
-                    fontFamily="Montserrat, Arial, sans-serif"
+                    fontFamily="var(--font-display)"
                     fontWeight={800}
                     fontSize={{ base: "1.05rem", md: "1.15rem" }}
                     mb={2.5}
@@ -1532,7 +1532,7 @@ function LeadFormSection() {
             <Heading
               as="h2"
               color="white"
-              fontFamily="Montserrat, Arial, sans-serif"
+              fontFamily="var(--font-display)"
               fontWeight={900}
               fontSize={{ base: "2rem", md: "2.75rem" }}
               letterSpacing="-1.5px"
@@ -1617,7 +1617,7 @@ function LeadFormSection() {
                 <Heading
                   as="h3"
                   color="white"
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={800}
                   fontSize="1.25rem"
                   mb={3}
@@ -1715,7 +1715,7 @@ function LeadFormSection() {
                   bg="#F25C05"
                   color="white"
                   borderRadius="full"
-                  fontFamily="Montserrat, Arial, sans-serif"
+                  fontFamily="var(--font-display)"
                   fontWeight={700}
                   fontSize="0.95rem"
                   _hover={{ bg: "#d94e04", transform: "translateY(-1px)" }}
@@ -1820,7 +1820,7 @@ function SpecSheetModal({
       >
         <ModalHeader
           color="white"
-          fontFamily="Montserrat, Arial, sans-serif"
+          fontFamily="var(--font-display)"
           fontWeight={800}
           fontSize="1.15rem"
           pt={7}
@@ -1851,7 +1851,7 @@ function SpecSheetModal({
               <Heading
                 as="h3"
                 color="white"
-                fontFamily="Montserrat, Arial, sans-serif"
+                fontFamily="var(--font-display)"
                 fontWeight={800}
                 fontSize="1.1rem"
                 mb={3}
@@ -1938,7 +1938,7 @@ function SpecSheetModal({
                 bg="#F25C05"
                 color="white"
                 borderRadius="full"
-                fontFamily="Montserrat, Arial, sans-serif"
+                fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize="0.9rem"
                 _hover={{ bg: "#d94e04", transform: "translateY(-1px)" }}
