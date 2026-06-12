@@ -59,10 +59,10 @@ export default function ProofCarousel() {
       onTouchStart={() => (pausedRef.current = true)}
     >
       {/* Header: live label + controls */}
-      <div className="flex items-center justify-between px-2 pb-2 pt-1">
-        <p className="m-0 font-mono text-[11px] tracking-[0.18em] text-ink-400">
-          <span className="text-signal-500">●</span> {slides[active]?.label} —{" "}
-          {slides[active]?.note}
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-2 pb-2 pt-1">
+        <p className="m-0 min-w-0 truncate font-mono text-[11px] tracking-[0.18em] text-ink-400">
+          <span className="text-signal-500">●</span> {slides[active]?.label}
+          <span className="hidden sm:inline"> — {slides[active]?.note}</span>
         </p>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5">
@@ -103,8 +103,15 @@ export default function ProofCarousel() {
         style={{ scrollbarWidth: "none" }}
       >
         {slides.map(({ id, C }) => (
-          <div key={id} className="w-full shrink-0 snap-center">
-            <C />
+          /* Fixed 4:3 stage — mockup SVGs have differing intrinsic ratios
+             (800×600 vs 800×560), so center them in a constant-height frame */
+          <div
+            key={id}
+            className="flex aspect-[4/3] w-full shrink-0 items-center justify-center snap-center"
+          >
+            <div className="w-full">
+              <C />
+            </div>
           </div>
         ))}
       </div>
