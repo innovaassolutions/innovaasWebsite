@@ -3,7 +3,6 @@
 import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Button, SimpleGrid } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-import Hero from "@/components/Hero";
 import FlowForgeDashboard from "@/components/mockups/FlowForgeDashboard";
 import FlowForgeInterview from "@/components/mockups/FlowForgeInterview";
 import FlowForgeReport from "@/components/mockups/FlowForgeReport";
@@ -29,13 +28,34 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Hero
-        image="/hero-services.webp"
-        heading="Our Products"
-        subheading="These aren't side projects. They're production software serving real clients. And they're proof of what we can build for you."
-        buttonText="Let's Talk"
-        buttonLink="/contact"
-      />
+      <Box as="section" borderBottom="1px solid rgba(255,255,255,0.08)" bg="#05080e" px={{ base: 6, md: 8 }} py={{ base: 16, md: 24 }}>
+        <Box maxW="1280px" mx="auto">
+          <Text fontFamily="var(--font-mono)" fontSize="xs" letterSpacing="0.28em" color="#f25c05" mb={8}>
+            04 / INTELLIGENT SOFTWARE
+          </Text>
+          <Heading
+            as="h1"
+            m={0}
+            maxW="900px"
+            textTransform="uppercase"
+            lineHeight={0.95}
+            letterSpacing="-0.02em"
+            color="#f4f6fa"
+            fontFamily="var(--font-anton)"
+            fontWeight={400}
+            fontSize={{ base: "2.6rem", md: "4.6rem" }}
+          >
+            Proof you can <Box as="span" color="#f25c05">log into.</Box>
+          </Heading>
+          <Text mt={8} maxW="640px" fontSize="lg" color="#8b99b0" lineHeight={1.7}>
+            We don&apos;t pitch capability — we demonstrate it. These are the five
+            AI platforms our team designed, built, and runs: the assessment engine
+            behind our consulting practice, the CRM we operate our own business on,
+            and the knowledge, prediction, and voice systems available for early
+            deployments. Every one is an argument for what we can build for you.
+          </Text>
+        </Box>
+      </Box>
       {/* Product Directory */}
       <Box bg={dirBg} py={{ base: 8, md: 10 }} px={{ base: 4, md: 8 }}>
         <Box maxW="1000px" mx="auto">
@@ -257,7 +277,7 @@ export default function ProductsPage() {
           </Flex>
 
           <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
-            NovaCRM is currently in private beta. Interested in early access? Get in touch.
+            NovaCRM is the system we run our own sales and delivery on, every day. Want one built around your business? That's exactly the kind of project we take on.
           </Text>
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>
@@ -334,7 +354,7 @@ export default function ProductsPage() {
           </Flex>
 
           <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
-            NovaKMS is currently in private beta. Interested in early access? Get in touch.
+            NovaKMS is in early deployment. We're onboarding a limited number of organizations — get in touch to see it on your own documents.
           </Text>
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>
@@ -411,7 +431,7 @@ export default function ProductsPage() {
           </Flex>
 
           <Text fontSize="sm" color={bodyTextColor} mb={6} fontStyle="italic">
-            NovaPredict is currently in private beta. Interested in early access? Get in touch.
+            NovaPredict is in early deployment. If unplanned downtime is costing you money, we'll scope a pilot on your machines.
           </Text>
           <List spacing={3} color={bodyTextColor} pl={2} mb={6}>
             <ListItem>

@@ -1,263 +1,194 @@
-"use client";
+import type { Metadata } from "next";
+import Link from "next/link";
+import PageHero from "@/components/system/PageHero";
 
-import { Box, Flex, Heading, Text, List, ListItem, ListIcon, useColorModeValue, Image } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons';
-import Hero from "@/components/Hero";
+export const metadata: Metadata = {
+  title: "Engineering Services",
+  description:
+    "Consulting, custom AI development, agentic systems, and implementation — delivered as one continuous engagement by one senior team. From assessment to production.",
+  alternates: { canonical: "/services" },
+};
+
+const services = [
+  {
+    id: "consulting",
+    n: "01",
+    title: "Consulting & Assessment",
+    lead: "Know exactly where you stand before you spend.",
+    body: "Every engagement starts with evidence, not opinion. Our FlowForge platform interviews your stakeholders in parallel — shop floor to C-suite — and we synthesize the findings into a readiness picture across technology, process, people, data, and strategy. You get a prioritized roadmap with realistic timelines and costs, built by the same engineers who would execute it.",
+    points: [
+      "AI-facilitated stakeholder interviews, run in days not months",
+      "Multi-dimensional readiness scoring with gap analysis",
+      "Prioritized, costed roadmap — implementation-ready, not shelfware",
+    ],
+  },
+  {
+    id: "development",
+    n: "02",
+    title: "Custom AI Development",
+    lead: "Software built around how you actually work.",
+    body: "When off-the-shelf doesn't fit, we design and build it — internal platforms, client-facing products, data pipelines, ML models. We've shipped five production platforms of our own, so the patterns, infrastructure, and judgment are already battle-tested before your project starts. You own the code outright.",
+    points: [
+      "Full-stack product engineering with AI integrated where it earns its place",
+      "Machine learning and predictive models trained on your data",
+      "Complete code ownership — no lock-in, no licensing surprises",
+    ],
+  },
+  {
+    id: "web",
+    n: "03",
+    title: "Web Design & Development",
+    lead: "Your site is doing sales calls while you sleep. Make it senior.",
+    body: "We design and build web platforms that carry serious business — corporate sites, e-commerce, and client portals with the narrative, motion, and performance to match. Recent work spans bilingual luxury commerce in Singapore to data-centre service platforms in Canada. This site is our own work, too.",
+    points: [
+      "Brand narrative, design systems, and motion — not template skins",
+      "Next.js / TypeScript builds: fast, accessible, SEO-sound",
+      "E-commerce, multilingual, CMS, and lead-capture integrations",
+    ],
+    href: "/work",
+    cta: "See selected work",
+  },
+  {
+    id: "agentic",
+    n: "04",
+    title: "Agentic AI Systems",
+    lead: "AI that does the work, not just answers questions.",
+    body: "The next layer of automation isn't chat — it's agents: AI systems that plan, use tools, take actions, and complete multi-step business processes with humans setting the guardrails. We architect and build agentic systems that handle real workflows — triage, research, reporting, coordination — measured by outcomes, not demos.",
+    points: [
+      "Process-mapped agent design: where autonomy pays, where humans stay",
+      "Tool-using agents integrated with your existing systems and data",
+      "Observability, guardrails, and human-in-the-loop controls by default",
+    ],
+    href: "/services/agentic-ai",
+    cta: "Deep dive: how we build agentic systems",
+  },
+  {
+    id: "implementation",
+    n: "05",
+    title: "Implementation & Integration",
+    lead: "The last mile is where value lives — or dies.",
+    body: "We deploy what we recommend and what we distribute: systems integration, unified data infrastructure, cloud migration, and the platforms in our distribution portfolio. One team carries the engagement from first interview to production support, so context never gets lost in a handoff.",
+    points: [
+      "Systems integration and unified namespace data architecture",
+      "Deployment of distributed platforms — Tulip, UMH, Litmus — done right",
+      "Cloud migration, data governance, and post-go-live support",
+    ],
+  },
+];
 
 export default function ServicesPage() {
-  const headingColor = useColorModeValue('#181f2a', '#fff');
-  const bodyTextColor = useColorModeValue('#222', '#d1d5db');
-  const whyTextColor = useColorModeValue('#222', '#fff');
-
   return (
-    <>
-      <Hero
-        image="/hero-services.webp"
-        heading="How We Help"
-        subheading="Every business is different, but the starting point is the same — understanding where you actually stand. From there, we work with you to close the gaps that matter most."
-        buttonText="Start a Conversation"
-        buttonLink="/contact"
-      />
-    <Box maxW="1000px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 4, md: 8 }}>
-
-      {/* Digital Readiness Assessment */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Digital Readiness Assessment
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            You probably already know things could be running better. But between day-to-day operations and conflicting opinions from every department, it&apos;s hard to know what to fix first. That&apos;s where we come in. We talk to people across your organization — from the shop floor to the C-suite — and give you an honest picture of where you stand.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI-Facilitated Interviews:</b> Your team talks to our platform on their own time. No scheduling nightmares, no six-week engagement just to gather input.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Multi-Dimensional Analysis:</b> Technology maturity, process efficiency, team readiness, data infrastructure, and AI opportunities — all in one assessment.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Professional Report &amp; Roadmap:</b> A prioritized plan with realistic timelines. Not a shelf document — a working blueprint for what to do next.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="DigitalTransformationService.webp" alt="Digital readiness assessment" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Assessment" />
-        </Box>
-      </Flex>
-
-      {/* Digital Transformation Strategy */}
-      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pl={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Digital Transformation Strategy
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            Once you know where you stand, the next step is a detailed plan to get where you need to be. We work with your leadership team to turn assessment findings into a transformation strategy — with clear priorities, realistic budgets, and a timeline your team can actually execute.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Assessment-Informed:</b> Built on real data from your organization, not generic frameworks.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Prioritized Roadmap:</b> Clear plan with realistic timelines. No 200-page strategy decks that sit on a shelf.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Implementation-Ready:</b> Every recommendation comes with a clear path to execution — because we&apos;re the ones who&apos;ll build it.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="MatrixScreen.webp" alt="Digital transformation strategy" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Strategy" />
-        </Box>
-      </Flex>
-
-      {/* Custom AI-Powered Software Development */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Custom AI-Powered Software Development
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            Most businesses don&apos;t need another SaaS subscription. They need software built around how they actually work. We design and build custom AI-powered tools — from internal dashboards to client-facing platforms — tailored to your specific workflows.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Bespoke Solutions:</b> Software built for your business, not adapted from someone else&apos;s template.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI Where It Counts:</b> We embed AI into the parts of your workflow where it creates real efficiency gains.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Full Ownership:</b> You own the code. No vendor lock-in, no surprise licensing fees down the road.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="advancedAnalytics.webp" alt="Custom AI software development" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Custom+AI" />
-        </Box>
-      </Flex>
-
-      {/* Advanced Analytics and AI */}
-      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pl={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Advanced Analytics and AI
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            You&apos;re sitting on data you&apos;re not using. We help you turn it into something actionable — whether that&apos;s predictive models, automated reporting, or AI agents that handle repetitive decisions so your team can focus on work that matters.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Actionable Insights:</b> Go from raw data to decisions that move the needle.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Machine Learning:</b> Deploy models that learn from your data and improve over time.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>AI Agents:</b> Automate repetitive analysis and decision-making with purpose-built AI.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="implementationServices.webp" alt="Analytics and AI" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Analytics+AI" />
-        </Box>
-      </Flex>
-
-      {/* Systems Integration & Data Infrastructure */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Systems Integration &amp; Data Infrastructure
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            Your CRM doesn&apos;t talk to your ERP. Your spreadsheets live in three different places. Sound familiar? We connect your systems into a single source of truth so your team stops wasting time hunting for information.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Data Integration:</b> Connect your existing tools and data sources into one unified system.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Clean Architecture:</b> Organized, well-documented data infrastructure that scales with your business.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>No Rip-and-Replace:</b> We work with your existing tools where possible. No unnecessary migrations.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="Data Cloud.webp" alt="Systems integration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Integration" />
-        </Box>
-      </Flex>
-
-      {/* Cloud Migration Services */}
-      <Flex direction={{ base: 'column', md: 'row-reverse' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pl={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Cloud Migration Services
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            Still running critical systems on aging hardware or local servers? We move your data and applications to the cloud — securely, with minimal disruption, and without the sticker shock that comes from over-provisioning.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Assessment &amp; Planning:</b> Evaluate what should move to the cloud and what shouldn&apos;t.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Seamless Migration:</b> Move data, applications, and workloads with minimal downtime.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Cost Optimization:</b> Right-size your cloud setup so you&apos;re not paying for resources you don&apos;t use.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="advancedAnalytics.webp" alt="Cloud migration" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Cloud+Migration" />
-        </Box>
-      </Flex>
-
-      {/* Data Governance & Security */}
-      <Flex direction={{ base: 'column', md: 'row' }} align="center" gap={8} mb={10}>
-        <Box flex={1} pr={{ md: 6 }}>
-          <Heading as="h2" size="lg" mb={4} color={headingColor} fontWeight={800} fontFamily="Montserrat, Arial, sans-serif">
-            Data Governance &amp; Security
-          </Heading>
-          <Text color={bodyTextColor} mb={2}>
-            AI is only as good as the data you feed it. We help you get your data house in order — clean, secure, compliant, and ready to power the tools your business needs.
-          </Text>
-          <List spacing={2} color={bodyTextColor} pl={2}>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Policy &amp; Process:</b> Clear data governance policies your team can actually follow.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Compliance:</b> Meet regulatory requirements without grinding your operations to a halt.</ListItem>
-            <ListItem><ListIcon as={CheckCircleIcon} color="#F25C05" /><b>Security:</b> Protect your data from threats with practical, proportionate security measures.</ListItem>
-          </List>
-        </Box>
-        <Box flex={1} minW={{ base: '100%', md: '300px' }}>
-          <Image src="dataGovernance.webp" alt="Data governance" borderRadius="lg" objectFit="cover" w="100%" h={{ base: '180px', md: '220px' }} fallbackSrc="https://via.placeholder.com/300x220?text=Governance" />
-        </Box>
-      </Flex>
-
-      {/* Why Choose Innovaas Solutions? */}
-      <Heading as="h3" size="2xl" mb={2} color={headingColor} fontWeight={900} fontFamily="Montserrat, Arial, sans-serif" textAlign="center">
-        Why Innovaas?
-      </Heading>
-      <Box
-        mt={16}
-        mb={8}
-        px={0}
-        py={0}
-        position="relative"
-        borderRadius="xl"
-        overflow="hidden"
-        bg="transparent"
+    <div className="bg-ink-950 text-ink-100">
+      <PageHero
+        index="02"
+        label="ENGINEERING SERVICES"
+        title="One team, from question"
+        accent="to production."
+        ctas={[{ href: "/contact", label: "Start a Conversation", solid: true }]}
       >
-        <Box
-          position="absolute"
-          inset={0}
-          zIndex={0}
-          bgImage="url('/images/why-choose-bg.jpg')"
-          bgSize="cover"
-          bgPosition="center"
-          opacity={0.25}
-          filter="brightness(0.7)"
-        />
-        <Box position="relative" zIndex={1} maxW="1100px" mx="auto" py={{ base: 8, md: 16 }} px={{ base: 2, md: 8 }}>
-          <Box
-            display="grid"
-            gridTemplateColumns={{ base: '1fr', md: '1fr 1px 1fr' }}
-            gridTemplateRows={{ base: 'repeat(4, 1fr)', md: 'repeat(2, 1fr)' }}
-            gap={{ base: 8, md: 0 }}
-            alignItems="center"
-            justifyItems="center"
-            minH="350px"
+        <p>
+          Consulting, development, and implementation are usually three firms
+          and two handoffs. At Innovaas they are one continuous engagement:
+          the senior engineers who assess your operation are the ones who
+          design, build, and ship the answer.
+        </p>
+      </PageHero>
+
+      {/* Service lines */}
+      <section>
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="space-y-8">
+            {services.map((s) => (
+              <article
+                key={s.id}
+                id={s.id}
+                className="scroll-mt-24 rounded-lg border border-line bg-ink-900 p-8 md:p-12"
+              >
+                <div className="grid gap-8 md:grid-cols-[200px_1fr]">
+                  <div>
+                    <p className="font-mono text-3xl text-signal-500">{s.n}</p>
+                    <p className="mt-2 font-mono text-[11px] leading-relaxed tracking-[0.2em] text-ink-400">
+                      SERVICE LINE
+                    </p>
+                  </div>
+                  <div>
+                    <h2
+                      className="text-2xl font-semibold text-ink-50 md:text-3xl"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {s.title}
+                    </h2>
+                    <p className="mt-2 font-medium text-signal-400">{s.lead}</p>
+                    <p className="mt-4 leading-relaxed text-ink-300">{s.body}</p>
+                    <ul className="mt-6 space-y-2 border-t border-line pt-6">
+                      {s.points.map((p) => (
+                        <li key={p} className="flex gap-3 text-sm text-ink-200">
+                          <span className="font-mono text-signal-500">—</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                    {s.href && (
+                      <Link
+                        href={s.href}
+                        className="mt-6 inline-block text-sm font-semibold !text-signal-400 hover:!text-signal-500"
+                      >
+                        {s.cta} →
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why one team */}
+      <section className="border-t border-line bg-ink-900">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <h2
+            className="text-2xl font-bold tracking-tight text-ink-50 md:text-3xl"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            {/* Left column */}
-            <Box w="100%" display="flex" flexDirection="column" alignItems="center" gap={12} gridRow={{ base: '1/3', md: '1/3' }}>
-              <Box textAlign="center" w="100%">
-                <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
-                  <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
-                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                  </Box>
-                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    We Build What We Recommend
-                  </Heading>
-                </Box>
-                <Text color={whyTextColor} fontSize="lg">
-                  FlowForge and NovaCRM are production software we built and maintain. When we say we can build custom AI tools, we have the receipts.
-                </Text>
-              </Box>
-              <Box textAlign="center" w="100%">
-                <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
-                  <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
-                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M16.53 11.06l-4.24-4.24c-.39-.39-1.02-.39-1.41 0l-4.24 4.24c-.39.39-.39 1.02 0 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l4.24-4.24c.39-.39.39-1.02 0-1.41z"/></svg>
-                  </Box>
-                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    Assessment to Deployment
-                  </Heading>
-                </Box>
-                <Text color={whyTextColor} fontSize="lg">
-                  One team from your first assessment through go-live. No handoffs between firms, no lost context, no finger-pointing.
-                </Text>
-              </Box>
-            </Box>
-            {/* Vertical divider */}
-            <Box display={{ base: 'none', md: 'block' }} h="80%" w="1px" bg="whiteAlpha.400" mx={8} gridRow="1/3" />
-            {/* Right column */}
-            <Box w="100%" display="flex" flexDirection="column" alignItems="center" gap={12} gridRow={{ base: '3/5', md: '1/3' }}>
-              <Box textAlign="center" w="100%">
-                <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
-                  <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
-                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                  </Box>
-                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    AI-First, Not AI-Hype
-                  </Heading>
-                </Box>
-                <Text color={whyTextColor} fontSize="lg">
-                  We use AI where it creates real value and skip it where it doesn&apos;t. No buzzword padding. No AI for AI&apos;s sake.
-                </Text>
-              </Box>
-              <Box textAlign="center" w="100%">
-                <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
-                  <Box as="span" color="#F25C05" fontSize="2xl" mr={2}>
-                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 10z"/></svg>
-                  </Box>
-                  <Heading as="h3" size="lg" color={whyTextColor} fontWeight={800}>
-                    Senior Team, Every Project
-                  </Heading>
-                </Box>
-                <Text color={whyTextColor} fontSize="lg">
-                  The people who understand your problem are the same people writing the code. No junior handoffs. No learning on your dime.
-                </Text>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-    </>
+            Why the one-team model wins
+          </h2>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-line bg-line md:grid-cols-3">
+            {[
+              {
+                t: "We build what we recommend",
+                b: "Five production platforms of our own. Every recommendation is backed by code we've already shipped and run.",
+              },
+              {
+                t: "Senior people, start to finish",
+                b: "The engineers in your first assessment meeting are the engineers at go-live. No junior handoffs, no learning on your budget.",
+              },
+              {
+                t: "AI where it counts",
+                b: "We use AI where it creates measurable value and skip it where it doesn't. No buzzword padding.",
+              },
+            ].map((x) => (
+              <div key={x.t} className="bg-ink-950 p-8">
+                <h3
+                  className="text-lg font-semibold text-ink-50"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {x.t}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-300">{x.b}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/contact"
+              className="inline-block rounded-md bg-signal-500 px-8 py-3.5 text-sm font-semibold !text-white transition-colors hover:bg-signal-600"
+            >
+              Talk to Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

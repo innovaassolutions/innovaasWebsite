@@ -1,10 +1,12 @@
 import ClientLayout from "../components/ClientLayout";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono, Anton } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import CookieConsent from "../components/CookieConsent";
+import RevealOnScroll from "../components/system/RevealOnScroll";
 import ChakraProviders from "../components/ChakraProviders";
 
 const inter = Inter({
@@ -12,35 +14,52 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
+const anton = Anton({
+  variable: "--font-anton",
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "Innovaas Solutions | Digital Transformation & AI Solutions for SMBs",
+    default: "Innovaas Solutions | Technology Distribution, Consulting & AI Engineering",
     template: "%s | Innovaas Solutions",
   },
   description:
-    "Innovaas Solutions helps US small and mid-size businesses (50-500 employees) accelerate digital transformation with AI-powered software, IoT integration, and data-driven insights. Products include FlowForge, NovaCRM, NovaKMS, and NovaPredict.",
+    "Innovaas is a Singapore-headquartered technology distribution and services company. We represent world-class technology brands across Southeast Asia, and deliver consulting, custom development, agentic AI systems, and implementation end to end.",
   keywords: [
+    "technology distribution Southeast Asia",
+    "technology distributor Singapore",
     "digital transformation",
-    "AI solutions",
-    "SMB software",
-    "digital readiness assessment",
-    "IoT integration",
-    "FlowForge",
-    "NovaCRM",
-    "NovaKMS",
-    "NovaPredict",
-    "Innovaas Solutions",
-    "business automation",
+    "agentic AI systems",
     "custom AI software",
+    "systems integration",
+    "data center connectivity",
+    "smart manufacturing",
+    "Tulip Interfaces",
+    "United Manufacturing Hub",
+    "Litmus",
+    "Black Sea Technology",
+    "Innovaas Solutions",
   ],
   metadataBase: new URL("https://innovaas.co"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Innovaas Solutions | Digital Transformation & AI Solutions for SMBs",
+    title: "Innovaas Solutions | Technology Distribution, Consulting & AI Engineering",
     description:
-      "Accelerate your digital transformation with AI-powered solutions. Connect machines, sensors, and data to unlock operational efficiency for your business.",
+      "Singapore-headquartered technology distribution and services. World-class brands, consulting, custom AI engineering, and implementation — delivered end to end across Southeast Asia.",
     url: "https://innovaas.co",
     siteName: "Innovaas Solutions",
     type: "website",
@@ -50,15 +69,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Innovaas Solutions – Digital Transformation & AI for SMBs",
+        alt: "Innovaas Solutions – Technology Distribution, Consulting & AI Engineering",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Innovaas Solutions | Digital Transformation & AI Solutions for SMBs",
+    title: "Innovaas Solutions | Technology Distribution, Consulting & AI Engineering",
     description:
-      "Accelerate your digital transformation with AI-powered solutions. Connect machines, sensors, and data to unlock operational efficiency.",
+      "Singapore-headquartered technology distribution and services. World-class brands, consulting, custom AI engineering, and implementation — end to end.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -74,10 +93,12 @@ const jsonLd = {
   url: "https://innovaas.co",
   logo: "https://innovaas.co/logo.png",
   description:
-    "Digital transformation and AI-powered software solutions for US small and mid-size businesses. Products include FlowForge, NovaCRM, NovaKMS, and NovaPredict.",
-  sameAs: [
-    "https://www.linkedin.com/company/innovaas",
-  ],
+    "Technology distribution and services company headquartered in Singapore. Distribution of world-class technology brands across Southeast Asia, plus consulting, custom AI development, and implementation.",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "SG",
+  },
+  sameAs: ["https://www.linkedin.com/company/innovaas"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
@@ -99,36 +120,27 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5a00" />
-        <meta name="theme-color" content="#0d1a21" />
+        <meta name="theme-color" content="#05080e" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          id="cookieyes"
-          type="text/javascript"
-          src="https://cdn-cookieyes.com/client_data/d847d4600e8aab3ff26548001d53fcb3/script.js"
-        />
       </head>
-      <Script
-        id="reb2b-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("GNLKQH7W8R6Q");`,
-        }}
-      />
+      {/* Umami is cookieless, so it loads without consent; reb2b is gated behind CookieConsent */}
       <Script
         src="https://analytics.innovaas.co/script.js"
         data-website-id="8703e9d2-01a7-4301-9700-f1362c9bda40"
         strategy="afterInteractive"
       />
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${anton.variable} antialiased`}
+      >
         <ChakraProviders>
           <Header />
-          <ClientLayout>
-            {children}
-          </ClientLayout>
+          <ClientLayout>{children}</ClientLayout>
           <Footer />
+          <CookieConsent />
+          <RevealOnScroll />
         </ChakraProviders>
       </body>
     </html>

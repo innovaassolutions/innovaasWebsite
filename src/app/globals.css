@@ -1,33 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;900&display=swap');
+/* Legacy: Montserrat kept only for pages not yet migrated to the new design system. Remove once all pages use font-display. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 @import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
 
+@theme {
+  /* ── Innovaas design tokens ─ "infrastructure-grade" dark system ── */
+
+  /* Ink: deep blue-grey neutrals (page bg → text) */
+  --color-ink-950: #05080e;
+  --color-ink-900: #0a0f18;
+  --color-ink-850: #0e141f;
+  --color-ink-800: #131b29;
+  --color-ink-700: #1c2638;
+  --color-ink-600: #2b3a52;
+  --color-ink-400: #b6c1d4;
+  --color-ink-300: #d4dbe6;
+  --color-ink-200: #e0e5ee;
+  --color-ink-100: #e6eaf2;
+  --color-ink-50: #f4f6fa;
+
+  /* Signal: brand orange, used sparingly — CTAs, highlights, active states only */
+  --color-signal-600: #d94e04;
+  --color-signal-500: #f25c05;
+  --color-signal-400: #ff6f1a;
+
+  /* Hairlines on dark surfaces */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+
+  /* Type system */
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
 :root {
-  /* --color-bg: #111827;
-  --color-text: #f3f4f6;
-  --color-text-light: #d1d5db; */
-  --color-accent: #F25C05;
+  /* Legacy aliases used by pages not yet migrated */
+  --color-accent: #f25c05;
   --color-accent-hover: #d94e04;
 }
 
-html, body {
-  /* background: var(--color-bg);
-  color: var(--color-text); */
-  font-family: 'Inter', Arial, sans-serif;
+html {
+  /* Slightly larger base type across the whole site */
+  font-size: 17px;
+}
+
+html,
+body {
+  font-family: var(--font-sans, 'Inter', Arial, sans-serif);
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', Arial, sans-serif;
+/* ── Illumination: greyed-out proof lights up in color ──
+   Hover on cursor devices; .illum-lit (scroll-driven) on touch. */
+.illum-card {
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.illum-card img {
+  filter: grayscale(1) brightness(0.92);
+  transition: filter 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .illum-card:hover img {
+    filter: none;
+    transform: scale(1.015);
+  }
+  .illum-card:hover {
+    border-color: rgb(242 92 5 / 0.55) !important;
+    box-shadow: 0 0 70px rgb(242 92 5 / 0.14);
+  }
+}
+.illum-card.illum-lit img {
+  filter: none;
+  transform: scale(1.015);
+}
+.illum-card.illum-lit {
+  border-color: rgb(242 92 5 / 0.55) !important;
+  box-shadow: 0 0 70px rgb(242 92 5 / 0.14);
+}
+
+/* ── Marquee (logo strip) ── */
+@keyframes marqueeX {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeX 42s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ── Scroll-reveal system: sections stagger-fade as they enter the viewport ── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-pending > div > * {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  .reveal-in > div > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-in > div > *:nth-child(2) { transition-delay: 0.08s; }
+  .reveal-in > div > *:nth-child(3) { transition-delay: 0.16s; }
+  .reveal-in > div > *:nth-child(4) { transition-delay: 0.24s; }
+  .reveal-in > div > *:nth-child(5) { transition-delay: 0.32s; }
+  .reveal-in > div > *:nth-child(n + 6) { transition-delay: 0.4s; }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display, 'Montserrat', Arial, sans-serif);
   font-weight: 700;
-  /* color: #fff; */
   margin-top: 0;
 }
 
 p {
-  /* color: var(--color-text-light); */
   line-height: 1.6;
 }
 
@@ -41,23 +146,25 @@ a:hover {
   color: var(--color-accent-hover);
 }
 
-button, .btn {
+button,
+.btn {
   background: var(--color-accent);
   color: #fff;
   border: none;
   border-radius: 6px;
   padding: 0.75em 1.5em;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-display, 'Montserrat', Arial, sans-serif);
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   background: var(--color-accent-hover);
 }
 
 nav {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-display, 'Montserrat', Arial, sans-serif);
 }

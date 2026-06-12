@@ -1,136 +1,186 @@
 "use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import {
-  Box, Flex, HStack, IconButton, useColorMode, useColorModeValue,
-  Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton,
-  useDisclosure, VStack
-} from "@chakra-ui/react";
-import { FiSun, FiMoon, FiMenu } from "react-icons/fi";
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/products', label: 'Products' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
+type NavChild = { href: string; label: string; note?: string };
+type NavItem = { label: string; href?: string; match: string; children?: NavChild[] };
+
+const navItems: NavItem[] = [
+  {
+    label: "Distribution",
+    match: "/distribution",
+    children: [
+      { href: "/distribution", label: "Overview", note: "How we bring brands to Southeast Asia" },
+      { href: "/distribution/black-sea-technology", label: "Black Sea Technology", note: "Data center connectivity" },
+      { href: "/distribution/tulip", label: "Tulip Interfaces", note: "Frontline operations platform" },
+      { href: "/distribution/umh", label: "United Manufacturing Hub", note: "Open-source IIoT infrastructure" },
+      { href: "/distribution/litmus", label: "Litmus", note: "Industrial edge data platform" },
+    ],
+  },
+  { label: "Services", href: "/services", match: "/services" },
+  { label: "Solutions", href: "/solutions", match: "/solutions" },
+  { label: "Products", href: "/products", match: "/products" },
+  { label: "Work", href: "/work", match: "/work" },
+  {
+    label: "Company",
+    match: "/about",
+    children: [
+      { href: "/about", label: "About" },
+      { href: "/blog", label: "Blog" },
+      { href: "/apply", label: "Careers" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
 ];
 
-function ColorModeSwitcher() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const iconColor = useColorModeValue('#fff', '#f3f4f6');
-  return (
-    <IconButton
-      aria-label="Toggle color mode"
-      icon={colorMode === "light" ? <FiMoon /> : <FiSun />}
-      onClick={toggleColorMode}
-      variant="ghost"
-      ml={2}
-      color={iconColor}
-    />
-  );
+function isActive(pathname: string, item: NavItem) {
+  if (item.children) {
+    return item.children.some(
+      (c) => pathname === c.href.split("#")[0] || pathname.startsWith(item.match)
+    );
+  }
+  return item.match === "/" ? pathname === "/" : pathname.startsWith(item.match);
 }
 
 export default function Header() {
   const pathname = usePathname();
-  const navTextColor = useColorModeValue('#fff', '#f3f4f6');
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
   return (
-    <Box as="nav" bg="#181f2a" px={{ base: 2, md: 8 }} py={0} position="sticky" top={0} zIndex={1000} borderBottom="1px solid #222">
-      <Flex h={{ base: "56px", md: "72px" }} align="center" justify="space-between">
+    <header className="sticky top-0 z-[1000] border-b border-line bg-ink-950/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 md:h-[72px]">
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+        <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
           <Image
-            src="/innovaas_logo_orange_and_white.png"
-            alt="Innovaas Logo"
-            width={140}
-            height={80}
-            style={{
-              objectFit: "contain",
-              height: "80px",
-              width: "auto",
-              marginRight: "1rem"
-            }}
-            // Responsive: larger on md+
-            sizes="(max-width: 768px) 120px, 240px"
+            src="/innovaas_logo_tight.png"
+            alt="Innovaas"
+            width={200}
+            height={64}
+            priority
+            style={{ objectFit: "contain", height: "40px", width: "auto" }}
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <HStack spacing={2} display={{ base: "none", md: "flex" }}>
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                padding: "0.4rem 1rem",
-                borderRadius: "999px",
-                background: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? 'var(--color-accent)' : 'transparent',
-                color: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? '#fff' : navTextColor,
-                fontWeight: 700,
-                fontFamily: 'Montserrat, Arial, sans-serif',
-                fontSize: "1rem",
-                transition: "background 0.2s, color 0.2s",
-                textDecoration: "none",
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </HStack>
-
-        {/* Color Mode Switcher */}
-        <Flex align="center">
-          <ColorModeSwitcher />
-          {/* Hamburger for mobile */}
-          <IconButton
-            aria-label="Open menu"
-            icon={<FiMenu />}
-            display={{ base: "inline-flex", md: "none" }}
-            onClick={onOpen}
-            variant="ghost"
-            color={navTextColor}
-            ml={2}
-          />
-        </Flex>
-      </Flex>
-
-      {/* Mobile Drawer */}
-      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent bg="#181f2a">
-          <DrawerCloseButton color="#fff" />
-          <DrawerBody>
-            <VStack spacing={4} mt={12}>
-              {navLinks.map(link => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={onClose}
-                  style={{
-                    padding: "0.75rem 1.5rem",
-                    borderRadius: "999px",
-                    background: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? 'var(--color-accent)' : 'transparent',
-                    color: (link.href === '/solutions' ? pathname.startsWith('/solutions') : pathname === link.href) ? '#fff' : navTextColor,
-                    fontWeight: 700,
-                    fontFamily: 'Montserrat, Arial, sans-serif',
-                    fontSize: "1.1rem",
-                    textDecoration: "none",
-                    width: "100%",
-                    textAlign: "center"
-                  }}
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 md:flex" style={{ fontFamily: "var(--font-display)" }}>
+          {navItems.map((item) =>
+            item.children ? (
+              <div key={item.label} className="group relative">
+                <button
+                  className={`!bg-transparent flex items-center gap-1 rounded-md !px-3 !py-2 text-[0.95rem] !font-medium transition-colors ${
+                    isActive(pathname, item) ? "text-signal-400" : "text-ink-200 group-hover:text-ink-50"
+                  }`}
+                  aria-haspopup="true"
                 >
-                  {link.label}
-                </Link>
-              ))}
-            </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </Box>
+                  {item.label}
+                  <FiChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="invisible absolute left-0 top-full w-72 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="overflow-hidden rounded-lg border border-line bg-ink-900 p-1.5 shadow-2xl shadow-black/50">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block rounded-md px-3 py-2.5 transition-colors hover:bg-ink-800"
+                      >
+                        <span className="block text-sm font-medium text-ink-100">{child.label}</span>
+                        {child.note && (
+                          <span className="mt-0.5 block text-xs text-ink-400">{child.note}</span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href!}
+                className={`rounded-md px-3 py-2 text-[0.95rem] font-medium transition-colors ${
+                  isActive(pathname, item) ? "!text-signal-400" : "!text-ink-200 hover:!text-ink-50"
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          )}
+          <Link
+            href="/contact"
+            className="ml-3 rounded-md bg-signal-500 px-4 py-2 text-sm font-semibold !text-white transition-colors hover:bg-signal-600"
+          >
+            Talk to Us
+          </Link>
+        </nav>
+
+        {/* Mobile toggle */}
+        <button
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="!bg-transparent !p-2 text-ink-100 md:hidden"
+        >
+          {mobileOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Mobile panel */}
+      {mobileOpen && (
+        <nav className="border-t border-line bg-ink-950 px-4 pb-6 pt-2 md:hidden">
+          {navItems.map((item) =>
+            item.children ? (
+              <div key={item.label} className="border-b border-line">
+                <button
+                  onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
+                  className="!bg-transparent flex w-full items-center justify-between !px-1 !py-3.5 text-left !text-base !font-medium text-ink-100"
+                >
+                  {item.label}
+                  <FiChevronDown
+                    className={`h-4 w-4 opacity-60 transition-transform ${
+                      openSection === item.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {openSection === item.label && (
+                  <div className="pb-3">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block rounded-md px-3 py-2.5 text-sm !text-ink-300 hover:bg-ink-800 hover:!text-ink-50"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href!}
+                onClick={() => setMobileOpen(false)}
+                className={`block border-b border-line px-1 py-3.5 text-base font-medium ${
+                  isActive(pathname, item) ? "!text-signal-400" : "!text-ink-100"
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          )}
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="mt-4 block rounded-md bg-signal-500 px-4 py-3 text-center text-sm font-semibold !text-white"
+          >
+            Talk to Us
+          </Link>
+        </nav>
+      )}
+    </header>
   );
-} 
+}

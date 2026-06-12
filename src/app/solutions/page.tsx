@@ -1,230 +1,152 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  SimpleGrid,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import PageHero from "@/components/system/PageHero";
 
-const ORANGE = "#F25C05";
-const TEAL = "#00b4c8";
+export const metadata: Metadata = {
+  title: "Solutions",
+  description:
+    "Outcome-focused solutions that combine Innovaas distribution, engineering, and AI software: data center infrastructure and smart manufacturing for Southeast Asia.",
+  alternates: { canonical: "/solutions" },
+};
 
 const solutions = [
   {
-    href: "/solutions/data-center-connectivity",
-    accent: ORANGE,
-    label: "Data Center Connectivity",
-    partner: "Black Sea Technology",
-    tagline: "High-Speed Interconnect",
-    description:
-      "400G, 800G, and 1.6T transceivers, DAC/ACC/AEC copper cables, fiber patch cords, and AOCs for AI clusters, HPC, and hyper-scale data centers.",
-    highlights: [
-      "1.6T OSFP-DD DR8 transceivers",
-      "800G QSFP-DD SR8 / DR4 / FR4",
-      "400G QSFP-DD & QSFP28 full range",
-      "Custom-length fiber & AOC assemblies",
+    id: "data-center",
+    n: "01",
+    title: "Data Center Infrastructure",
+    lead: "The connectivity layer for AI, HPC, and cloud.",
+    body: "AI clusters live and die on their network fabric. We supply and support the optics and cabling that carry the load — 400G to 1.6T transceivers, DAC/ACC/AEC copper, and fiber from Black Sea Technology — with architecture support for lossless RoCE fabrics and data center interconnect, delivered through our Singapore distribution operation.",
+    stack: [
+      { k: "DISTRIBUTION", v: "Black Sea Technology optics & cabling" },
+      { k: "ENGINEERING", v: "Topology review, optics selection, qualification" },
+      { k: "SCALE", v: "Pilot lots to nine-figure supply programs" },
     ],
-    cta: "Explore Connectivity",
+    links: [
+      { href: "/solutions/data-center-connectivity", label: "Connectivity portfolio" },
+      { href: "/distribution/black-sea-technology", label: "Black Sea Technology" },
+    ],
   },
   {
-    href: "/solutions/data-center-power",
-    accent: TEAL,
-    label: "Data Center Power",
-    partner: "PDUMind",
-    tagline: "Intelligent Rack PDU Management",
-    description:
-      "Metered, switched, and 3-phase intelligent rack PDUs with per-outlet monitoring, remote switching, and SNMP/iOS management for AI infrastructure worldwide.",
-    highlights: [
-      "CPDU series — metered & switched",
-      "CM-V 3-phase distribution PDUs",
-      "Per-outlet kWh ±1% accuracy",
-      "Cascade up to 16 PDUs per port",
+    id: "smart-manufacturing",
+    n: "02",
+    title: "Smart Manufacturing",
+    lead: "From machine data to decisions — one stack, one team.",
+    body: "We build the full smart-factory stack: edge connectivity with Litmus, a Unified Namespace on United Manufacturing Hub, frontline apps and composable MES on Tulip, and predictive maintenance with our own NovaPredict ML platform. Distribution, architecture, and implementation from a single accountable partner.",
+    stack: [
+      { k: "EDGE & DATA", v: "Litmus + United Manufacturing Hub" },
+      { k: "FRONTLINE", v: "Tulip apps, quality & composable MES" },
+      { k: "INTELLIGENCE", v: "NovaPredict ML & analytics" },
     ],
-    cta: "Explore Power",
+    links: [
+      { href: "/distribution", label: "Distribution portfolio" },
+      { href: "/products", label: "NovaPredict platform" },
+    ],
+  },
+  {
+    id: "intelligent-operations",
+    n: "03",
+    title: "Intelligent Operations",
+    lead: "Agents and AI systems inside your daily workflows.",
+    body: "Beyond the factory: agentic AI systems that triage, research, document, and coordinate; knowledge management that answers from your own documents; voice agents that never miss a call. Built on the same platforms we run our own company on.",
+    stack: [
+      { k: "AGENTS", v: "Custom agentic systems with guardrails" },
+      { k: "KNOWLEDGE", v: "NovaKMS RAG search & chat" },
+      { k: "FRONT DOOR", v: "NovaVoice AI phone agents" },
+    ],
+    links: [
+      { href: "/services/agentic-ai", label: "Agentic AI services" },
+      { href: "/products", label: "The platforms" },
+    ],
   },
 ];
 
 export default function SolutionsPage() {
-  const bg = useColorModeValue("#f5f5f0", "#0f1623");
-  const cardBg = useColorModeValue("#ffffff", "#181f2a");
-  const borderColor = useColorModeValue("#e8e4da", "#2a3444");
-  const textMuted = useColorModeValue("#71706B", "#9ca3af");
-  const headingColor = useColorModeValue("#171614", "#f3f4f6");
-  const bodyText = useColorModeValue("#3d3b35", "#d1d5db");
-
   return (
-    <Box bg={bg} minH="100vh">
-      {/* Hero */}
-      <Box
-        bg="#181f2a"
-        pt={{ base: 14, md: 20 }}
-        pb={{ base: 12, md: 16 }}
-        px={{ base: 6, md: 8 }}
-        textAlign="center"
+    <div className="bg-ink-950 text-ink-100">
+      <PageHero
+        index="03"
+        label="SOLUTIONS"
+        title="Where the three engines"
+        accent="combine."
+        ctas={[{ href: "/contact", label: "Discuss Your Project", solid: true }]}
       >
-        <Text
-          fontSize={{ base: "11px", md: "12px" }}
-          fontWeight={700}
-          letterSpacing="0.18em"
-          color={ORANGE}
-          textTransform="uppercase"
-          mb={3}
-        >
-          Solutions
-        </Text>
-        <Heading
-          as="h1"
-          fontSize={{ base: "2.2rem", md: "3rem" }}
-          fontWeight={800}
-          color="#f3f4f6"
-          lineHeight={1.15}
-          mb={4}
-          fontFamily="Montserrat, Arial, sans-serif"
-        >
-          Infrastructure Built for<br />
-          <Box as="span" color={ORANGE}>
-            What&apos;s Next
-          </Box>
-        </Heading>
-        <Text
-          fontSize={{ base: "1rem", md: "1.15rem" }}
-          color="#9ca3af"
-          maxW="560px"
-          mx="auto"
-          lineHeight={1.7}
-        >
-          Innovaas partners with best-in-class manufacturers to deliver complete
-          data center solutions — from high-speed interconnect to intelligent
-          power management.
-        </Text>
-      </Box>
+        <p>
+          Distribution gives you the technology. Engineering makes it run.
+          Software makes it smart. Our solutions bundle all three around a
+          business outcome — so you contract one partner, not three vendors.
+        </p>
+      </PageHero>
 
-      {/* Cards */}
-      <Box maxW="1100px" mx="auto" px={{ base: 4, md: 8 }} py={{ base: 12, md: 16 }}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-          {solutions.map((sol) => (
-            <Box
-              key={sol.href}
-              bg={cardBg}
-              border="1px solid"
-              borderColor={borderColor}
-              borderRadius="16px"
-              overflow="hidden"
-              transition="box-shadow 0.2s, transform 0.2s"
-              _hover={{ boxShadow: `0 0 0 2px ${sol.accent}40`, transform: "translateY(-2px)" }}
-            >
-              {/* Accent bar */}
-              <Box h="4px" bg={sol.accent} />
+      <section>
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="space-y-8">
+            {solutions.map((s) => (
+              <article
+                key={s.id}
+                id={s.id}
+                className="scroll-mt-24 rounded-lg border border-line bg-ink-900 p-8 md:p-12"
+              >
+                <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+                  <div>
+                    <p className="font-mono text-sm text-signal-500">{s.n}</p>
+                    <h2
+                      className="mt-3 text-2xl font-semibold text-ink-50 md:text-3xl"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {s.title}
+                    </h2>
+                    <p className="mt-2 font-medium text-signal-400">{s.lead}</p>
+                    <p className="mt-4 leading-relaxed text-ink-300">{s.body}</p>
+                    <div className="mt-6 flex flex-wrap gap-4">
+                      {s.links.map((l) => (
+                        <Link
+                          key={l.href}
+                          href={l.href}
+                          className="text-sm font-semibold !text-signal-400 hover:!text-signal-500"
+                        >
+                          {l.label} →
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-px overflow-hidden rounded-md border border-line bg-line">
+                    {s.stack.map((row) => (
+                      <div key={row.k} className="bg-ink-950 px-5 py-4">
+                        <p className="m-0 font-mono text-[11px] tracking-[0.2em] text-ink-400">
+                          {row.k}
+                        </p>
+                        <p className="m-0 mt-1 text-sm font-medium text-ink-100">{row.v}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <Box p={{ base: 6, md: 8 }}>
-                {/* Partner badge */}
-                <Flex align="center" gap={2} mb={4}>
-                  <Box
-                    px={2.5}
-                    py={0.5}
-                    borderRadius="full"
-                    bg={`${sol.accent}18`}
-                    border="1px solid"
-                    borderColor={`${sol.accent}40`}
-                  >
-                    <Text fontSize="11px" fontWeight={700} color={sol.accent} letterSpacing="0.1em" textTransform="uppercase">
-                      {sol.partner}
-                    </Text>
-                  </Box>
-                  <Text fontSize="11px" color={textMuted} fontWeight={600} letterSpacing="0.12em" textTransform="uppercase">
-                    {sol.tagline}
-                  </Text>
-                </Flex>
-
-                <Heading
-                  as="h2"
-                  fontSize={{ base: "1.4rem", md: "1.6rem" }}
-                  fontWeight={800}
-                  color={headingColor}
-                  mb={3}
-                  fontFamily="Montserrat, Arial, sans-serif"
-                >
-                  {sol.label}
-                </Heading>
-
-                <Text fontSize="0.95rem" color={bodyText} lineHeight={1.7} mb={6}>
-                  {sol.description}
-                </Text>
-
-                {/* Highlights */}
-                <Box mb={8}>
-                  {sol.highlights.map((h) => (
-                    <Flex key={h} align="center" gap={2.5} mb={2}>
-                      <Box
-                        w="6px"
-                        h="6px"
-                        borderRadius="full"
-                        bg={sol.accent}
-                        flexShrink={0}
-                      />
-                      <Text fontSize="0.875rem" color={bodyText}>
-                        {h}
-                      </Text>
-                    </Flex>
-                  ))}
-                </Box>
-
-                {/* CTA */}
-                <Link href={sol.href} style={{ textDecoration: "none" }}>
-                  <Box
-                    as="span"
-                    display="inline-flex"
-                    alignItems="center"
-                    gap={1.5}
-                    px={5}
-                    py={2.5}
-                    borderRadius="full"
-                    bg={sol.accent}
-                    color="#fff"
-                    fontSize="0.875rem"
-                    fontWeight={700}
-                    transition="opacity 0.15s"
-                    _hover={{ opacity: 0.88 }}
-                  >
-                    {sol.cta} →
-                  </Box>
-                </Link>
-              </Box>
-            </Box>
-          ))}
-        </SimpleGrid>
-
-        {/* Bottom copy */}
-        <Box textAlign="center" mt={14}>
-          <Text fontSize="0.95rem" color={textMuted} maxW="520px" mx="auto" lineHeight={1.7}>
-            All solutions are available globally. Contact our team to discuss
-            requirements, pricing, and lead times.
-          </Text>
-          <Link href="/about#contact" style={{ textDecoration: "none" }}>
-            <Box
-              as="span"
-              display="inline-flex"
-              mt={5}
-              px={6}
-              py={3}
-              borderRadius="full"
-              border="2px solid"
-              borderColor={ORANGE}
-              color={ORANGE}
-              fontSize="0.9rem"
-              fontWeight={700}
-              transition="background 0.15s, color 0.15s"
-              _hover={{ bg: ORANGE, color: "#fff" }}
-            >
-              Get in Touch
-            </Box>
+      <section className="border-t border-line bg-ink-900">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-center">
+          <h2
+            className="mx-auto max-w-2xl text-2xl font-bold tracking-tight text-ink-50 md:text-4xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Don&apos;t see your problem here? That&apos;s what the assessment is for.
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-ink-300">
+            Every engagement starts by understanding where you actually stand —
+            then we assemble the right combination of brands, builds, and
+            engineering.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-md bg-signal-500 px-8 py-3.5 text-sm font-semibold !text-white transition-colors hover:bg-signal-600"
+          >
+            Start With an Assessment
           </Link>
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </section>
+    </div>
   );
 }

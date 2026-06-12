@@ -1,28 +1,20 @@
 import { extendTheme, ThemeConfig, StyleFunctionProps } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "light",
-  useSystemColorMode: true,
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 
 const theme = extendTheme({
   config,
   styles: {
+    // Only body-level defaults — element selectors (p, h1...) are unlayered
+    // when injected by Emotion and would override Tailwind's layered utilities.
     global: (props: StyleFunctionProps) => ({
       body: {
-        bg: props.colorMode === "dark" ? "#111827" : "#f3f4f6",
-        color: props.colorMode === "dark" ? "#f3f4f6" : "#111827",
+        bg: props.colorMode === "dark" ? "#05080e" : "#f3f4f6",
+        color: props.colorMode === "dark" ? "#f4f6fa" : "#111827",
       },
-      p: {
-        color: props.colorMode === "dark" ? "#d1d5db" : "#374151",
-      },
-      h1: {
-        color: props.colorMode === "dark" ? "#fff" : "#111827",
-      },
-      h2: {
-        color: props.colorMode === "dark" ? "#fff" : "#111827",
-      },
-      // Add more as needed
     }),
   },
 });

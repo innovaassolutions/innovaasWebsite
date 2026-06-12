@@ -1,4 +1,24 @@
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/partners/tulip',
+        destination: '/distribution/tulip',
+        permanent: true,
+      },
+      {
+        source: '/partners',
+        destination: '/distribution',
+        permanent: true,
+      },
+      {
+        // PDUMind partnership ended — page retired
+        source: '/solutions/data-center-power',
+        destination: '/solutions',
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

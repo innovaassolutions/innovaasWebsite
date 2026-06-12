@@ -4,5 +4,7 @@ import { ReactNode } from "react";
 import theme from "./theme";
 
 export default function ChakraProviders({ children }: { children: ReactNode }) {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
+  // resetCSS=false: Chakra's reset (h1 { font-size: inherit }) is unlayered and
+  // would override Tailwind's layered utilities; Tailwind preflight handles reset.
+  return <ChakraProvider theme={theme} resetCSS={false}>{children}</ChakraProvider>;
 }
