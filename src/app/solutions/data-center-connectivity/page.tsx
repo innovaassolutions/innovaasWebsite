@@ -85,29 +85,19 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
       display="flex"
       alignItems="center"
     >
-      {/* Background photo */}
-      <NextImage
-        src="/blackseatech/hero-home.png"
-        alt=""
-        fill
-        priority
-        style={{ objectFit: "cover", objectPosition: "center" }}
-      />
-
-      {/* Dark overlay — strong enough to guarantee white text legibility */}
-      <Box
-        position="absolute"
-        inset={0}
-        style={{ background: "rgba(8, 12, 22, 0.88)" }}
-      />
-
-      {/* Subtle left-side gradient for extra text contrast */}
+      {/* Flat ink background with dot grid (design system) */}
+      <Box position="absolute" inset={0} bg="#05080e" />
       <Box
         position="absolute"
         inset={0}
         style={{
-          background:
-            "linear-gradient(90deg, rgba(8,12,22,0.6) 0%, transparent 70%)",
+          backgroundImage:
+            "radial-gradient(rgba(182,193,212,0.13) 1.2px, transparent 1.2px)",
+          backgroundSize: "34px 34px",
+          maskImage:
+            "radial-gradient(ellipse at 75% 40%, black 0%, transparent 70%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at 75% 40%, black 0%, transparent 70%)",
         }}
       />
 
@@ -129,21 +119,8 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
         >
           {/* Left — copy */}
           <Box flex="1" maxW={{ lg: "560px" }}>
-            {/* Partnership pill */}
-            <Flex
-              display="inline-flex"
-              align="center"
-              gap={2}
-              border="1px solid rgba(255,255,255,0.18)"
-              borderRadius="full"
-              px={4}
-              py={1.5}
-              mb={8}
-              style={{
-                backdropFilter: "blur(12px)",
-                background: "rgba(255,255,255,0.06)",
-              }}
-            >
+            {/* System kicker */}
+            <Flex align="center" gap={3} mb={8}>
               <Box
                 w="7px"
                 h="7px"
@@ -153,33 +130,34 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 style={{ animation: "hero-pulse 2.5s ease-in-out infinite" }}
               />
               <Text
-                fontSize="11px"
-                fontWeight={700}
-                letterSpacing="1.8px"
+                fontFamily="var(--font-mono)"
+                fontSize="12px"
+                letterSpacing="0.28em"
                 textTransform="uppercase"
-                color="rgba(255,255,255,0.9)"
+                color="#F25C05"
                 lineHeight={1}
               >
-                Authorized Reseller · Black Sea Technology
+                01 / DISTRIBUTION — AUTHORIZED RESELLER · BLACK SEA TECHNOLOGY
               </Text>
             </Flex>
 
             <Heading
               as="h1"
-              color="white"
-              fontFamily="var(--font-display)"
-              fontWeight={900}
-              fontSize={{ base: "2.6rem", md: "3.4rem", lg: "3.8rem" }}
-              lineHeight={1.06}
-              letterSpacing="-2px"
+              color="#f4f6fa"
+              fontFamily="var(--font-anton)"
+              fontWeight={400}
+              textTransform="uppercase"
+              fontSize={{ base: "2.8rem", md: "3.8rem", lg: "4.4rem" }}
+              lineHeight={0.95}
+              letterSpacing="-0.01em"
               mb={6}
             >
-              The Interconnect
+              The interconnect
               <br />
-              Behind Tomorrow&apos;s
+              behind tomorrow&apos;s
               <br />
               <Box as="span" color="#F25C05">
-                AI Infrastructure
+                AI infrastructure.
               </Box>
             </Heading>
 
@@ -205,7 +183,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 color="white"
                 px={8}
                 py={4}
-                borderRadius="full"
+                borderRadius="8px"
                 fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize="0.95rem"
@@ -224,7 +202,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 color="white"
                 px={8}
                 py={4}
-                borderRadius="full"
+                borderRadius="8px"
                 fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize="0.95rem"
@@ -264,12 +242,9 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
             {/* Glass card */}
             <Box
               position="relative"
-              borderRadius="28px"
-              border="1px solid rgba(255,255,255,0.12)"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                backdropFilter: "blur(24px)",
-              }}
+              borderRadius="10px"
+              border="1px solid rgba(255,255,255,0.08)"
+              style={{ background: "#0a0f18" }}
               p={{ base: 8, md: 10 }}
               display="flex"
               flexDirection="column"
@@ -328,7 +303,7 @@ function HeroSection({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                   <Text
                     color="#F25C05"
                     fontFamily="var(--font-display)"
-                    fontWeight={900}
+                    fontWeight={700}
                     fontSize="1.3rem"
                   >
                     1600 Gbps
@@ -388,7 +363,7 @@ function StatsStrip() {
 
   return (
     <Box
-      bg="#0f1623"
+      bg="#0a0f18"
       borderTop="1px solid rgba(255,255,255,0.06)"
       borderBottom="1px solid rgba(255,255,255,0.06)"
     >
@@ -420,16 +395,17 @@ function StatsStrip() {
               >
                 <Text
                   color="#F25C05"
-                  fontFamily="var(--font-display)"
-                  fontWeight={900}
-                  fontSize={{ base: "1.6rem", md: "2rem" }}
+                  fontFamily="var(--font-mono)"
+                  fontWeight={500}
+                  fontSize={{ base: "1.5rem", md: "1.9rem" }}
                   lineHeight={1}
                   mb={1.5}
                 >
                   {s.value}
                 </Text>
                 <Text
-                  color="rgba(255,255,255,0.45)"
+                  color="#b6c1d4"
+                  fontFamily="var(--font-mono)"
                   fontSize="0.7rem"
                   fontWeight={600}
                   letterSpacing="1px"
@@ -481,15 +457,15 @@ const CATEGORIES = [
 ];
 
 function CategoryCards() {
-  const headingColor = useColorModeValue("#111827", "#ffffff");
-  const bodyColor    = useColorModeValue("#4b5563", "#d1d5db");
-  const cardBg       = useColorModeValue("#ffffff", "#1a2233");
-  const cardBorder   = useColorModeValue("rgba(0,0,0,0.07)", "rgba(255,255,255,0.08)");
+  const headingColor = "#f4f6fa";
+  const bodyColor    = "#d4dbe6";
+  const cardBg       = "#0a0f18";
+  const cardBorder   = "rgba(255,255,255,0.08)";
 
   return (
     <Box
       as="section"
-      bg={useColorModeValue("#f8f9fb", "#111827")}
+      bg="#05080e"
       py={{ base: 16, md: 24 }}
     >
       <Box maxW="1200px" mx="auto" px={{ base: 5, md: 10 }}>
@@ -499,6 +475,7 @@ function CategoryCards() {
             fontSize="11px"
             fontWeight={700}
             letterSpacing="2px"
+            fontFamily="var(--font-mono)"
             textTransform="uppercase"
             mb={3}
           >
@@ -508,7 +485,7 @@ function CategoryCards() {
             as="h2"
             color={headingColor}
             fontFamily="var(--font-display)"
-            fontWeight={900}
+            fontWeight={700}
             fontSize={{ base: "2rem", md: "2.75rem" }}
             letterSpacing="-1.5px"
             lineHeight={1.1}
@@ -531,16 +508,17 @@ function CategoryCards() {
               bg={cardBg}
               border="1px solid"
               borderColor={cardBorder}
-              borderRadius="20px"
+              borderRadius="10px"
               overflow="hidden"
               display="flex"
               flexDirection="column"
               transition="transform 0.2s, box-shadow 0.2s"
               _hover={{
                 transform: "translateY(-4px)",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.12)",
+                borderColor: "rgba(242,92,5,0.45)",
+                boxShadow: "0 0 50px rgba(242,92,5,0.08)",
               }}
-              boxShadow="0 2px 12px rgba(0,0,0,0.06)"
+              boxShadow="none"
             >
               {/* Image area */}
               <Box
@@ -744,20 +722,20 @@ const CATALOG_TABS = [
 ];
 
 function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
-  const headingColor  = useColorModeValue("#111827", "#ffffff");
-  const bodyColor     = useColorModeValue("#4b5563", "#d1d5db");
-  const cardBg        = useColorModeValue("#ffffff", "#1a2233");
-  const borderColor   = useColorModeValue("rgba(0,0,0,0.07)", "rgba(255,255,255,0.08)");
-  const specRowAlt    = useColorModeValue("#f9fafb", "rgba(255,255,255,0.03)");
-  const specLabelClr  = useColorModeValue("#9ca3af", "#6b7280");
-  const groupBg       = useColorModeValue("#f9fafb", "#111827");
-  const itemBorderClr = useColorModeValue("rgba(0,0,0,0.06)", "rgba(255,255,255,0.06)");
+  const headingColor  = "#f4f6fa";
+  const bodyColor     = "#d4dbe6";
+  const cardBg        = "#0a0f18";
+  const borderColor   = "rgba(255,255,255,0.08)";
+  const specRowAlt    = "rgba(255,255,255,0.03)";
+  const specLabelClr  = "#b6c1d4";
+  const groupBg       = "#0a0f18";
+  const itemBorderClr = "rgba(255,255,255,0.06)";
 
   return (
     <Box
       as="section"
       id="catalogue"
-      bg={useColorModeValue("#ffffff", "#0d1117")}
+      bg="#05080e"
       py={{ base: 16, md: 24 }}
       borderTop="1px solid"
       borderColor={borderColor}
@@ -769,7 +747,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
               {CATALOG_TABS.map((t) => (
                 <Tab
                   key={t.label}
-                  color={useColorModeValue("#6b7280", "#9ca3af")}
+                  color="#b6c1d4"
                   fontFamily="var(--font-display)"
                   fontWeight={700}
                   fontSize="0.82rem"
@@ -802,7 +780,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                 >
                   {/* Image */}
                   <Box
-                    borderRadius="20px"
+                    borderRadius="10px"
                     overflow="hidden"
                     display="flex"
                     alignItems="center"
@@ -859,7 +837,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                       <Box
                         border="1px solid"
                         borderColor={borderColor}
-                        borderRadius="12px"
+                        borderRadius="10px"
                         overflow="hidden"
                         mb={tab.applications.length > 0 ? 5 : 0}
                       >
@@ -960,7 +938,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
                           bg={groupBg}
                           border="1px solid"
                           borderColor={borderColor}
-                          borderRadius="14px"
+                          borderRadius="10px"
                           p={6}
                         >
                           <Text
@@ -1039,7 +1017,7 @@ function ProductCatalog({ onSpecSheetOpen }: { onSpecSheetOpen: () => void }) {
               color="white"
               px={5}
               py={2.5}
-              borderRadius="full"
+              borderRadius="8px"
               fontFamily="var(--font-display)"
               fontWeight={700}
               fontSize="0.8rem"
@@ -1098,7 +1076,7 @@ function SolutionsSection() {
   ];
 
   return (
-    <Box as="section" bg="#080c16" py={{ base: 16, md: 24 }} position="relative" overflow="hidden">
+    <Box as="section" bg="#05080e" py={{ base: 16, md: 24 }} position="relative" overflow="hidden">
       {/* Subtle grid */}
       <Box
         position="absolute"
@@ -1118,6 +1096,7 @@ function SolutionsSection() {
             fontSize="11px"
             fontWeight={700}
             letterSpacing="2px"
+            fontFamily="var(--font-mono)"
             textTransform="uppercase"
             mb={3}
           >
@@ -1127,7 +1106,7 @@ function SolutionsSection() {
             as="h2"
             color="white"
             fontFamily="var(--font-display)"
-            fontWeight={900}
+            fontWeight={700}
             fontSize={{ base: "2rem", md: "2.75rem" }}
             letterSpacing="-1.5px"
             lineHeight={1.1}
@@ -1140,7 +1119,7 @@ function SolutionsSection() {
 
         {/* Diagram */}
         <Box
-          borderRadius="20px"
+          borderRadius="10px"
           overflow="hidden"
           mb={12}
           border="1px solid rgba(255,255,255,0.07)"
@@ -1164,7 +1143,7 @@ function SolutionsSection() {
               <Text
                 color="rgba(255,255,255,0.15)"
                 fontFamily="var(--font-display)"
-                fontWeight={900}
+                fontWeight={700}
                 fontSize="2rem"
                 lineHeight={1}
                 display={{ base: "none", md: "block" }}
@@ -1347,7 +1326,7 @@ function WhyInnovaasSection() {
   ];
 
   return (
-    <Box as="section" bg="#f8f9fb" py={{ base: 16, md: 24 }}>
+    <Box as="section" bg="#0a0f18" py={{ base: 16, md: 24 }} borderTop="1px solid rgba(255,255,255,0.08)">
       <Box maxW="1200px" mx="auto" px={{ base: 5, md: 10 }}>
         <Box
           display="grid"
@@ -1369,9 +1348,9 @@ function WhyInnovaasSection() {
             </Text>
             <Heading
               as="h2"
-              color="#111827"
+              color="#f4f6fa"
               fontFamily="var(--font-display)"
-              fontWeight={900}
+              fontWeight={700}
               fontSize={{ base: "2rem", md: "2.6rem" }}
               letterSpacing="-1.5px"
               lineHeight={1.1}
@@ -1391,7 +1370,7 @@ function WhyInnovaasSection() {
               color="white"
               px={7}
               py={3.5}
-              borderRadius="full"
+              borderRadius="8px"
               fontFamily="var(--font-display)"
               fontWeight={700}
               fontSize="0.9rem"
@@ -1412,16 +1391,16 @@ function WhyInnovaasSection() {
                 gridTemplateColumns="48px 1fr"
                 gap={6}
                 py={8}
-                borderTop="1px solid rgba(0,0,0,0.07)"
-                _last={{ borderBottom: "1px solid rgba(0,0,0,0.07)" }}
+                borderTop="1px solid rgba(255,255,255,0.08)"
+                _last={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
                 role="group"
                 transition="all 0.2s"
                 _hover={{ pl: 2 }}
               >
                 <Text
-                  color="rgba(0,0,0,0.12)"
+                  color="rgba(255,255,255,0.22)"
                   fontFamily="var(--font-display)"
-                  fontWeight={900}
+                  fontWeight={700}
                   fontSize="1.4rem"
                   lineHeight={1.2}
                   mt={0.5}
@@ -1431,7 +1410,7 @@ function WhyInnovaasSection() {
                 <Box>
                   <Heading
                     as="h3"
-                    color="#111827"
+                    color="#f4f6fa"
                     fontFamily="var(--font-display)"
                     fontWeight={800}
                     fontSize={{ base: "1.05rem", md: "1.15rem" }}
@@ -1441,7 +1420,7 @@ function WhyInnovaasSection() {
                     {p.title}
                   </Heading>
                   <Text
-                    color="#4b5563"
+                    color="#d4dbe6"
                     fontSize="0.9rem"
                     lineHeight={1.8}
                   >
@@ -1497,7 +1476,7 @@ function LeadFormSection() {
   };
 
   return (
-    <Box as="section" id="inquiry" bg="#080c16" py={{ base: 16, md: 24 }} position="relative" overflow="hidden">
+    <Box as="section" id="inquiry" bg="#05080e" py={{ base: 16, md: 24 }} position="relative" overflow="hidden">
       {/* Glow accent */}
       <Box
         position="absolute"
@@ -1533,7 +1512,7 @@ function LeadFormSection() {
               as="h2"
               color="white"
               fontFamily="var(--font-display)"
-              fontWeight={900}
+              fontWeight={700}
               fontSize={{ base: "2rem", md: "2.75rem" }}
               letterSpacing="-1.5px"
               lineHeight={1.1}
@@ -1573,7 +1552,7 @@ function LeadFormSection() {
 
             <Box
               p={5}
-              borderRadius="14px"
+              borderRadius="10px"
               border="1px solid rgba(255,255,255,0.08)"
               style={{ background: "rgba(255,255,255,0.04)" }}
               display="inline-block"
@@ -1813,9 +1792,9 @@ function SpecSheetModal({
     <Modal isOpen={isOpen} onClose={handleClose} isCentered size="md">
       <ModalOverlay backdropFilter="blur(6px)" bg="rgba(8,12,22,0.75)" />
       <ModalContent
-        bg="#0d1421"
+        bg="#0a0f18"
         border="1px solid rgba(255,255,255,0.1)"
-        borderRadius="20px"
+        borderRadius="10px"
         mx={4}
       >
         <ModalHeader
