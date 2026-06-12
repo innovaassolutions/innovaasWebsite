@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroThroughput from "@/components/throughput/HeroThroughput";
-import FlowForgeDashboard from "@/components/mockups/FlowForgeDashboard";
+import ProofCarousel from "@/components/system/ProofCarousel";
 import LogoMarquee from "@/components/system/LogoMarquee";
 import Manifesto from "@/components/system/Manifesto";
 import CountUp from "@/components/system/CountUp";
@@ -230,12 +230,11 @@ export default function HomePage() {
                 We don&apos;t just advise. We ship.
               </h2>
               <p className="mt-6 leading-relaxed text-ink-300">
-                FlowForge is the AI assessment engine we built to run our own
-                consulting practice — parallel AI interviews, automated
-                synthesis, professional reporting. It&apos;s one of five
-                platforms we&apos;ve taken from idea to production. When we
-                recommend a build, the team that ships it has done it before —
-                for ourselves.
+                These are live platforms we designed, built, and run ourselves:
+                FlowForge powers our consulting practice, NovaCRM runs our own
+                sales and delivery, NovaKMS answers from our knowledge base,
+                and NovaVoice picks up the phone. When we recommend a build,
+                the team that ships it has done it before — for ourselves.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
@@ -246,12 +245,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="rounded-lg border border-line bg-ink-900 p-3 shadow-2xl shadow-black/40">
-              <p className="mb-2 px-2 pt-1 font-mono text-[11px] tracking-[0.18em] text-ink-400">
-                FLOWFORGE.INNOVAAS.CO — LIVE PLATFORM
-              </p>
-              <FlowForgeDashboard />
-            </div>
+            <ProofCarousel />
           </div>
         </div>
       </section>
