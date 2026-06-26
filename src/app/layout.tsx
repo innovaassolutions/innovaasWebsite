@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     template: "%s | Innovaas Solutions",
   },
   description:
-    "Innovaas is a Singapore-headquartered technology distribution and services company. We represent world-class technology brands across Southeast Asia, and deliver consulting, custom development, agentic AI systems, and implementation end to end.",
+    "Innovaas is a Singapore-headquartered technology distribution and services company. We represent world-class technology brands and deliver consulting, custom development, agentic AI systems, and implementation to clients worldwide.",
   keywords: [
-    "technology distribution Southeast Asia",
+    "global technology distribution",
     "technology distributor Singapore",
     "digital transformation",
     "agentic AI systems",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Innovaas Solutions | Technology Distribution, Consulting & AI Engineering",
     description:
-      "Singapore-headquartered technology distribution and services. World-class brands, consulting, custom AI engineering, and implementation — delivered end to end across Southeast Asia.",
+      "Singapore-headquartered technology distribution and services. World-class brands, consulting, custom AI engineering, and implementation — delivered to clients worldwide.",
     url: "https://innovaas.co",
     siteName: "Innovaas Solutions",
     type: "website",
@@ -93,7 +93,7 @@ const jsonLd = {
   url: "https://innovaas.co",
   logo: "https://innovaas.co/logo.png",
   description:
-    "Technology distribution and services company headquartered in Singapore. Distribution of world-class technology brands across Southeast Asia, plus consulting, custom AI development, and implementation.",
+    "Technology distribution and services company headquartered in Singapore, serving clients worldwide with world-class technology brands, consulting, custom AI development, and implementation.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "SG",

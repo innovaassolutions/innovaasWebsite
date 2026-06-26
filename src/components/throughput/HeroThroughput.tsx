@@ -111,10 +111,10 @@ export default function HeroThroughput() {
               technology
             </span>
             <span className="thr-reveal block text-[clamp(3rem,9vw,7.5rem)]" style={{ animationDelay: "0.34s" }}>
-              through
+              without
             </span>
             <span className="thr-reveal block text-[clamp(3rem,9vw,7.5rem)]" style={{ animationDelay: "0.46s" }}>
-              Southeast Asia<span className="text-signal-500">.</span>
+              borders<span className="text-signal-500">.</span>
             </span>
           </h1>
 
